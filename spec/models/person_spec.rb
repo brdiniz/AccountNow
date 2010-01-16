@@ -11,7 +11,7 @@ describe Person do
     Person.create!(@valid_attributes)
   end
 
-  it 'should not create a new instace give valid attributes' do
+  it 'should not create a new instace given valid attributes' do
     person = Person.new
     person.should be_invalid
     person.errors.on(:name).should_not be_blank
