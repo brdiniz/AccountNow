@@ -10,6 +10,7 @@ describe Person do
     person = Person.new
     person.should be_invalid
     person.errors.on(:name).should_not be_blank
+    person.errors.on(:address).should be_blank
   end
 end
 
