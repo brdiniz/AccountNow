@@ -27,5 +27,15 @@ config.action_mailer.delivery_method = :test
 # like if you have constraints or database-specific column types
 # config.active_record.schema_format = :sql
 
-  config.gem 'rspec-rails', :version => '>= 1.2.9', :lib => false unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
+config.gem 'rspec-rails', :version => '>= 1.2.9', :lib => false unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
+config.gem "polyglot", :lib => false, :version => ">= 0.2.5"
+config.gem "hpricot", :lib => false, :version => ">= 0.8.1"
+config.gem "treetop", :lib => false, :version => ">= 1.2.5"
+config.gem "term-ansicolor", :lib => false, :version => ">= 1.0.3"
+config.gem "webrat", :lib => false, :version => ">= 0.4.4"
+config.gem "cucumber", :lib => false, :version => ">= 0.3.5"
+config.gem "rspec", :lib => false, :version => ">= 1.2.6"
+config.gem "Selenium", :lib => false, :version => ">= 1.1.14"
+config.gem "selenium-client", :lib => false, :version => ">= 1.2.15"
+config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
 

@@ -1,14 +1,9 @@
 require 'spec_helper'
 
 describe Person do
-  before(:each) do
-    @valid_attributes = {
-      :name => "Bruno Diniz"
-    }
-  end
 
   it "should create a new instance given valid attributes" do
-    Person.create!(@valid_attributes)
+    Factory.create(:person)
   end
 
   it 'should not create a new instace given valid attributes' do
