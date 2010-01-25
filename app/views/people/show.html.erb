@@ -8,10 +8,14 @@
   </div>
   <div class="content">
     <div class="inner">
-
         <p>
           <b><%= t("activerecord.attributes.people.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</b>
           <%= @person.name %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.people.tipe", :default => t("activerecord.labels.tipe", :default => "Tipo")) %>:</b>
+          <%= @person.tipe %>
         </p>
 
         <p>
