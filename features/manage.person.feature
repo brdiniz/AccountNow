@@ -9,9 +9,10 @@ I want feature
     When I follow "Novo"
     And I fill in "Nome" with "Bruno Diniz"
     And I fill in "Tipo" with "FISICA"
+    And I fill in "Identificador" with "1020"
     And I fill in "Endereço" with "CONSELHEIRO BROTERO"
     And I press "Salvar"
-    Then I should see "Person was successfully created."
+    Then I should see "Person criado com sucesso!"
     And I should see "Bruno Diniz"
     And I should have 1 person
 

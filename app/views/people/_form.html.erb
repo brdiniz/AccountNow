@@ -10,6 +10,11 @@
   </div>
 
   <div class="group">
+    <%= f.label :identifier, t("activerecord.attributes.person.identifier", :default => "Identificador"), :class => :label %>
+    <%= f.text_field :identifier, :class => 'text_field' %>
+  </div>
+
+  <div class="group">
     <%= f.label :address, t("activerecord.attributes.person.address", :default => "Address"), :class => :label %>
     <%= f.text_field :address, :class => 'text_field' %>
   </div>

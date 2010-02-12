@@ -2686,3 +2686,578 @@ Rendering template within layouts/application
 Rendering people/index
 Rendered people/_sidebar (0.5ms)
 Completed in 44ms (View: 37, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-01-25 18:10:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Rendered people/_form (6.5ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 37ms (View: 29, DB: 0) | 200 OK [http://localhost/people/1/edit]
+
+
+Processing PeopleController#update (for 127.0.0.1 at 2010-01-25 18:10:16) [PUT]
+  Parameters: {"person"=>{"address"=>"RUA CONSELHEIRO BROTERO", "name"=>"BRUNO", "tipe"=>"FISICA"}, "authenticity_token"=>"SfACAnRUDv+i7w2r9WfcF43Ac/y9x+z32u6JY0qZQ2A=", "id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://localhost:3000/people/1
+Completed in 18ms (DB: 0) | 302 Found [http://localhost/people/1]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-01-25 18:10:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+Rendered people/_sidebar (0.3ms)
+Completed in 26ms (View: 18, DB: 0) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-01-25 18:11:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+Rendered people/_sidebar (0.4ms)
+Completed in 175ms (View: 167, DB: 0) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-01-25 18:11:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Rendered people/_form (6.6ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 29ms (View: 20, DB: 0) | 200 OK [http://localhost/people/1/edit]
+
+
+Processing PeopleController#update (for 127.0.0.1 at 2010-01-25 18:11:10) [PUT]
+  Parameters: {"person"=>{"address"=>"RUA CONSELHEIRO BROTERO", "name"=>"BRUNO", "tipe"=>"FISICA"}, "authenticity_token"=>"SfACAnRUDv+i7w2r9WfcF43Ac/y9x+z32u6JY0qZQ2A=", "id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://localhost:3000/people/1
+Completed in 19ms (DB: 0) | 302 Found [http://localhost/people/1]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-01-25 18:11:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+Rendered people/_sidebar (0.4ms)
+Completed in 27ms (View: 19, DB: 0) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-01-25 18:11:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+Rendered people/_sidebar (0.4ms)
+Completed in 27ms (View: 19, DB: 0) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-01-25 18:11:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (4.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Rendered people/_form (6.4ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 31ms (View: 19, DB: 4) | 200 OK [http://localhost/people/1/edit]
+
+
+Processing PeopleController#update (for 127.0.0.1 at 2010-01-25 18:11:21) [PUT]
+  Parameters: {"person"=>{"address"=>"RUA CONSELHEIRO BROTERO", "name"=>"BRUNO", "tipe"=>"FISICA"}, "authenticity_token"=>"SfACAnRUDv+i7w2r9WfcF43Ac/y9x+z32u6JY0qZQ2A=", "id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://localhost:3000/people/1
+Completed in 20ms (DB: 0) | 302 Found [http://localhost/people/1]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-01-25 18:11:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+Rendered people/_sidebar (0.4ms)
+Completed in 27ms (View: 19, DB: 0) | 200 OK [http://localhost/people/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-25 18:51:01) [GET]
+
+ActionController::RoutingError (No route matches "/logout" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-01-25 20:07:22) [GET]
+  [4;35;1mPerson Load (4.9ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 47ms (View: 36, DB: 5) | 200 OK [http://localhost/People]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-01-25 20:07:59) [GET]
+  [4;36;1mPerson Load (1.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 50ms (View: 43, DB: 1) | 200 OK [http://localhost/People]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-01-25 20:08:00) [GET]
+  [4;35;1mPerson Load (1.3ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 215ms (View: 208, DB: 1) | 200 OK [http://localhost/People]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-01-25 20:08:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+Rendered people/_sidebar (0.4ms)
+Completed in 34ms (View: 20, DB: 0) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-01-25 20:08:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Rendered people/_form (7.0ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 27ms (View: 19, DB: 0) | 200 OK [http://localhost/people/1/edit]
+
+
+Processing PeopleController#update (for 127.0.0.1 at 2010-01-25 20:08:10) [PUT]
+  Parameters: {"person"=>{"address"=>"RUA CONSELHEIRO BROTERO", "name"=>"BRUNO DINIZ", "tipe"=>"FISICA"}, "authenticity_token"=>"SfACAnRUDv+i7w2r9WfcF43Ac/y9x+z32u6JY0qZQ2A=", "id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mPerson Update (0.4ms)[0m   [0mUPDATE "people" SET "updated_at" = '2010-01-25 22:08:10', "name" = 'BRUNO DINIZ' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/people/1
+Completed in 62ms (DB: 0) | 302 Found [http://localhost/people/1]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-01-25 20:08:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+Rendered people/_sidebar (0.4ms)
+Completed in 27ms (View: 19, DB: 0) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-01-25 20:08:13) [GET]
+  [4;35;1mPerson Load (1.3ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 42ms (View: 35, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#destroy (for 127.0.0.1 at 2010-01-25 20:08:24) [DELETE]
+  Parameters: {"authenticity_token"=>"SfACAnRUDv+i7w2r9WfcF43Ac/y9x+z32u6JY0qZQ2A=", "id"=>"3"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+  [4;35;1mPerson Destroy (0.4ms)[0m   [0mDELETE FROM "people" WHERE "id" = 3[0m
+Redirected to http://localhost:3000/people
+Completed in 103ms (DB: 0) | 302 Found [http://localhost/people/3]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-01-25 20:08:24) [GET]
+  [4;36;1mPerson Load (1.1ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 38ms (View: 32, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#destroy (for 127.0.0.1 at 2010-01-25 20:08:30) [DELETE]
+  Parameters: {"authenticity_token"=>"SfACAnRUDv+i7w2r9WfcF43Ac/y9x+z32u6JY0qZQ2A=", "id"=>"5"}
+  [4;35;1mPerson Load (1.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 5) [0m
+  [4;36;1mPerson Destroy (0.5ms)[0m   [0;1mDELETE FROM "people" WHERE "id" = 5[0m
+Redirected to http://localhost:3000/people
+Completed in 126ms (DB: 0) | 302 Found [http://localhost/people/5]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-01-25 20:08:30) [GET]
+  [4;35;1mPerson Load (1.0ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 34ms (View: 27, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#destroy (for 127.0.0.1 at 2010-01-25 20:08:43) [DELETE]
+  Parameters: {"authenticity_token"=>"SfACAnRUDv+i7w2r9WfcF43Ac/y9x+z32u6JY0qZQ2A=", "id"=>"2"}
+  [4;36;1mPerson Load (0.9ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mPerson Destroy (0.7ms)[0m   [0mDELETE FROM "people" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/people
+Completed in 56ms (DB: 0) | 302 Found [http://localhost/people/2]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-01-25 20:08:43) [GET]
+  [4;36;1mPerson Load (0.9ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#destroy (for 127.0.0.1 at 2010-01-25 20:08:46) [DELETE]
+  Parameters: {"authenticity_token"=>"SfACAnRUDv+i7w2r9WfcF43Ac/y9x+z32u6JY0qZQ2A=", "id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mPerson Destroy (0.4ms)[0m   [0;1mDELETE FROM "people" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/people
+Completed in 54ms (DB: 0) | 302 Found [http://localhost/people/1]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-01-25 20:08:47) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://localhost/people]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100116011931)
+Migrating to AddAddressToPerson (20100117121453)
+Migrating to AddTipeToPerson (20100118194044)
+Migrating to CreateBanks (20100118223731)
+Migrating to AddIdentifierToPeople (20100125225603)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: peoples: ALTER TABLE "peoples" ADD "identifier" varchar(255)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100116011931)
+Migrating to AddAddressToPerson (20100117121453)
+Migrating to AddTipeToPerson (20100118194044)
+Migrating to CreateBanks (20100118223731)
+Migrating to AddIdentifierToPeople (20100125230019)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: peoples: ALTER TABLE "peoples" ADD "code" varchar(255)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100116011931)
+Migrating to AddAddressToPerson (20100117121453)
+Migrating to AddTipeToPerson (20100118194044)
+Migrating to CreateBanks (20100118223731)
+Migrating to AddIdentifierToPeople (20100125230206)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: peoples: ALTER TABLE "peoples" ADD "identifier" varchar(255)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100116011931)
+Migrating to AddAddressToPerson (20100117121453)
+Migrating to AddTipeToPerson (20100118194044)
+Migrating to CreateBanks (20100118223731)
+Migrating to AddIdentifierToPerson (20100125230232)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mALTER TABLE "people" ADD "identifier" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100125230232')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("banks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("people")[0m
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-01-27 10:08:21) [GET]
+  [4;36;1mPerson Load (0.8ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (1.5ms)
+Completed in 193ms (View: 187, DB: 1) | 200 OK [http://localhost/People]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-01-27 10:08:26) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (11.0ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 49ms (View: 41, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-01-27 10:08:29) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-06 17:38:18) [GET]
+  [4;36;1mPerson Load (0.8ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (18.3ms)
+Completed in 461ms (View: 453, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-06 17:39:47) [GET]
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 18ms (View: 11, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-06 17:39:49) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (43.2ms)
+Rendered people/_sidebar (0.7ms)
+Completed in 104ms (View: 96, DB: 0) | 200 OK [http://localhost/people/new]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100116011931)
+Migrating to AddAddressToPerson (20100117121453)
+Migrating to AddTipeToPerson (20100118194044)
+Migrating to CreateBanks (20100118223731)
+Migrating to AddIdentifierToPerson (20100125230232)
+Migrating to CreateCompanies (20100206194651)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "people_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100206194651')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("banks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("companies")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("people")[0m
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-06 17:48:02) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (6.6ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 25ms (View: 18, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-06 17:48:02) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (6.5ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-06 17:48:03) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (7.5ms)
+Rendered people/_sidebar (1.2ms)
+Completed in 28ms (View: 21, DB: 0) | 200 OK [http://localhost/people/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-06 18:18:09) [POST]
+  Parameters: {"person"=>{"address"=>"RUA CONSELHEIRO BROTERO 717 AP 22", "name"=>"BRUNO DA S F DINIZ", "tipe"=>"FISICA"}, "authenticity_token"=>"ddnlix/w7tmphUm7HUwquX+WZiUaLsBp2S0lj+xlM0s="}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (5.4ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 29ms (View: 15, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-06 18:18:11) [POST]
+  Parameters: {"person"=>{"address"=>"RUA CONSELHEIRO BROTERO 717 AP 22", "name"=>"BRUNO DA S F DINIZ", "tipe"=>"FISICA"}, "authenticity_token"=>"ddnlix/w7tmphUm7HUwquX+WZiUaLsBp2S0lj+xlM0s="}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (5.4ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 29ms (View: 15, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-06 18:18:13) [POST]
+  Parameters: {"person"=>{"address"=>"RUA CONSELHEIRO BROTERO 717 AP 22", "name"=>"BRUNO DA S F DINIZ", "tipe"=>"FISICA"}, "authenticity_token"=>"ddnlix/w7tmphUm7HUwquX+WZiUaLsBp2S0lj+xlM0s="}
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (5.3ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 28ms (View: 15, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-06 18:18:14) [POST]
+  Parameters: {"person"=>{"address"=>"RUA CONSELHEIRO BROTERO 717 AP 22", "name"=>"BRUNO DA S F DINIZ", "tipe"=>"FISICA"}, "authenticity_token"=>"ddnlix/w7tmphUm7HUwquX+WZiUaLsBp2S0lj+xlM0s="}
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (5.2ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 28ms (View: 15, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-06 18:18:15) [POST]
+  Parameters: {"person"=>{"address"=>"RUA CONSELHEIRO BROTERO 717 AP 22", "name"=>"BRUNO DA S F DINIZ", "tipe"=>"FISICA"}, "authenticity_token"=>"ddnlix/w7tmphUm7HUwquX+WZiUaLsBp2S0lj+xlM0s="}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (5.7ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 32ms (View: 18, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-06 18:18:18) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-06 18:18:37) [GET]
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-06 18:18:39) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-06 18:18:43) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (6.6ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/people/new]
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" LIMIT 1[0m
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-06 18:26:40) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (9.9ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 32ms (View: 25, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-06 18:26:43) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (8.0ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 27ms (View: 20, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-06 18:26:45) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (8.2ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 26ms (View: 19, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-06 18:26:57) [POST]
+  Parameters: {"person"=>{"address"=>"RUA CONSELHEIRO BROTERO 717 AP 22", "name"=>"BRUNO DA S F DINIZ", "tipe"=>"FISICA", "identifier"=>"1020"}, "authenticity_token"=>"ddnlix/w7tmphUm7HUwquX+WZiUaLsBp2S0lj+xlM0s="}
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '1020') LIMIT 1[0m
+  [4;35;1mPerson Create (0.6ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('BRUNO DA S F DINIZ', 'RUA CONSELHEIRO BROTERO 717 AP 22', '2010-02-06 20:26:57', 'FISICA', '2010-02-06 20:26:57', '1020')[0m
+Redirected to http://localhost:3000/people/6
+Completed in 67ms (DB: 0) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-06 18:26:57) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering people/show
+Rendered people/_sidebar (0.4ms)
+Completed in 37ms (View: 27, DB: 0) | 200 OK [http://localhost/people/6]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-06 18:27:02) [GET]
+  [4;35;1mPerson Load (0.9ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 31ms (View: 24, DB: 1) | 200 OK [http://localhost/people]
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.9ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-06 20:27:30', 1, '2010-02-06 20:27:30')[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1 AND "companies".id <> 1) LIMIT 1[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mCompany Load (0.9ms)[0m   [0mSELECT * FROM "companies" LIMIT 1[0m
+  [4;36;1mCompany Load (0.9ms)[0m   [0;1mSELECT * FROM "companies" LIMIT 1[0m
+  [4;35;1mCompany Load (0.9ms)[0m   [0mSELECT * FROM "companies" LIMIT 1[0m

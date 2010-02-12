@@ -41,6 +41,9 @@ pt_br:
             wild_button: "Excluir Arquivo"
     errors: "Erro!"
     activerecord:
+        errors:
+            messages:
+                record_invalid: "Ocorreram erros ao salvar informações"
         labels:
             name: Nome
             tipe: Tipo

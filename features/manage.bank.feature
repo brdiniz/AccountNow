@@ -12,7 +12,7 @@ I want feature
     And I should not see "Ex: a simple text"
     And I fill in "Nome" with "BANCO DO BRASIL"
     And I press "Salvar"
-    Then I should see "Bank was successfully created."
+    Then I should see "Bank criado com sucesso!"
     And I should see "001"
     And I should have 1 bank
 
