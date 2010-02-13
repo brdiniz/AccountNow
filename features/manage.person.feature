@@ -35,4 +35,5 @@ I want feature
     And I should see "Willian Gates"
     When I follow "Willian Gates"
     And I should see "Visualizar"
+    And I should see "Registrar uma conta"
 

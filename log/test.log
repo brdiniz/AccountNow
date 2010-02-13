@@ -8871,3 +8871,271 @@ Rendered banks/_sidebar (0.8ms)
   [4;36;1mCompany Create (0.7ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-06 20:19:25', 1, '2010-02-06 20:19:25')[0m
   [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
   [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+Rendering people/index.html.erb
+Rendered people/_sidebar (1.2ms)
+Rendering people/new.html.erb
+Rendered people/_form (7.8ms)
+Rendered people/_sidebar (0.3ms)
+Rendering people/edit.html.erb
+Rendered people/_form (6.0ms)
+Rendered people/_sidebar (0.3ms)
+Rendering people/show.html.erb
+Rendered people/_sidebar (0.4ms)
+Rendering banks/edit.html.erb
+Rendered banks/_form (6.2ms)
+Rendered people/_sidebar (0.4ms)
+Rendered banks/_sidebar (1.6ms)
+Rendering banks/show.html.erb
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.0ms)
+Rendering banks/index.html.erb
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.0ms)
+Rendering banks/new.html.erb
+Rendered banks/_form (4.0ms)
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (0.8ms)
+  [4;36;1mBank Create (0.7ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-12 06:28:53', 'code1', '2010-02-12 06:28:53')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.5ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-12 06:28:53', 'FISICA', '2010-02-12 06:28:53', 'cpf_1')[0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-12 06:28:53', 'FISICA', '2010-02-12 06:28:53', '123456')[0m
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p4', NULL, '2010-02-12 06:28:53', 'FISICA', '2010-02-12 06:28:53', 'cpf_2')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.2ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-12 06:28:53', 1, '2010-02-12 06:28:53')[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100116011931)
+Migrating to AddAddressToPerson (20100117121453)
+Migrating to AddTipeToPerson (20100118194044)
+Migrating to CreateBanks (20100118223731)
+Migrating to AddIdentifierToPerson (20100125230232)
+Migrating to CreateCompanies (20100206194651)
+Migrating to CreateAccounts (20100212064044)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_id" integer, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100212064044')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("banks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("companies")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("people")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100116011931)
+Migrating to AddAddressToPerson (20100117121453)
+Migrating to AddTipeToPerson (20100118194044)
+Migrating to CreateBanks (20100118223731)
+Migrating to AddIdentifierToPerson (20100125230232)
+Migrating to CreateCompanies (20100206194651)
+Migrating to CreateAccounts (20100212064044)
+Migrating to RemoveAccountTypeFromAccount (20100212065140)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_id" integer, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mDROP TABLE "accounts"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_accounts")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "altered_accounts"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "accounts"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_accounts")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_accounts"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "accounts" ADD "kind" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100212065140')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("banks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("companies")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("people")[0m
+Rendering people/index.html.erb
+Rendered people/_sidebar (1.1ms)
+Rendering people/new.html.erb
+Rendered people/_form (8.1ms)
+Rendered people/_sidebar (0.4ms)
+Rendering people/edit.html.erb
+Rendered people/_form (6.2ms)
+Rendered people/_sidebar (0.4ms)
+Rendering people/show.html.erb
+Rendered people/_sidebar (0.4ms)
+Rendering banks/edit.html.erb
+Rendered banks/_form (6.2ms)
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.3ms)
+Rendering banks/show.html.erb
+Rendered people/_sidebar (0.5ms)
+Rendered banks/_sidebar (1.1ms)
+Rendering banks/index.html.erb
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.0ms)
+Rendering banks/new.html.erb
+Rendered banks/_form (4.1ms)
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (0.8ms)
+  [4;36;1mBank Create (0.7ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-13 12:26:23', 'code1', '2010-02-13 12:26:23')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-13 12:26:23', 'FISICA', '2010-02-13 12:26:23', 'cpf_1')[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-13 12:26:23', 'FISICA', '2010-02-13 12:26:23', '123456')[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p4', NULL, '2010-02-13 12:26:23', 'FISICA', '2010-02-13 12:26:23', 'cpf_2')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.2ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-13 12:26:23', 1, '2010-02-13 12:26:23')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.7ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-13 12:27:32', 'FISICA', '2010-02-13 12:27:32', 'cpf_1')[0m
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-13 10:27:32) [POST]
+  Parameters: {"account"=>{"kind"=>"nome", "person_id"=>1}, "person_id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-13 12:27:58', 'FISICA', '2010-02-13 12:27:58', 'cpf_1')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-13 10:27:58) [POST]
+  Parameters: {"account"=>{"kind"=>"nome", "person_id"=>1}, "person_id"=>"1"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-13 12:28:22', 'FISICA', '2010-02-13 12:28:22', 'cpf_1')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-13 10:28:22) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Create (0.3ms)[0m   [0mINSERT INTO "accounts" ("kind", "created_at", "updated_at") VALUES('nome', '2010-02-13 12:28:22', '2010-02-13 12:28:22')[0m
+Redirected to http://test.host/people/1/accounts/1
+Completed in 14ms (DB: 0) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.6ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-13 12:28:41', 'FISICA', '2010-02-13 12:28:41', 'cpf_1')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-13 10:28:41) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Create (0.4ms)[0m   [0mINSERT INTO "accounts" ("kind", "created_at", "updated_at") VALUES('nome', '2010-02-13 12:28:41', '2010-02-13 12:28:41')[0m
+Redirected to http://test.host/people/1/accounts/1
+Completed in 15ms (DB: 0) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.6ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-13 12:29:21', 'FISICA', '2010-02-13 12:29:21', 'cpf_1')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-13 10:29:21) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Create (0.3ms)[0m   [0mINSERT INTO "accounts" ("kind", "created_at", "updated_at") VALUES('nome', '2010-02-13 12:29:21', '2010-02-13 12:29:21')[0m
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 17ms (DB: 2) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+Rendering people/index.html.erb
+Rendered people/_sidebar (1.1ms)
+Rendering people/new.html.erb
+Rendered people/_form (7.7ms)
+Rendered people/_sidebar (0.4ms)
+Rendering people/edit.html.erb
+Rendered people/_form (5.9ms)
+Rendered people/_sidebar (0.3ms)
+Rendering people/show.html.erb
+Rendered people/_sidebar (0.4ms)
+Rendering banks/edit.html.erb
+Rendered banks/_form (6.1ms)
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.3ms)
+Rendering banks/show.html.erb
+Rendered people/_sidebar (0.4ms)
+Rendered banks/_sidebar (1.0ms)
+Rendering banks/index.html.erb
+Rendered people/_sidebar (0.4ms)
+Rendered banks/_sidebar (1.0ms)
+Rendering banks/new.html.erb
+Rendered banks/_form (3.9ms)
+Rendered people/_sidebar (0.4ms)
+Rendered banks/_sidebar (1.0ms)
+  [4;36;1mBank Create (0.6ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-13 12:29:24', 'code1', '2010-02-13 12:29:24')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-13 12:29:24', 'FISICA', '2010-02-13 12:29:24', 'cpf_1')[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-13 12:29:24', 'FISICA', '2010-02-13 12:29:24', '123456')[0m
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p4', NULL, '2010-02-13 12:29:24', 'FISICA', '2010-02-13 12:29:24', 'cpf_2')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.2ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-13 12:29:24', 1, '2010-02-13 12:29:24')[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_3') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p5', NULL, '2010-02-13 12:29:24', 'FISICA', '2010-02-13 12:29:24', 'cpf_3')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-13 10:29:24) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Create (0.4ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "created_at", "updated_at") VALUES('nome', '2010-02-13 12:29:24', '2010-02-13 12:29:24')[0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 17ms (DB: 6) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.6ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-13 12:32:56', 'FISICA', '2010-02-13 12:32:56', 'cpf_1')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-13 10:32:56) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Create (0.3ms)[0m   [0mINSERT INTO "accounts" ("kind", "created_at", "updated_at") VALUES('nome', '2010-02-13 12:32:56', '2010-02-13 12:32:56')[0m
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 15ms (DB: 2) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-13 12:33:01', 'FISICA', '2010-02-13 12:33:01', 'cpf_1')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-13 10:33:01) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Create (0.3ms)[0m   [0mINSERT INTO "accounts" ("kind", "created_at", "updated_at") VALUES('nome', '2010-02-13 12:33:01', '2010-02-13 12:33:01')[0m
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 15ms (DB: 2) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m

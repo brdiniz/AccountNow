@@ -1,8 +1,10 @@
 <div class="block">
   <h3>Ações para cadastros</h3>
   <ul class="navigation">
-    <li><%= link_to "Cadastro de bancos", banks_path  %></li>
-    <li><%= link_to "Cadastro de pessoas", people_path  %></li>
+    <li><%= link_to "Voltar para a pessoa", people_path  %></li>
+    <% if !@person.nil? && !@person.id.nil? %>
+      <li><%= link_to "Registrar uma conta", new_person_account_path(@person)  %></li>
+    <% end %>
   </ul>
 </div>
 

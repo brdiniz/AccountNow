@@ -1,0 +1,13 @@
+
+  <div class="group">
+    <%= f.label :kind, t("activerecord.attributes.account.kind", :default => "Kind"), :class => :label %>
+    <%= f.select :kind, Account::KINDS, :include_blank => true %>
+  </div>
+
+<div class="group navform wat-cf">
+  <button class="button" type="submit">
+    <%= image_tag("web-app-theme/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
+  </button>
+  <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.cancel", :default => "Cancel")}")} #{t("web-app-theme.cancel", :default => "Cancel")}", @person, :class => "button" %>
+</div>
+

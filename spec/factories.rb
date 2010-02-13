@@ -9,6 +9,3 @@ Factory.define :bank do |f|
   f.name "bank_bla_ble_bli"
 end
 
-Factory.define :company do |f|
-end
-
