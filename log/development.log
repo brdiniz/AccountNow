@@ -6085,3 +6085,76 @@ Rendering template within layouts/application
 Rendering people/show
 Rendered people/_sidebar (0.5ms)
 Completed in 29ms (View: 21, DB: 0) | 200 OK [http://localhost/people/6]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (84.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (56.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100116011931)
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100116011931')[0m
+Migrating to AddAddressToPerson (20100117121453)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mALTER TABLE "people" ADD "address" varchar(255)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100117121453')[0m
+Migrating to AddTipeToPerson (20100118194044)
+  [4;36;1mSQL (1.2ms)[0m   [0;1mALTER TABLE "people" ADD "tipe" varchar(255)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100118194044')[0m
+Migrating to CreateBanks (20100118223731)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "banks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100118223731')[0m
+Migrating to AddIdentifierToPerson (20100125230232)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mALTER TABLE "people" ADD "identifier" varchar(255)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100125230232')[0m
+Migrating to CreateCompanies (20100206194651)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "people_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100206194651')[0m
+Migrating to CreateAccounts (20100212064044)
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_id" integer, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100212064044')[0m
+Migrating to RemoveAccountTypeFromAccount (20100212065140)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_id" integer, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("accounts")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "accounts"[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_accounts")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "altered_accounts"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("accounts")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "accounts"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_accounts")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "altered_accounts"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "accounts" ADD "kind" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100212065140')[0m
+Migrating to AddReferencesPeopleFromAccounts (20100212075545)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mALTER TABLE "accounts" ADD "people_id" integer[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100212075545')[0m
+Migrating to AddPeopleIdFromAccounts (20100212075804)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "kind" varchar(255), "people_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("accounts")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "accounts"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "kind" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_accounts")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "altered_accounts"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "accounts" ADD "person_id" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100212075804')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("accounts")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("banks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("companies")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("people")[0m

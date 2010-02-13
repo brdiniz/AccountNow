@@ -18,6 +18,7 @@
       </div>
       <div id="main-navigation">
           <ul>
+            <li class="<%= request.path =~ /profile/ ? 'active' : '' %>"><a href="<%= banks_path %>">Arquivos</a></li>
             <li class="<%= request.path =~ /banks/ ? 'active' : '' %>"><a href="<%= banks_path %>">Bancos</a></li>
             <li class="<%= request.path =~ /people/ ? 'active' : '' %>"><a href="<%= people_path %>">Clientes / Fornecedores</a></li>
         <div class="clear"></div>
