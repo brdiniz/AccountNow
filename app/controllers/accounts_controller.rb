@@ -10,7 +10,8 @@ class AccountsController < InheritedResources::Base
 
   def destroy
     destroy! do |format|
-      format.html { redirect_to @account }
+      puts @person
+      format.html { redirect_to @person }
     end
   rescue Exception => e
     flash[:error] = e.message

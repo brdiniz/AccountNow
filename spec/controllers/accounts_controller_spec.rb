@@ -9,5 +9,11 @@ describe AccountsController do
     response.should redirect_to(person_path(Person.first))
   end
 
+  it 'should redirect person whe destroy account' do
+    ac = Factory(:account)
+    post :destroy, :id => ac.id, :person_id => ac.person.id
+    response.should redirect_to(person_path(ac.person))
+  end
+
 end
 

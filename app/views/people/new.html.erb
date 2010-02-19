@@ -6,7 +6,7 @@
     </ul>
   </div>
   <div class="content">
-    <h2 class="title"><%= t("web-app-theme.new", :default => "New")%>  Person</h2>
+    <p />
     <div class="inner">
       <% form_for :person, :url => people_path, :html => { :class => :form } do |f| -%>
         <%= render :partial => "form", :locals => {:f => f} %>

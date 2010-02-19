@@ -6158,3 +6158,1760 @@ Migrating to AddPeopleIdFromAccounts (20100212075804)
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("banks")[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("companies")[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("people")[0m
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 20:46:27) [GET]
+  [4;36;1mPerson Load (1.6ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (15.0ms)
+Completed in 250ms (View: 242, DB: 2) | 200 OK [http://localhost/People]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 20:46:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+Rendered people/_sidebar (0.6ms)
+Completed in 46ms (View: 38, DB: 0) | 200 OK [http://localhost/people/1]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 20:46:34) [GET]
+  Parameters: {"person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (17.3ms)
+Rendered accounts/_sidebar (5.8ms)
+Completed in 83ms (View: 69, DB: 0) | 200 OK [http://localhost/people/1/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-02-17 20:46:40) [POST]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "account"=>{"kind"=>"a receber"}, "person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Create (23.7ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "created_at", "updated_at", "person_id") VALUES('a receber', '2010-02-17 22:46:40', '2010-02-17 22:46:40', 1)[0m
+  [4;35;1mPerson Load (1.1ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://localhost:3000/people/1
+Completed in 104ms (DB: 25) | 302 Found [http://localhost/people/1/accounts]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 20:46:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+Rendered people/_sidebar (0.5ms)
+Completed in 29ms (View: 19, DB: 0) | 200 OK [http://localhost/people/1]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-17 20:46:42) [GET]
+  [4;35;1mBank Load (1.5ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (0.5ms)
+Rendered banks/_sidebar (17.8ms)
+Completed in 72ms (View: 64, DB: 1) | 200 OK [http://localhost/banks]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-17 20:46:43) [GET]
+  [4;36;1mBank Load (1.0ms)[0m   [0;1mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (0.2ms)
+Rendered banks/_sidebar (1.0ms)
+Completed in 31ms (View: 24, DB: 1) | 200 OK [http://localhost/banks]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 20:46:44) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 37ms (View: 30, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-02-17 20:46:54) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Rendered people/_form (357.7ms)
+Rendered people/_sidebar (0.8ms)
+Completed in 422ms (View: 413, DB: 0) | 200 OK [http://localhost/people/3/edit]
+
+
+Processing PeopleController#update (for 127.0.0.1 at 2010-02-17 20:47:04) [PUT]
+  Parameters: {"person"=>{"address"=>"Rua Onze de Julho", "name"=>"Renato da Silva Ferreira Diniz", "tipe"=>"Física", "identifier"=>"15303286835"}, "authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "id"=>"3"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '15303286835' AND "people".id <> 3) LIMIT 1[0m
+  [4;35;1mPerson Update (0.3ms)[0m   [0mUPDATE "people" SET "updated_at" = '2010-02-17 22:47:04', "name" = 'Renato da Silva Ferreira Diniz' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/people/3
+Completed in 60ms (DB: 0) | 302 Found [http://localhost/people/3]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 20:47:05) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering people/show
+Rendered people/_sidebar (0.5ms)
+Completed in 27ms (View: 19, DB: 0) | 200 OK [http://localhost/people/3]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-17 20:47:07) [GET]
+  [4;35;1mBank Load (1.0ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (0.2ms)
+Rendered banks/_sidebar (1.0ms)
+Completed in 30ms (View: 24, DB: 1) | 200 OK [http://localhost/banks]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-17 20:47:08) [GET]
+  [4;36;1mBank Load (1.2ms)[0m   [0;1mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.2ms)
+Completed in 167ms (View: 28, DB: 1) | 200 OK [http://localhost/banks]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 20:47:10) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 39ms (View: 32, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-17 20:47:11) [GET]
+  [4;36;1mBank Load (1.0ms)[0m   [0;1mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (0.4ms)
+Rendered banks/_sidebar (1.5ms)
+Completed in 34ms (View: 27, DB: 1) | 200 OK [http://localhost/banks]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 20:47:17) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 38ms (View: 31, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-02-17 20:47:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Rendered people/_form (7.8ms)
+Rendered people/_sidebar (0.6ms)
+Completed in 30ms (View: 21, DB: 0) | 200 OK [http://localhost/people/1/edit]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 20:47:34) [GET]
+  [4;35;1mPerson Load (1.3ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 41ms (View: 34, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 20:58:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.7ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+
+ActionView::TemplateError (undefined local variable or method `rak' for #<ActionView::Base:0xb5814dd0>) on line #42 of app/views/people/show.html.erb:
+39:         <th class="last"></th>
+40:         <% @person.accounts.each do |account| %>
+41:           <tr class='<%= cycle("odd", "even") %>'>
+42:             <td><%= link_to  account.id , [@modulo, rak] %></td>
+43:             <td><%= account.kind %></td>
+44:             <td></td>
+45:             <td></td>
+
+    app/views/people/show.html.erb:42
+    app/views/people/show.html.erb:40
+    responders (0.4.2) lib/responders/flash_responder.rb:89:in `to_html'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (73.4ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 20:58:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.7ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 54ms (View: 44, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:00:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+ERROR: compiling _run_erb_app47views47people47show46html46erb RAISED compile error
+/home/bruno/Documents/Projects/account-now/app/views/people/show.html.erb:50: syntax error, unexpected ','
+...ete")}", [@person, account], , :method => :delete, :confirm ...
+                              ^
+Function body:           def _run_erb_app47views47people47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div class=\"block\">\n  <div class=\"secondary-navigation\">\n    <ul class=\"wat-cf\">\n      <li class=\"first\">"
+
+
+; @output_buffer.concat(( link_to "#{t("web-app-theme.list", :default => "List")}", people_path  ).to_s); @output_buffer.concat "</li>\n      <li>"
+; @output_buffer.concat(( link_to "#{t("web-app-theme.new", :default => "New")}", new_person_path ).to_s); @output_buffer.concat "</li>\n      <li class=\"active\">"
+; @output_buffer.concat(( link_to "#{t("web-app-theme.show", :default => "Show")}", people_path ).to_s); @output_buffer.concat "</li>\n    </ul>\n  </div>\n  <div class=\"content\">\n    <div class=\"inner\">\n        <p>\n          <b>"
+
+
+
+
+
+; @output_buffer.concat(( t("activerecord.attributes.people.name", :default => t("activerecord.labels.name", :default => "Name")) ).to_s); @output_buffer.concat ":</b>\n          "
+; @output_buffer.concat(( @person.name ).to_s); @output_buffer.concat "\n        </p>\n\n        <p>\n          <b>"
+
+
+
+; @output_buffer.concat(( t("activerecord.attributes.people.tipe", :default => t("activerecord.labels.tipe", :default => "Tipo")) ).to_s); @output_buffer.concat ":</b>\n          "
+; @output_buffer.concat(( @person.tipe ).to_s); @output_buffer.concat "\n        </p>\n\n        <p>\n          <b>"
+
+
+
+; @output_buffer.concat(( t("activerecord.attributes.people.address", :default => t("activerecord.labels.address", :default => "Address")) ).to_s); @output_buffer.concat ":</b>\n          "
+; @output_buffer.concat(( @person.address ).to_s); @output_buffer.concat "\n        </p>\n      <div class=\"wat-cf\">\n        "
+
+
+; @output_buffer.concat(( link_to "#{image_tag("web-app-theme/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}")} #{t("web-app-theme.edit", :default=> "Edit")}", edit_person_path(@person), :class => "button" ).to_s); @output_buffer.concat "\n        "
+; @output_buffer.concat(( link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}")} #{t("web-app-theme.delete", :default => "Delete")}", people_path(@person), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" ).to_s); @output_buffer.concat "\n      </div>\n\n\r\n      <p />\r\n\r\n      <table class=\"table\" id=\"accounts_table\">\r\n        <th class=\"first\">ID</th>\r\n        <th>Tipo</th>\r\n        <th>Data do vencimento</th>\r\n        <th>Valor</th>\r\n        <th></th>\r\n        <th class=\"last\"></th>\r\n        "
+
+
+
+
+
+
+
+
+
+
+
+
+;  @person.accounts.each do |account| ; @output_buffer.concat "\r\n          <tr class='"
+; @output_buffer.concat(( cycle("odd", "even") ).to_s); @output_buffer.concat "'>\r\n            <td>"
+; @output_buffer.concat(( link_to  account.id , [@person, account] ).to_s); @output_buffer.concat "</td>\r\n            <td>"
+; @output_buffer.concat(( account.kind ).to_s); @output_buffer.concat "</td>\r\n            <td></td>\r\n            <td></td>\r\n            <td></td>\r\n            <td>\r\n              "
+
+
+
+
+; @output_buffer.concat(( link_to "#{t("web-app-theme.show", :default => "Show")}", "#" ).to_s); @output_buffer.concat " |\r\n              "
+; @output_buffer.concat(( link_to "#{t("web-app-theme.edit", :default => "Edit")}", "#" ).to_s); @output_buffer.concat " |\r\n              "
+; @output_buffer.concat(( link_to "#{t("web-app-theme.delete", :default => "Delete")}", [@person, account], , :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" ).to_s); @output_buffer.concat "\r\n            </td>\r\n          </tr>\r\n        "
+
+
+;  end ; @output_buffer.concat "\r\n      </table>\n\n    </div>\n  </div>\n</div>\n\n"
+
+
+
+
+
+
+;  content_for :sidebar, render(:partial => 'sidebar') 
+@output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/bruno/Documents/Projects/account-now/app/views/people/show.html.erb:65:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/home/bruno/Documents/Projects/account-now/vendor/plugins/inherited_resources/lib/inherited_resources/legacy/respond_to.rb:105:in `retrieve_response_from_mimes'
+/home/bruno/Documents/Projects/account-now/vendor/plugins/inherited_resources/lib/inherited_resources/legacy/responder.rb:183:in `call'
+/home/bruno/Documents/Projects/account-now/vendor/plugins/inherited_resources/lib/inherited_resources/legacy/responder.rb:183:in `default_render'
+/home/bruno/Documents/Projects/account-now/vendor/plugins/inherited_resources/lib/inherited_resources/legacy/responder.rb:124:in `to_html'
+/usr/lib/ruby/gems/1.8/gems/responders-0.4.2/lib/responders/flash_responder.rb:89:in `to_html'
+/home/bruno/Documents/Projects/account-now/vendor/plugins/inherited_resources/lib/inherited_resources/legacy/responder.rb:117:in `send'
+/home/bruno/Documents/Projects/account-now/vendor/plugins/inherited_resources/lib/inherited_resources/legacy/responder.rb:117:in `respond'
+/home/bruno/Documents/Projects/account-now/vendor/plugins/inherited_resources/lib/inherited_resources/legacy/responder.rb:110:in `call'
+/home/bruno/Documents/Projects/account-now/vendor/plugins/inherited_resources/lib/inherited_resources/legacy/respond_to.rb:67:in `respond_with'
+/home/bruno/Documents/Projects/account-now/vendor/plugins/inherited_resources/lib/inherited_resources/actions.rb:13:in `show'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/home/bruno/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/home/bruno/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/home/bruno/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/bruno/Documents/Projects/account-now/app/views/people/show.html.erb:50: syntax error, unexpected ','
+...ete")}", [@person, account], , :method => :delete, :confirm ...
+                              ^) on line #50 of app/views/people/show.html.erb:
+47:             <td>
+48:               <%= link_to "#{t("web-app-theme.show", :default => "Show")}", "#" %> |
+49:               <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", "#" %> |
+50:               <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", [@person, account], , :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+51:             </td>
+52:           </tr>
+53:         <% end %>
+
+    app/views/people/show.html.erb:65:in `compile!'
+    responders (0.4.2) lib/responders/flash_responder.rb:89:in `to_html'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (64.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:00:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.8ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.7ms)
+Completed in 211ms (View: 97, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing AccountsController#destroy (for 127.0.0.1 at 2010-02-17 21:11:43) [DELETE]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "id"=>"2", "person_id"=>"1"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 2 AND ("accounts".person_id = 1)) [0m
+  [4;35;1mAccount Destroy (0.5ms)[0m   [0mDELETE FROM "accounts" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/people/1
+Completed in 87ms (DB: 2) | 302 Found [http://localhost/people/1/accounts/2]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:11:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.7ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 51ms (View: 40, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:11:52) [GET]
+  [4;36;1mPerson Load (1.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 37ms (View: 31, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:11:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 2) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 38ms (View: 29, DB: 1) | 200 OK [http://localhost/people/2]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:11:58) [GET]
+  Parameters: {"person_id"=>"2"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (8.2ms)
+Rendered accounts/_sidebar (0.2ms)
+Completed in 30ms (View: 16, DB: 0) | 200 OK [http://localhost/people/2/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-02-17 21:12:02) [POST]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "account"=>{"kind"=>"a pagar"}, "person_id"=>"2"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mAccount Create (0.7ms)[0m   [0mINSERT INTO "accounts" ("kind", "created_at", "updated_at", "person_id") VALUES('a pagar', '2010-02-17 23:12:02', '2010-02-17 23:12:02', 2)[0m
+  [4;36;1mPerson Load (1.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Redirected to http://localhost:3000/people/2
+Completed in 71ms (DB: 2) | 302 Found [http://localhost/people/2/accounts]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:12:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 2) [0m
+Rendered people/_sidebar (0.7ms)
+Completed in 44ms (View: 35, DB: 1) | 200 OK [http://localhost/people/2]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:13:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (14.1ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 2) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 173ms (View: 150, DB: 14) | 200 OK [http://localhost/people/2]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:15:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+
+ActionView::TemplateError (syntax error on line 73, col 10: `          unit: "R$"') on line #4 of app/views/people/show.html.erb:
+1: <div class="block">
+2:   <div class="secondary-navigation">
+3:     <ul class="wat-cf">
+4:       <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", people_path  %></li>
+5:       <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_person_path %></li>
+6:       <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", people_path %></li>
+7:     </ul>
+
+    /usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    app/views/people/show.html.erb:4
+    responders (0.4.2) lib/responders/flash_responder.rb:89:in `to_html'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (80.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:15:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.7ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 2) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 199ms (View: 190, DB: 1) | 200 OK [http://localhost/people/2]
+
+
+Processing AccountsController#destroy (for 127.0.0.1 at 2010-02-17 21:15:43) [DELETE]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "id"=>"3", "person_id"=>"2"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 3 AND ("accounts".person_id = 2)) [0m
+  [4;36;1mAccount Destroy (0.3ms)[0m   [0;1mDELETE FROM "accounts" WHERE "id" = 3[0m
+Redirected to http://localhost:3000/people/2
+Completed in 103ms (DB: 1) | 302 Found [http://localhost/people/2/accounts/3]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:15:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 2) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 37ms (View: 28, DB: 1) | 200 OK [http://localhost/people/2]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:16:51) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 40ms (View: 33, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:17:04) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 3) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/people/3]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:17:06) [GET]
+  Parameters: {"person_id"=>"3"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (8.4ms)
+Rendered accounts/_sidebar (0.2ms)
+Completed in 30ms (View: 17, DB: 0) | 200 OK [http://localhost/people/3/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-02-17 21:17:12) [POST]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "account"=>{"kind"=>"a pagar"}, "person_id"=>"3"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+  [4;36;1mAccount Create (0.5ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "created_at", "updated_at", "person_id") VALUES('a pagar', '2010-02-17 23:17:12', '2010-02-17 23:17:12', 3)[0m
+  [4;35;1mPerson Load (1.1ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+Redirected to http://localhost:3000/people/3
+Completed in 77ms (DB: 2) | 302 Found [http://localhost/people/3/accounts]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:17:12) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 3) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 44ms (View: 35, DB: 1) | 200 OK [http://localhost/people/3]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:17:19) [GET]
+  [4;36;1mPerson Load (1.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 38ms (View: 31, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:17:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 2) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 46ms (View: 30, DB: 1) | 200 OK [http://localhost/people/2]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:21:00) [GET]
+  Parameters: {"person_id"=>"2"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (8.1ms)
+Rendered people/_people_item_sidebar (2.1ms)
+Completed in 45ms (View: 33, DB: 0) | 200 OK [http://localhost/people/2/accounts/new]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:23:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 2) [0m
+Rendered people/_sidebar (1.7ms)
+Completed in 40ms (View: 32, DB: 1) | 200 OK [http://localhost/people/2]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:23:25) [GET]
+  Parameters: {"person_id"=>"2"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (7.7ms)
+Rendered people/_people_item_sidebar (1.2ms)
+Completed in 30ms (View: 18, DB: 0) | 200 OK [http://localhost/people/2/accounts/new]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:23:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 2) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 40ms (View: 30, DB: 1) | 200 OK [http://localhost/people/2]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:23:41) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 39ms (View: 32, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:23:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 44ms (View: 34, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:23:54) [GET]
+  [4;36;1mPerson Load (1.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 37ms (View: 30, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:24:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 42ms (View: 34, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:24:34) [GET]
+  Parameters: {"person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (8.3ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 31ms (View: 18, DB: 0) | 200 OK [http://localhost/people/1/accounts/new]
+
+
+Processing AccountsController#show (for 127.0.0.1 at 2010-02-17 21:24:37) [GET]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+Rendering template within layouts/application
+Rendering accounts/show
+
+ActionView::TemplateError (undefined local variable or method `accounts_path' for #<ActionView::Base:0xb57f0840>) on line #4 of app/views/accounts/show.html.erb:
+1: <div class="block">
+2:   <div class="secondary-navigation">
+3:     <ul class="wat-cf">
+4:       <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", accounts_path  %></li>
+5:       <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_account_path %></li>
+6:       <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", account_path %></li>
+7:     </ul>
+
+    app/views/accounts/show.html.erb:4
+    responders (0.4.2) lib/responders/flash_responder.rb:89:in `to_html'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (66.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountsController#edit (for 127.0.0.1 at 2010-02-17 21:24:41) [GET]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+Rendering template within layouts/application
+Rendering accounts/edit
+
+ActionView::TemplateError (undefined local variable or method `accounts_path' for #<ActionView::Base:0xb58a0600>) on line #4 of app/views/accounts/edit.html.erb:
+1: <div class="block">
+2:   <div class="secondary-navigation">
+3:     <ul class="wat-cf">
+4:       <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", accounts_path  %></li>
+5:       <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_account_path %></li>
+6:       <li class="active"><%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_account_path %></li>
+7:     </ul>
+
+    app/views/accounts/edit.html.erb:4
+    responders (0.4.2) lib/responders/flash_responder.rb:89:in `to_html'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (66.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:25:27) [GET]
+  Parameters: {"person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (8.3ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 29ms (View: 17, DB: 0) | 200 OK [http://localhost/people/1/accounts/new]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:26:04) [GET]
+  Parameters: {"person_id"=>"1"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (8.7ms)
+Rendered people/_people_item_sidebar (1.1ms)
+Completed in 41ms (View: 27, DB: 0) | 200 OK [http://localhost/people/1/accounts/new]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:26:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 47ms (View: 36, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:27:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+
+ActionView::TemplateError (undefined local variable or method `person' for #<ActionView::Base:0xb57738b8>) on line #5 of app/views/people/show.html.erb:
+2:   <div class="secondary-navigation">
+3:     <ul class="wat-cf">
+4:       <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", people_path  %></li>
+5:       <li class="active"><%= link_to "#{person.name}", people_path %></li>
+6:     </ul>
+7:   </div>
+8:   <div class="content">
+
+    app/views/people/show.html.erb:5
+    responders (0.4.2) lib/responders/flash_responder.rb:89:in `to_html'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (217.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:27:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 52ms (View: 43, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:27:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 51ms (View: 42, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:27:58) [GET]
+  Parameters: {"person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (147.0ms)
+Rendered people/_people_item_sidebar (0.9ms)
+Completed in 168ms (View: 156, DB: 0) | 200 OK [http://localhost/people/1/accounts/new]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:28:24) [GET]
+  Parameters: {"person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.4ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 38ms (View: 25, DB: 0) | 200 OK [http://localhost/people/1/accounts/new]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:28:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.8ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 46ms (View: 36, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:28:32) [GET]
+  [4;35;1mPerson Load (1.3ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 39ms (View: 32, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-17 21:29:18) [GET]
+  [4;36;1mBank Load (1.0ms)[0m   [0;1mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (16.2ms)
+Rendered banks/_sidebar (127.9ms)
+Completed in 158ms (View: 152, DB: 1) | 200 OK [http://localhost/banks]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:29:19) [GET]
+  [4;35;1mPerson Load (1.3ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 40ms (View: 33, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:29:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 43ms (View: 34, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:29:55) [GET]
+  [4;36;1mPerson Load (1.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 37ms (View: 30, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-17 21:29:57) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (9.7ms)
+Rendered people/_sidebar (0.5ms)
+Completed in 47ms (View: 39, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:30:00) [GET]
+  [4;35;1mPerson Load (1.3ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 40ms (View: 33, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-17 21:30:03) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (7.7ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 28ms (View: 20, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:30:05) [GET]
+  [4;36;1mPerson Load (1.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 37ms (View: 31, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:30:36) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (1.5ms)
+Completed in 44ms (View: 37, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:31:05) [GET]
+  [4;36;1mPerson Load (1.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+
+ActionView::TemplateError (undefined local variable or method `new_people_path' for #<ActionView::Base:0xb56463a0>) on line #4 of app/views/people/_sidebar.html.erb:
+1: <div class="block">
+2:   <h3>Ações</h3>
+3:   <ul class="navigation">
+4:     <li><%= link_to "Criar cliente / fornecedores", new_people_path  %></li>
+5:     <% if !@person.nil? && !@person.id.nil? %>
+6:       <li><%= link_to "Registrar uma conta", new_person_account_path(@person)  %></li>
+7:     <% end %>
+
+    app/views/people/_sidebar.html.erb:4
+    app/views/people/index.html.erb:37
+    responders (0.4.2) lib/responders/flash_responder.rb:89:in `to_html'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (82.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:31:13) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (1.4ms)
+Completed in 44ms (View: 37, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-17 21:31:34) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (8.2ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 29ms (View: 20, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:31:52) [GET]
+  [4;36;1mPerson Load (1.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 38ms (View: 31, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:32:42) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 45ms (View: 38, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:32:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 43ms (View: 34, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:32:48) [GET]
+  Parameters: {"person_id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.7ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 33ms (View: 19, DB: 0) | 200 OK [http://localhost/people/1/accounts/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:32:51) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 38ms (View: 31, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:32:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 43ms (View: 34, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:32:59) [GET]
+  Parameters: {"person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.2ms)
+Rendered people/_people_item_sidebar (0.7ms)
+Completed in 29ms (View: 17, DB: 0) | 200 OK [http://localhost/people/1/accounts/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:33:03) [GET]
+  [4;35;1mPerson Load (1.3ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 37ms (View: 30, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:33:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 46ms (View: 36, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-17 21:33:12) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (7.8ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 26ms (View: 19, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-17 21:34:53) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (7.6ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 25ms (View: 18, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-17 21:35:20) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (7.5ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 32ms (View: 25, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:35:24) [GET]
+  [4;36;1mPerson Load (1.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 40ms (View: 33, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:35:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 45ms (View: 35, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:35:29) [GET]
+  Parameters: {"person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.5ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 31ms (View: 18, DB: 0) | 200 OK [http://localhost/people/1/accounts/new]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:35:59) [GET]
+  Parameters: {"person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.2ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 36ms (View: 24, DB: 0) | 200 OK [http://localhost/people/1/accounts/new]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:36:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 46ms (View: 36, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:36:03) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 38ms (View: 31, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:36:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 43ms (View: 34, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:37:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 44ms (View: 35, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-17 21:38:01) [GET]
+  [4;36;1mBank Load (1.0ms)[0m   [0;1mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.3ms)
+Completed in 33ms (View: 26, DB: 1) | 200 OK [http://localhost/banks]
+
+
+Processing BanksController#new (for 127.0.0.1 at 2010-02-17 21:38:05) [GET]
+Rendering template within layouts/application
+Rendering banks/new
+Rendered banks/_form (19.1ms)
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.0ms)
+Completed in 63ms (View: 56, DB: 0) | 200 OK [http://localhost/banks/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:38:33) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 37ms (View: 30, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:38:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 42ms (View: 34, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:38:50) [GET]
+  [4;36;1mPerson Load (1.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 42ms (View: 33, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:38:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 2) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/people/2]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:38:58) [GET]
+  [4;35;1mPerson Load (1.2ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 39ms (View: 31, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-17 21:39:01) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (7.6ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 33ms (View: 26, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-17 21:39:20) [POST]
+  Parameters: {"person"=>{"address"=>"Rua Conselheiro Brotero, 717 ap 22", "name"=>"Paola Martins e Vasconcelos Diniz", "tipe"=>"Física", "identifier"=>"30120785-9"}, "authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM="}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '30120785-9') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Paola Martins e Vasconcelos Diniz', 'Rua Conselheiro Brotero, 717 ap 22', '2010-02-17 23:39:21', 'Física', '2010-02-17 23:39:21', '30120785-9')[0m
+Redirected to http://localhost:3000/people/4
+Completed in 92ms (DB: 0) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:39:21) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 4) [0m
+Rendered people/_sidebar (0.7ms)
+Completed in 36ms (View: 27, DB: 1) | 200 OK [http://localhost/people/4]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:40:14) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 4) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 36ms (View: 25, DB: 1) | 200 OK [http://localhost/people/4]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:40:19) [GET]
+  Parameters: {"person_id"=>"4"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.3ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 29ms (View: 17, DB: 0) | 200 OK [http://localhost/people/4/accounts/new]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:40:22) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 4) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 33ms (View: 25, DB: 1) | 200 OK [http://localhost/people/4]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:40:24) [GET]
+  Parameters: {"person_id"=>"4"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.4ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 32ms (View: 19, DB: 0) | 200 OK [http://localhost/people/4/accounts/new]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:40:26) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 4) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 35ms (View: 26, DB: 1) | 200 OK [http://localhost/people/4]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:40:28) [GET]
+  Parameters: {"person_id"=>"4"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.2ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 29ms (View: 17, DB: 0) | 200 OK [http://localhost/people/4/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-02-17 21:41:19) [POST]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "account"=>{"kind"=>"a pagar"}, "person_id"=>"4"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+  [4;36;1mAccount Create (0.5ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "created_at", "updated_at", "person_id") VALUES('a pagar', '2010-02-17 23:41:19', '2010-02-17 23:41:19', 4)[0m
+  [4;35;1mPerson Load (1.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Redirected to http://localhost:3000/people/4
+Completed in 69ms (DB: 2) | 302 Found [http://localhost/people/4/accounts]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:41:19) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 4) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 177ms (View: 168, DB: 1) | 200 OK [http://localhost/people/4]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-17 21:45:34) [GET]
+  [4;36;1mBank Load (1.0ms)[0m   [0;1mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.1ms)
+Completed in 33ms (View: 26, DB: 1) | 200 OK [http://localhost/banks]
+
+
+Processing BanksController#edit (for 127.0.0.1 at 2010-02-17 21:45:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mBank Load (0.4ms)[0m   [0mSELECT * FROM "banks" WHERE ("banks"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering banks/edit
+Rendered banks/_form (5.5ms)
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.0ms)
+Completed in 55ms (View: 47, DB: 0) | 200 OK [http://localhost/banks/2/edit]
+
+
+Processing BanksController#update (for 127.0.0.1 at 2010-02-17 21:45:47) [PUT]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "id"=>"2", "bank"=>{"name"=>"Banco Santander", "code"=>"0053"}}
+  [4;36;1mBank Load (0.4ms)[0m   [0;1mSELECT * FROM "banks" WHERE ("banks"."id" = 2) [0m
+  [4;35;1mBank Update (0.4ms)[0m   [0mUPDATE "banks" SET "updated_at" = '2010-02-17 23:45:47', "code" = '0053' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/banks/2
+Completed in 52ms (DB: 0) | 302 Found [http://localhost/banks/2]
+
+
+Processing BanksController#show (for 127.0.0.1 at 2010-02-17 21:45:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mBank Load (0.7ms)[0m   [0;1mSELECT * FROM "banks" WHERE ("banks"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering banks/show
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.2ms)
+Completed in 47ms (View: 30, DB: 1) | 200 OK [http://localhost/banks/2]
+
+
+Processing BanksController#new (for 127.0.0.1 at 2010-02-17 21:45:50) [GET]
+Rendering template within layouts/application
+Rendering banks/new
+Rendered banks/_form (5.6ms)
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.1ms)
+Completed in 27ms (View: 18, DB: 0) | 200 OK [http://localhost/banks/new]
+
+
+Processing BanksController#create (for 127.0.0.1 at 2010-02-17 21:46:03) [POST]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "bank"=>{"name"=>"BANESPA", "code"=>"0033"}}
+  [4;35;1mBank Create (0.4ms)[0m   [0mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('BANESPA', '2010-02-17 23:46:03', '0033', '2010-02-17 23:46:03')[0m
+Redirected to http://localhost:3000/banks/3
+Completed in 65ms (DB: 0) | 302 Found [http://localhost/banks]
+
+
+Processing BanksController#show (for 127.0.0.1 at 2010-02-17 21:46:03) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mBank Load (0.4ms)[0m   [0;1mSELECT * FROM "banks" WHERE ("banks"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering banks/show
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.1ms)
+Completed in 28ms (View: 19, DB: 0) | 200 OK [http://localhost/banks/3]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-17 21:46:05) [GET]
+  [4;35;1mBank Load (1.1ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.1ms)
+Completed in 37ms (View: 30, DB: 1) | 200 OK [http://localhost/banks]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:46:35) [GET]
+  [4;36;1mPerson Load (1.6ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 43ms (View: 36, DB: 2) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-17 21:46:40) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (8.3ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 29ms (View: 20, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-17 21:46:59) [POST]
+  Parameters: {"person"=>{"address"=>"Rua Conselheiro Brotero, 717 ap 22", "name"=>"Jose Ferreira Diniz Filho", "tipe"=>"Física", "identifier"=>"98864548815"}, "authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM="}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '98864548815') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Jose Ferreira Diniz Filho', 'Rua Conselheiro Brotero, 717 ap 22', '2010-02-17 23:46:59', 'Física', '2010-02-17 23:46:59', '98864548815')[0m
+Redirected to http://localhost:3000/people/5
+Completed in 86ms (DB: 0) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:46:59) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 5) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 34ms (View: 26, DB: 1) | 200 OK [http://localhost/people/5]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:47:02) [GET]
+  [4;35;1mPerson Load (1.5ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 50ms (View: 43, DB: 2) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:47:17) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 4) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 42ms (View: 33, DB: 1) | 200 OK [http://localhost/people/4]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:47:18) [GET]
+  Parameters: {"person_id"=>"4"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.4ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 31ms (View: 18, DB: 1) | 200 OK [http://localhost/people/4/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-02-17 21:47:22) [POST]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "account"=>{"kind"=>"a pagar"}, "person_id"=>"4"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+  [4;36;1mAccount Create (0.4ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "created_at", "updated_at", "person_id") VALUES('a pagar', '2010-02-17 23:47:22', '2010-02-17 23:47:22', 4)[0m
+  [4;35;1mPerson Load (1.1ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Redirected to http://localhost:3000/people/4
+Completed in 70ms (DB: 2) | 302 Found [http://localhost/people/4/accounts]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:47:22) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.7ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 4) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 48ms (View: 40, DB: 1) | 200 OK [http://localhost/people/4]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:50:52) [GET]
+  [4;36;1mPerson Load (1.5ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 49ms (View: 42, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:50:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 2) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 38ms (View: 28, DB: 1) | 200 OK [http://localhost/people/2]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:50:57) [GET]
+  Parameters: {"person_id"=>"2"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.6ms)
+Rendered people/_people_item_sidebar (0.9ms)
+Completed in 30ms (View: 18, DB: 0) | 200 OK [http://localhost/people/2/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-02-17 21:51:00) [POST]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "account"=>{"kind"=>"a receber"}, "person_id"=>"2"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mAccount Create (0.5ms)[0m   [0mINSERT INTO "accounts" ("kind", "created_at", "updated_at", "person_id") VALUES('a receber', '2010-02-17 23:51:00', '2010-02-17 23:51:00', 2)[0m
+  [4;36;1mPerson Load (1.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Redirected to http://localhost:3000/people/2
+Completed in 66ms (DB: 2) | 302 Found [http://localhost/people/2/accounts]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:51:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 2) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 43ms (View: 35, DB: 1) | 200 OK [http://localhost/people/2]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:51:03) [GET]
+  [4;35;1mPerson Load (1.5ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.5ms)
+Completed in 185ms (View: 178, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-17 21:51:20) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (8.1ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 28ms (View: 20, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-17 21:51:50) [POST]
+  Parameters: {"person"=>{"address"=>"Av tal, 190", "name"=>"Claro", "tipe"=>"Juridica", "identifier"=>"01234567000187"}, "authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM="}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '01234567000187') LIMIT 1[0m
+  [4;35;1mPerson Create (0.4ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Claro', 'Av tal, 190', '2010-02-17 23:51:50', 'Juridica', '2010-02-17 23:51:50', '01234567000187')[0m
+Redirected to http://localhost:3000/people/6
+Completed in 82ms (DB: 0) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:51:51) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 6) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/people/6]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:52:17) [GET]
+  Parameters: {"person_id"=>"6"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.2ms)
+Rendered people/_people_item_sidebar (0.7ms)
+Completed in 29ms (View: 17, DB: 0) | 200 OK [http://localhost/people/6/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-02-17 21:52:20) [POST]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "account"=>{"kind"=>"a pagar"}, "person_id"=>"6"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 6) [0m
+  [4;36;1mAccount Create (0.5ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "created_at", "updated_at", "person_id") VALUES('a pagar', '2010-02-17 23:52:20', '2010-02-17 23:52:20', 6)[0m
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 6) [0m
+Redirected to http://localhost:3000/people/6
+Completed in 72ms (DB: 2) | 302 Found [http://localhost/people/6/accounts]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:52:20) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 6) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 45ms (View: 36, DB: 1) | 200 OK [http://localhost/people/6]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:52:23) [GET]
+  Parameters: {"person_id"=>"6"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.4ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 30ms (View: 18, DB: 0) | 200 OK [http://localhost/people/6/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-02-17 21:52:26) [POST]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "account"=>{"kind"=>"a pagar"}, "person_id"=>"6"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 6) [0m
+  [4;36;1mAccount Create (0.4ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "created_at", "updated_at", "person_id") VALUES('a pagar', '2010-02-17 23:52:26', '2010-02-17 23:52:26', 6)[0m
+  [4;35;1mPerson Load (1.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 6) [0m
+Redirected to http://localhost:3000/people/6
+Completed in 62ms (DB: 2) | 302 Found [http://localhost/people/6/accounts]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:52:26) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.7ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 6) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 186ms (View: 177, DB: 1) | 200 OK [http://localhost/people/6]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-17 21:52:28) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (7.9ms)
+Rendered people/_sidebar (0.4ms)
+Completed in 27ms (View: 19, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-17 21:52:49) [POST]
+  Parameters: {"person"=>{"address"=>"Av Eusebio Matoso", "name"=>"Unibanco Dibens", "tipe"=>"Juridica", "identifier"=>"01234567000101"}, "authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM="}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '01234567000101') LIMIT 1[0m
+  [4;35;1mPerson Create (0.4ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Unibanco Dibens', 'Av Eusebio Matoso', '2010-02-17 23:52:49', 'Juridica', '2010-02-17 23:52:49', '01234567000101')[0m
+Redirected to http://localhost:3000/people/7
+Completed in 56ms (DB: 0) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:52:49) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 7) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/people/7]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-02-17 21:52:51) [GET]
+  Parameters: {"person_id"=>"7"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering accounts/new
+Rendered accounts/_form (3.3ms)
+Rendered people/_people_item_sidebar (0.8ms)
+Completed in 29ms (View: 17, DB: 0) | 200 OK [http://localhost/people/7/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-02-17 21:52:57) [POST]
+  Parameters: {"authenticity_token"=>"RSwLo7Efk4OBDL7uMjERJLIqnQTdm8dBmwLjVsDbftM=", "account"=>{"kind"=>"a pagar"}, "person_id"=>"7"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 7) [0m
+  [4;36;1mAccount Create (0.5ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "created_at", "updated_at", "person_id") VALUES('a pagar', '2010-02-17 23:52:57', '2010-02-17 23:52:57', 7)[0m
+  [4;35;1mPerson Load (1.1ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 7) [0m
+Redirected to http://localhost:3000/people/7
+Completed in 68ms (DB: 2) | 302 Found [http://localhost/people/7/accounts]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-17 21:52:57) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 7) [0m
+Rendered people/_sidebar (0.5ms)
+Completed in 44ms (View: 35, DB: 1) | 200 OK [http://localhost/people/7]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:53:00) [GET]
+  [4;36;1mPerson Load (1.8ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 62ms (View: 54, DB: 2) | 200 OK [http://localhost/people]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-17 21:54:49) [GET]
+  [4;35;1mBank Load (1.1ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (0.3ms)
+Rendered banks/_sidebar (1.2ms)
+Completed in 37ms (View: 30, DB: 1) | 200 OK [http://localhost/banks]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 21:54:51) [GET]
+  [4;36;1mPerson Load (1.8ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (34.6ms)
+Completed in 269ms (View: 260, DB: 2) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-17 22:04:02) [GET]
+  [4;35;1mPerson Load (1.9ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 72ms (View: 64, DB: 2) | 200 OK [http://localhost/people]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-17 22:09:15) [GET]
+
+ActionController::RoutingError (No route matches "/logout" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)

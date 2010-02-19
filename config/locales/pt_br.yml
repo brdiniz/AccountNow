@@ -8,6 +8,7 @@ pt_br:
       show: Visualizar
       edit: Editar
       delete: Remover
+      confirm: Tem certeza?
   checkbox:
     "true": Sim
     "false": Não
@@ -31,14 +32,6 @@ pt_br:
      month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
      abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
      order: [ :day, :month, :year ]
-  file_set:
-      exclude_table_title: "Diretórios Excluídos"
-      include_table_title: "Diretórios Incluídos"
-      wild_table_title: "Arquivos Excluídos"
-      form:
-          include_button: "Incluir Diretório"
-          exclude_button: "Excluir Diretório"
-          wild_button: "Excluir Arquivo"
   errors: "Erro!"
   activerecord:
     labels:
@@ -48,38 +41,19 @@ pt_br:
     models:
         Person: Pessoa
         Account: Conta
+        Accounts: Contas
     attributes:
-        account:
+        accounts:
             kind: "Tipo"
-        person:
+        people:
             name: Nome
             address: "Endereço"
             tipe: Tipo
-        bank:
+        banks:
             code: Código
             name: Nome
     errors:
       template:
         body: "Os seguintes erros impediram esta operação:"
         header: "Ocorreram erros nesta operação!"
-  number:
-      # Used in number_with_delimiter()
-      # These are also the defaults for 'currency', 'percentage', 'precision', and 'human'
-      format:
-        # Sets the separator between the units, for more precision (e.g. 1.0 / 2.0 == 0.5)
-        separator: ","
-        # Delimets thousands (e.g. 1,000,000 is a million) (always in groups of three)
-        delimiter: "."
-        # Number of decimals, behind the separator (the number 1 with a precision of 2 gives: 1.00)
-        precision: 2
-      # Used in number_to_currency()
-      currency:
-        format:
-          # Where is the currency sign? %u is the currency unit, %n the number (default: $5.00)
-          format: "%u%n"
-          unit: "R$"
-          # These three are to override number.format and are optional
-          separator: ","
-          delimiter: "."
-          precision: 2
 

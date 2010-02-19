@@ -2,8 +2,7 @@
   <div class="secondary-navigation">
     <ul class="wat-cf">
       <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", people_path  %></li>
-      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_person_path %></li>
-      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", people_path %></li>
+      <li class="active"><%= link_to "#{@person.name}", "#" %></li>
     </ul>
   </div>
   <div class="content">
@@ -26,6 +25,33 @@
         <%= link_to "#{image_tag("web-app-theme/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}")} #{t("web-app-theme.edit", :default=> "Edit")}", edit_person_path(@person), :class => "button" %>
         <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}")} #{t("web-app-theme.delete", :default => "Delete")}", people_path(@person), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
       </div>
+
+
+      <p />
+
+      <table class="table" id="accounts_table">
+        <th class="first">ID</th>
+        <th>Tipo</th>
+        <th>Data do vencimento</th>
+        <th>Valor</th>
+        <th></th>
+        <th class="last"></th>
+        <% @person.accounts.each do |account| %>
+          <tr class='<%= cycle("odd", "even") %>'>
+            <td><%= link_to  account.id , [@person, account] %></td>
+            <td><%= account.kind %></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <%= link_to "#{t("web-app-theme.show", :default => "Show")}", "#" %> |
+              <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", "#" %> |
+              <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", [@person, account], :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+
     </div>
   </div>
 </div>
