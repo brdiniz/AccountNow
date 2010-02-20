@@ -1,7 +1,7 @@
 <div class="block">
   <h3>Ações</h3>
   <ul class="navigation">
-    <li><%= link_to "Criar cliente / fornecedores", new_person_path  %></li>
+    <li><%= link_to "Criar cliente / fornecedor", new_person_path  %></li>
     <% if !@person.nil? && !@person.id.nil? %>
       <li><%= link_to "Registrar uma conta", new_person_account_path(@person)  %></li>
     <% end %>

@@ -45,11 +45,11 @@ pt_br:
     attributes:
         accounts:
             kind: "Tipo"
-        people:
+        person:
             name: Nome
             address: "Endereço"
             tipe: Tipo
-        banks:
+        bank:
             code: Código
             name: Nome
     errors:

@@ -6,7 +6,7 @@ I want feature
   Scenario: Create a new Person
     Given I have no Person
     And I go to the list of Person
-    When I follow "Novo"
+    When I follow "Criar cliente / fornecedor"
     And I fill in "Nome" with "Bruno Diniz"
     And I fill in "Tipo" with "FISICA"
     And I fill in "Identificador" with "1020"
@@ -23,8 +23,8 @@ I want feature
     And I should see "Nome"
     And I should see "Tipo"
     And I should see "Steve Jobs"
-    And I should see "Ações para cadastros"
-    And I should see "Cadastro de pessoas"
+    And I should see "Ações"
+    And I should see "Criar cliente / fornecedor"
     And I should not see "Link 1"
     And I should not see "Link 2"
 
@@ -34,6 +34,5 @@ I want feature
     And I go to the list of Person
     And I should see "Willian Gates"
     When I follow "Willian Gates"
-    And I should see "Visualizar"
     And I should see "Registrar uma conta"
 

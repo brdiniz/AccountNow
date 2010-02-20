@@ -60948,3 +60948,613 @@ Rendering template within layouts/application
 Rendering people/show
 Rendered people/_sidebar (0.5ms)
 Completed in 17ms (View: 13, DB: 1) | 200 OK [http://www.example.com/people/1]
+  [4;36;1mBank Load (0.6ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 09:54:03) [GET]
+  [4;35;1mBank Load (0.5ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (1.0ms)
+Rendered banks/_sidebar (2.4ms)
+Completed in 71ms (View: 59, DB: 1) | 200 OK [http://www.example.com/banks]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 09:54:03) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 186ms (View: 7, DB: 1) | 200 OK [http://www.example.com/people]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.6ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Steve Jobs', NULL, '2010-02-20 11:54:03', 'FISICA', '2010-02-20 11:54:03', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 09:54:03) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 13ms (View: 10, DB: 2) | 200 OK [http://www.example.com/people]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Willian Gates', NULL, '2010-02-20 11:54:03', 'FISICA', '2010-02-20 11:54:03', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 09:54:03) [GET]
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 13ms (View: 10, DB: 2) | 200 OK [http://www.example.com/people]
+REQUESTING PAGE: GET /people/1 with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-20 09:54:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 20ms (View: 16, DB: 1) | 200 OK [http://www.example.com/people/1]
+  [4;36;1mBank Load (0.6ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 09:55:58) [GET]
+  [4;35;1mBank Load (0.3ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (1.0ms)
+Rendered banks/_sidebar (2.5ms)
+Completed in 36ms (View: 29, DB: 1) | 200 OK [http://www.example.com/banks]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" [0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 09:55:58) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (37.9ms)
+Completed in 186ms (View: 179, DB: 1) | 200 OK [http://www.example.com/people]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.8ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Steve Jobs', NULL, '2010-02-20 11:55:58', 'FISICA', '2010-02-20 11:55:58', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 09:55:58) [GET]
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.5ms)
+Completed in 15ms (View: 11, DB: 2) | 200 OK [http://www.example.com/people]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.5ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Willian Gates', NULL, '2010-02-20 11:55:58', 'FISICA', '2010-02-20 11:55:58', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 09:55:58) [GET]
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 15ms (View: 11, DB: 2) | 200 OK [http://www.example.com/people]
+REQUESTING PAGE: GET /people/1 with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-20 09:55:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.7ms)
+Completed in 24ms (View: 19, DB: 1) | 200 OK [http://www.example.com/people/1]
+  [4;36;1mBank Load (0.6ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 09:57:50) [GET]
+  [4;35;1mBank Load (0.3ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (1.0ms)
+Rendered banks/_sidebar (2.5ms)
+Completed in 35ms (View: 29, DB: 1) | 200 OK [http://www.example.com/banks]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 09:57:50) [GET]
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 184ms (View: 177, DB: 1) | 200 OK [http://www.example.com/people]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.8ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Steve Jobs', NULL, '2010-02-20 11:57:50', 'FISICA', '2010-02-20 11:57:50', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 09:57:50) [GET]
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 14ms (View: 10, DB: 2) | 200 OK [http://www.example.com/people]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.5ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Willian Gates', NULL, '2010-02-20 11:57:50', 'FISICA', '2010-02-20 11:57:50', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 09:57:50) [GET]
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 13ms (View: 10, DB: 2) | 200 OK [http://www.example.com/people]
+REQUESTING PAGE: GET /people/1 with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-20 09:57:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 21ms (View: 17, DB: 1) | 200 OK [http://www.example.com/people/1]
+  [4;36;1mBank Load (0.8ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 09:59:51) [GET]
+  [4;35;1mBank Load (0.4ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (1.0ms)
+Rendered banks/_sidebar (2.4ms)
+Completed in 40ms (View: 32, DB: 1) | 200 OK [http://www.example.com/banks]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" [0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 09:59:51) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.6ms)
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://www.example.com/people]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.8ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Steve Jobs', NULL, '2010-02-20 11:59:51', 'FISICA', '2010-02-20 11:59:51', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 09:59:51) [GET]
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.5ms)
+Completed in 15ms (View: 11, DB: 2) | 200 OK [http://www.example.com/people]
+  [4;36;1mBank Load (0.8ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 10:00:31) [GET]
+  [4;35;1mBank Load (0.4ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (1.0ms)
+Rendered banks/_sidebar (2.4ms)
+Completed in 40ms (View: 30, DB: 1) | 200 OK [http://www.example.com/banks]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 10:00:31) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (1.1ms)
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://www.example.com/people]
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.8ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Steve Jobs', NULL, '2010-02-20 12:00:31', 'FISICA', '2010-02-20 12:00:31', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 10:00:31) [GET]
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.5ms)
+Completed in 15ms (View: 12, DB: 3) | 200 OK [http://www.example.com/people]
+  [4;36;1mBank Load (0.8ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 10:01:47) [GET]
+  [4;35;1mBank Load (0.4ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (1.2ms)
+Rendered banks/_sidebar (3.0ms)
+Completed in 38ms (View: 31, DB: 1) | 200 OK [http://www.example.com/banks]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" [0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 10:01:47) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://www.example.com/people]
+  [4;36;1mBank Load (0.7ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 10:02:35) [GET]
+  [4;35;1mBank Load (0.5ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (1.1ms)
+Rendered banks/_sidebar (2.7ms)
+Completed in 42ms (View: 34, DB: 1) | 200 OK [http://www.example.com/banks]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 10:02:35) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://www.example.com/people]
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-20 10:02:36) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (16.9ms)
+Rendered people/_sidebar (0.8ms)
+Completed in 31ms (View: 27, DB: 0) | 200 OK [http://www.example.com/people/new]
+  [4;36;1mBank Load (0.7ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 10:04:47) [GET]
+  [4;35;1mBank Load (0.7ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered people/_sidebar (1.3ms)
+Rendered banks/_sidebar (2.8ms)
+Completed in 41ms (View: 32, DB: 1) | 200 OK [http://www.example.com/banks]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" [0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 10:04:47) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.5ms)
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://www.example.com/people]
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-20 10:04:47) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (15.6ms)
+Rendered people/_sidebar (1.0ms)
+Completed in 32ms (View: 27, DB: 0) | 200 OK [http://www.example.com/people/new]
+REQUESTING PAGE: POST /people with {"person"=>{"address"=>"CONSELHEIRO BROTERO", "name"=>"Bruno Diniz", "tipe"=>"FISICA", "identifier"=>"1020"}} and HTTP headers {"HTTP_REFERER"=>"/people/new"}
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-20 10:04:48) [POST]
+  Parameters: {"person"=>{"name"=>"Bruno Diniz", "address"=>"CONSELHEIRO BROTERO", "tipe"=>"FISICA", "identifier"=>"1020"}}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '1020') LIMIT 1[0m
+  [4;35;1mPerson Create (0.7ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Bruno Diniz', 'CONSELHEIRO BROTERO', '2010-02-20 12:04:48', 'FISICA', '2010-02-20 12:04:48', '1020')[0m
+Redirected to http://www.example.com/people/1
+Completed in 11ms (DB: 0) | 302 Found [http://www.example.com/people]
+REQUESTING PAGE: GET http://www.example.com/people/1 with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-20 10:04:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.8ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.8ms)
+Completed in 25ms (View: 20, DB: 1) | 200 OK [http://www.example.com/people/1]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "people" [0m
+  [4;36;1mBank Load (0.8ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 10:06:52) [GET]
+  [4;35;1mBank Load (0.6ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered banks/_sidebar (0.7ms)
+Completed in 41ms (View: 33, DB: 1) | 200 OK [http://www.example.com/banks]
+  [4;36;1mBank Load (0.6ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 10:08:37) [GET]
+  [4;35;1mBank Load (0.4ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered banks/_sidebar (0.6ms)
+Completed in 35ms (View: 29, DB: 1) | 200 OK [http://www.example.com/banks]
+REQUESTING PAGE: GET /banks/new with {} and HTTP headers {"HTTP_REFERER"=>"/banks"}
+
+
+Processing BanksController#new (for 127.0.0.1 at 2010-02-20 10:08:37) [GET]
+Rendering template within layouts/application
+Rendering banks/new
+Rendered banks/_form (8.5ms)
+Rendered banks/_sidebar (0.2ms)
+Completed in 20ms (View: 17, DB: 0) | 200 OK [http://www.example.com/banks/new]
+REQUESTING PAGE: POST /banks with {"bank"=>{"name"=>"BANCO DO BRASIL", "code"=>"001"}} and HTTP headers {"HTTP_REFERER"=>"/banks/new"}
+
+
+Processing BanksController#create (for 127.0.0.1 at 2010-02-20 10:08:37) [POST]
+  Parameters: {"bank"=>{"name"=>"BANCO DO BRASIL", "code"=>"001"}}
+  [4;36;1mBank Create (0.8ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('BANCO DO BRASIL', '2010-02-20 12:08:37', '001', '2010-02-20 12:08:37')[0m
+Redirected to http://www.example.com/banks/1
+Completed in 8ms (DB: 0) | 302 Found [http://www.example.com/banks]
+REQUESTING PAGE: GET http://www.example.com/banks/1 with {} and HTTP headers {"HTTP_REFERER"=>"/banks"}
+
+
+Processing BanksController#show (for 127.0.0.1 at 2010-02-20 10:08:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBank Load (0.8ms)[0m   [0mSELECT * FROM "banks" WHERE ("banks"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering banks/show
+Rendered banks/_sidebar (0.3ms)
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://www.example.com/banks/1]
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "banks" [0m
+  [4;36;1mBank Load (0.7ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 10:08:44) [GET]
+  [4;35;1mBank Load (0.3ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered banks/_sidebar (0.6ms)
+Completed in 36ms (View: 29, DB: 1) | 200 OK [http://www.example.com/banks]
+REQUESTING PAGE: GET /banks/new with {} and HTTP headers {"HTTP_REFERER"=>"/banks"}
+
+
+Processing BanksController#new (for 127.0.0.1 at 2010-02-20 10:08:44) [GET]
+Rendering template within layouts/application
+Rendering banks/new
+Rendered banks/_form (188.0ms)
+Rendered banks/_sidebar (0.2ms)
+Completed in 199ms (View: 195, DB: 0) | 200 OK [http://www.example.com/banks/new]
+REQUESTING PAGE: POST /banks with {"bank"=>{"name"=>"BANCO DO BRASIL", "code"=>"001"}} and HTTP headers {"HTTP_REFERER"=>"/banks/new"}
+
+
+Processing BanksController#create (for 127.0.0.1 at 2010-02-20 10:08:44) [POST]
+  Parameters: {"bank"=>{"name"=>"BANCO DO BRASIL", "code"=>"001"}}
+  [4;36;1mBank Create (0.8ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('BANCO DO BRASIL', '2010-02-20 12:08:44', '001', '2010-02-20 12:08:44')[0m
+Redirected to http://www.example.com/banks/1
+Completed in 8ms (DB: 0) | 302 Found [http://www.example.com/banks]
+REQUESTING PAGE: GET http://www.example.com/banks/1 with {} and HTTP headers {"HTTP_REFERER"=>"/banks"}
+
+
+Processing BanksController#show (for 127.0.0.1 at 2010-02-20 10:08:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBank Load (0.6ms)[0m   [0mSELECT * FROM "banks" WHERE ("banks"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering banks/show
+Rendered banks/_sidebar (0.2ms)
+Completed in 17ms (View: 14, DB: 1) | 200 OK [http://www.example.com/banks/1]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "banks" [0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" [0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 10:08:44) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (1.2ms)
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://www.example.com/people]
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-20 10:08:44) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (11.4ms)
+Rendered people/_sidebar (0.5ms)
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://www.example.com/people/new]
+REQUESTING PAGE: POST /people with {"person"=>{"address"=>"CONSELHEIRO BROTERO", "name"=>"Bruno Diniz", "tipe"=>"FISICA", "identifier"=>"1020"}} and HTTP headers {"HTTP_REFERER"=>"/people/new"}
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-20 10:08:44) [POST]
+  Parameters: {"person"=>{"name"=>"Bruno Diniz", "address"=>"CONSELHEIRO BROTERO", "tipe"=>"FISICA", "identifier"=>"1020"}}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '1020') LIMIT 1[0m
+  [4;36;1mPerson Create (0.5ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Bruno Diniz', 'CONSELHEIRO BROTERO', '2010-02-20 12:08:44', 'FISICA', '2010-02-20 12:08:44', '1020')[0m
+Redirected to http://www.example.com/people/1
+Completed in 9ms (DB: 0) | 302 Found [http://www.example.com/people]
+REQUESTING PAGE: GET http://www.example.com/people/1 with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-20 10:08:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 20ms (View: 16, DB: 1) | 200 OK [http://www.example.com/people/1]
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "people" [0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Steve Jobs', NULL, '2010-02-20 12:08:44', 'FISICA', '2010-02-20 12:08:44', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 10:08:44) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 13ms (View: 10, DB: 2) | 200 OK [http://www.example.com/people]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.6ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Willian Gates', NULL, '2010-02-20 12:08:44', 'FISICA', '2010-02-20 12:08:44', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 10:08:44) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 14ms (View: 11, DB: 2) | 200 OK [http://www.example.com/people]
+REQUESTING PAGE: GET /people/1 with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-20 10:08:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 18ms (View: 14, DB: 1) | 200 OK [http://www.example.com/people/1]
+  [4;36;1mBank Load (0.6ms)[0m   [0;1mSELECT * FROM "banks" [0m
+REQUESTING PAGE: GET /banks with {} and HTTP headers {}
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-20 10:24:47) [GET]
+  [4;35;1mBank Load (0.3ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered banks/_sidebar (0.8ms)
+Completed in 35ms (View: 28, DB: 1) | 200 OK [http://www.example.com/banks]
+REQUESTING PAGE: GET /banks/new with {} and HTTP headers {"HTTP_REFERER"=>"/banks"}
+
+
+Processing BanksController#new (for 127.0.0.1 at 2010-02-20 10:24:47) [GET]
+Rendering template within layouts/application
+Rendering banks/new
+Rendered banks/_form (185.3ms)
+Rendered banks/_sidebar (0.2ms)
+Completed in 196ms (View: 193, DB: 0) | 200 OK [http://www.example.com/banks/new]
+REQUESTING PAGE: POST /banks with {"bank"=>{"name"=>"BANCO DO BRASIL", "code"=>"001"}} and HTTP headers {"HTTP_REFERER"=>"/banks/new"}
+
+
+Processing BanksController#create (for 127.0.0.1 at 2010-02-20 10:24:47) [POST]
+  Parameters: {"bank"=>{"name"=>"BANCO DO BRASIL", "code"=>"001"}}
+  [4;36;1mBank Create (0.8ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('BANCO DO BRASIL', '2010-02-20 12:24:47', '001', '2010-02-20 12:24:47')[0m
+Redirected to http://www.example.com/banks/1
+Completed in 8ms (DB: 0) | 302 Found [http://www.example.com/banks]
+REQUESTING PAGE: GET http://www.example.com/banks/1 with {} and HTTP headers {"HTTP_REFERER"=>"/banks"}
+
+
+Processing BanksController#show (for 127.0.0.1 at 2010-02-20 10:24:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBank Load (0.7ms)[0m   [0mSELECT * FROM "banks" WHERE ("banks"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering banks/show
+Rendered banks/_sidebar (0.2ms)
+Completed in 16ms (View: 13, DB: 1) | 200 OK [http://www.example.com/banks/1]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "banks" [0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" [0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 10:24:47) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (1.8ms)
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://www.example.com/people]
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-20 10:24:47) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (11.8ms)
+Rendered people/_sidebar (0.6ms)
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://www.example.com/people/new]
+REQUESTING PAGE: POST /people with {"person"=>{"address"=>"CONSELHEIRO BROTERO", "name"=>"Bruno Diniz", "tipe"=>"FISICA", "identifier"=>"1020"}} and HTTP headers {"HTTP_REFERER"=>"/people/new"}
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-20 10:24:47) [POST]
+  Parameters: {"person"=>{"name"=>"Bruno Diniz", "address"=>"CONSELHEIRO BROTERO", "tipe"=>"FISICA", "identifier"=>"1020"}}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '1020') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Bruno Diniz', 'CONSELHEIRO BROTERO', '2010-02-20 12:24:47', 'FISICA', '2010-02-20 12:24:47', '1020')[0m
+Redirected to http://www.example.com/people/1
+Completed in 9ms (DB: 0) | 302 Found [http://www.example.com/people]
+REQUESTING PAGE: GET http://www.example.com/people/1 with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-20 10:24:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.6ms)
+Completed in 21ms (View: 18, DB: 1) | 200 OK [http://www.example.com/people/1]
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "people" [0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Steve Jobs', NULL, '2010-02-20 12:24:47', 'FISICA', '2010-02-20 12:24:47', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 10:24:47) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.5ms)
+Completed in 13ms (View: 10, DB: 2) | 200 OK [http://www.example.com/people]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '10') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Willian Gates', NULL, '2010-02-20 12:24:47', 'FISICA', '2010-02-20 12:24:47', '10')[0m
+REQUESTING PAGE: GET /people with {} and HTTP headers {}
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-20 10:24:47) [GET]
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.4ms)
+Completed in 14ms (View: 11, DB: 2) | 200 OK [http://www.example.com/people]
+REQUESTING PAGE: GET /people/1 with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-20 10:24:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.7ms)
+Completed in 18ms (View: 14, DB: 1) | 200 OK [http://www.example.com/people/1]

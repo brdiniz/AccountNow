@@ -2,9 +2,10 @@
 # from the project root directory.
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environment'))
+require File.dirname(__FILE__) + "/factories"
+
 require 'spec/autorun'
 require 'spec/rails'
-require File.dirname(__FILE__) + "/factories"
 
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'
@@ -45,7 +46,7 @@ Spec::Runner.configure do |config|
   # RSpec uses its own mocking framework by default. If you prefer to
   # use mocha, flexmock or RR, uncomment the appropriate line:
   #
-  # config.mock_with :mocha
+  #config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
   #
