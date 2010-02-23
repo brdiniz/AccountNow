@@ -14,3 +14,7 @@ Factory.define :account do |f|
 	f.association :person, :factory => :person
 end
 
+Factory.define :box do |f|
+  f.sequence(:name) { |n| "box_#{n}" }
+end
+

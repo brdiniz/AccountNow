@@ -4,7 +4,7 @@ class BoxesController < InheritedResources::Base
     destroy!
   rescue Exception => e
     flash[:error] = e.message
-    redirect_to(people_path)
+    redirect_to(boxes_path)
   end
 end
 
