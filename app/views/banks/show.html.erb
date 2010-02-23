@@ -1,9 +1,7 @@
 <div class="block">
   <div class="secondary-navigation">
     <ul class="wat-cf">
-      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", banks_path  %></li>
-      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_bank_path %></li>
-      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", "#" %></li>
+      <li class="first active"><%= link_to "#{@bank.name}", "#" %></li>
     </ul>
   </div>
   <div class="content">
