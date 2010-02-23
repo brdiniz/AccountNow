@@ -14,7 +14,7 @@ class AccountsController < InheritedResources::Base
     end
   rescue Exception => e
     flash[:error] = e.message
-    redirect_to(person_account_path)
+    redirect_to(person_path(@person))
   end
 end
 

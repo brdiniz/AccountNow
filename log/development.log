@@ -8211,3 +8211,77 @@ Migrating to AddPriceToAccounts (20100220115335)
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("banks")[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("companies")[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("people")[0m
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-23 13:01:28) [GET]
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (1.0ms)
+Completed in 55ms (View: 48, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-02-23 13:01:32) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (94.2ms)
+Rendered people/_sidebar (0.3ms)
+Completed in 117ms (View: 113, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-02-23 13:01:51) [POST]
+  Parameters: {"person"=>{"address"=>"Rua Conselheiro Brotero, 717 ap 22", "name"=>"Bruno da Silva Ferreira Diniz", "tipe"=>"Física", "identifier"=>"15303297870"}, "authenticity_token"=>"RRiyLXzseKQoLm4qiM0bD1PlOThYbaTcUlTI5j17Q9M="}
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '15303297870') LIMIT 1[0m
+  [4;36;1mPerson Create (0.5ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('Bruno da Silva Ferreira Diniz', 'Rua Conselheiro Brotero, 717 ap 22', '2010-02-23 16:01:51', 'Física', '2010-02-23 16:01:51', '15303297870')[0m
+Redirected to http://localhost:8080/people/1
+Completed in 17ms (DB: 0) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-02-23 13:01:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (1.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts".person_id = 1) [0m
+Rendered people/_sidebar (0.4ms)
+Completed in 34ms (View: 26, DB: 2) | 200 OK [http://localhost/people/1]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-23 13:01:56) [GET]
+  [4;35;1mBank Load (0.5ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered banks/_sidebar (0.5ms)
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/banks]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-23 13:01:57) [GET]
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.3ms)
+Completed in 105ms (View: 102, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-23 13:01:58) [GET]
+  [4;35;1mBank Load (0.5ms)[0m   [0mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered banks/_sidebar (0.1ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/banks]
+
+
+Processing BanksController#new (for 127.0.0.1 at 2010-02-23 13:01:59) [GET]
+Rendering template within layouts/application
+Rendering banks/new
+Rendered banks/_form (4.7ms)
+Rendered banks/_sidebar (0.1ms)
+Completed in 25ms (View: 21, DB: 0) | 200 OK [http://localhost/banks/new]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-23 13:02:02) [GET]
+  [4;36;1mBank Load (0.5ms)[0m   [0;1mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered banks/_sidebar (0.1ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/banks]

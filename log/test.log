@@ -10098,3 +10098,558 @@ Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 12:55:55) [POST
   [4;35;1mAccount Destroy (0.1ms)[0m   [0mDELETE FROM "accounts" WHERE "id" = 1[0m
 Redirected to http://test.host/people/1
 Completed in 4ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;36;1mBank Create (0.5ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-23 15:59:20', 'code1', '2010-02-23 15:59:20')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 15:59:20', 'FISICA', '2010-02-23 15:59:20', 'cpf_1')[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 15:59:20', 'FISICA', '2010-02-23 15:59:20', '123456')[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p4', NULL, '2010-02-23 15:59:20', 'FISICA', '2010-02-23 15:59:20', 'cpf_2')[0m
+  [4;35;1mCompany Load (0.1ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.2ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-23 15:59:20', 1, '2010-02-23 15:59:20')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_3') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p5', NULL, '2010-02-23 15:59:20', 'FISICA', '2010-02-23 15:59:20', 'cpf_3')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 12:59:20) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Create (0.2ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 15:59:20', '2010-02-23 15:59:20', 1)[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 12ms (DB: 5) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_4') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p6', NULL, '2010-02-23 15:59:20', 'FISICA', '2010-02-23 15:59:20', 'cpf_4')[0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 15:59:20', '2010-02-23 15:59:20', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 12:59:20) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;36;1mAccount Destroy (0.1ms)[0m   [0;1mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 5ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;36;1mBank Create (0.6ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-23 16:02:21', 'code1', '2010-02-23 16:02:21')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 16:02:21', 'FISICA', '2010-02-23 16:02:21', 'cpf_1')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.3ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-23 16:02:21', 1, '2010-02-23 16:02:21')[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 16:02:21', 'FISICA', '2010-02-23 16:02:21', 'cpf_2')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.4ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p3', NULL, '2010-02-23 16:02:21', 'FISICA', '2010-02-23 16:02:21', '123456')[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_3') LIMIT 1[0m
+  [4;36;1mPerson Create (0.5ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p5', NULL, '2010-02-23 16:02:21', 'FISICA', '2010-02-23 16:02:21', 'cpf_3')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 13:02:21) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Create (0.3ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 16:02:21', '2010-02-23 16:02:21', 1)[0m
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 19ms (DB: 7) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_4') LIMIT 1[0m
+  [4;36;1mPerson Create (1.0ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p6', NULL, '2010-02-23 16:02:21', 'FISICA', '2010-02-23 16:02:21', 'cpf_4')[0m
+  [4;35;1mAccount Create (0.3ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:02:21', '2010-02-23 16:02:21', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:02:21) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;36;1mAccount Destroy (0.2ms)[0m   [0;1mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 8ms (DB: 3) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 16:04:15', 'FISICA', '2010-02-23 16:04:15', 'cpf_1')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 13:04:15) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 16:04:15', '2010-02-23 16:04:15', 1)[0m
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 12ms (DB: 2) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 16:04:15', 'FISICA', '2010-02-23 16:04:15', 'cpf_2')[0m
+  [4;36;1mAccount Create (0.2ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:04:15', '2010-02-23 16:04:15', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:04:15) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;35;1mAccount Destroy (0.1ms)[0m   [0mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 5ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 16:04:23', 'FISICA', '2010-02-23 16:04:23', 'cpf_1')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 13:04:23) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 16:04:23', '2010-02-23 16:04:23', 1)[0m
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 12ms (DB: 2) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 16:04:23', 'FISICA', '2010-02-23 16:04:23', 'cpf_2')[0m
+  [4;36;1mAccount Create (0.2ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:04:23', '2010-02-23 16:04:23', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:04:23) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;35;1mAccount Destroy (0.2ms)[0m   [0mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 6ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 16:05:01', 'FISICA', '2010-02-23 16:05:01', 'cpf_1')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 13:05:01) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 16:05:01', '2010-02-23 16:05:01', 1)[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 12ms (DB: 2) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 16:05:01', 'FISICA', '2010-02-23 16:05:01', 'cpf_2')[0m
+  [4;36;1mAccount Create (0.2ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:05:01', '2010-02-23 16:05:01', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:05:01) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;35;1mAccount Destroy (0.1ms)[0m   [0mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 4ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_3') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p3', NULL, '2010-02-23 16:05:01', 'FISICA', '2010-02-23 16:05:01', 'cpf_3')[0m
+  [4;36;1mAccount Create (0.1ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:05:01', '2010-02-23 16:05:01', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:05:01) [POST]
+  Parameters: {"id"=>"0", "person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 0 AND ("accounts".person_id = 1)) [0m
+Redirected to http://test.host/people/1
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/people/1/accounts/0]
+  [4;36;1mBank Create (0.5ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-23 16:05:09', 'code1', '2010-02-23 16:05:09')[0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 16:05:09', 'FISICA', '2010-02-23 16:05:09', 'cpf_1')[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 16:05:09', 'FISICA', '2010-02-23 16:05:09', '123456')[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p4', NULL, '2010-02-23 16:05:09', 'FISICA', '2010-02-23 16:05:09', 'cpf_2')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.2ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-23 16:05:09', 1, '2010-02-23 16:05:09')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_3') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p5', NULL, '2010-02-23 16:05:09', 'FISICA', '2010-02-23 16:05:09', 'cpf_3')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 13:05:09) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Create (0.3ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 16:05:09', '2010-02-23 16:05:09', 1)[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 13ms (DB: 5) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_4') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p6', NULL, '2010-02-23 16:05:09', 'FISICA', '2010-02-23 16:05:09', 'cpf_4')[0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:05:09', '2010-02-23 16:05:09', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:05:09) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;36;1mAccount Destroy (0.1ms)[0m   [0;1mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 5ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_5') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p7', NULL, '2010-02-23 16:05:09', 'FISICA', '2010-02-23 16:05:09', 'cpf_5')[0m
+  [4;35;1mAccount Create (0.1ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:05:09', '2010-02-23 16:05:09', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:05:09) [POST]
+  Parameters: {"id"=>"0", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.1ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 0 AND ("accounts".person_id = 1)) [0m
+Redirected to http://test.host/people/1
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/people/1/accounts/0]
+  [4;36;1mBank Create (0.6ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-23 16:08:05', 'code1', '2010-02-23 16:08:05')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.8ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 16:08:05', 'FISICA', '2010-02-23 16:08:05', 'cpf_1')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.4ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 16:08:05', 'FISICA', '2010-02-23 16:08:05', '123456')[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p4', NULL, '2010-02-23 16:08:05', 'FISICA', '2010-02-23 16:08:05', 'cpf_2')[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.2ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-23 16:08:05', 1, '2010-02-23 16:08:05')[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_3') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p5', NULL, '2010-02-23 16:08:05', 'FISICA', '2010-02-23 16:08:05', 'cpf_3')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 13:08:05) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;35;1mPerson Load (1.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Create (0.2ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 16:08:05', '2010-02-23 16:08:05', 1)[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 17ms (DB: 7) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_4') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p6', NULL, '2010-02-23 16:08:05', 'FISICA', '2010-02-23 16:08:05', 'cpf_4')[0m
+  [4;35;1mAccount Create (0.4ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:08:05', '2010-02-23 16:08:05', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:08:05) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;36;1mAccount Destroy (0.2ms)[0m   [0;1mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 10ms (DB: 3) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_5') LIMIT 1[0m
+  [4;36;1mPerson Create (0.6ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p7', NULL, '2010-02-23 16:08:05', 'FISICA', '2010-02-23 16:08:05', 'cpf_5')[0m
+  [4;35;1mAccount Create (0.3ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:08:05', '2010-02-23 16:08:05', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:08:05) [POST]
+  Parameters: {"id"=>"0", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.8ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 0 AND ("accounts".person_id = 1)) [0m
+Redirected to http://test.host/people/1
+Completed in 7ms (DB: 3) | 302 Found [http://test.host/people/1/accounts/0]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_6') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p8', NULL, '2010-02-23 16:08:05', 'FISICA', '2010-02-23 16:08:05', 'cpf_6')[0m
+
+
+Processing PeopleController#create (for 0.0.0.0 at 2010-02-23 13:08:05) [POST]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (148.1ms)
+Rendered people/_sidebar (1.1ms)
+Completed in 192ms (View: 182, DB: 0) | 200 OK [http://test.host/people?id=1]
+
+
+Processing PeopleController#destroy (for 0.0.0.0 at 2010-02-23 13:08:06) [POST]
+  Parameters: {"id"=>"0"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 0) [0m
+Redirected to http://test.host/people
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/people/0]
+  [4;36;1mBank Create (0.6ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-23 16:08:27', 'code1', '2010-02-23 16:08:27')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 16:08:27', 'FISICA', '2010-02-23 16:08:27', 'cpf_1')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.4ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 16:08:27', 'FISICA', '2010-02-23 16:08:27', '123456')[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.5ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p4', NULL, '2010-02-23 16:08:27', 'FISICA', '2010-02-23 16:08:27', 'cpf_2')[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.3ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-23 16:08:27', 1, '2010-02-23 16:08:27')[0m
+  [4;35;1mCompany Load (0.4ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_3') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p5', NULL, '2010-02-23 16:08:27', 'FISICA', '2010-02-23 16:08:27', 'cpf_3')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 13:08:27) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Create (0.3ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 16:08:27', '2010-02-23 16:08:27', 1)[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 23ms (DB: 7) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_4') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p6', NULL, '2010-02-23 16:08:27', 'FISICA', '2010-02-23 16:08:27', 'cpf_4')[0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:08:27', '2010-02-23 16:08:27', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:08:27) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;36;1mAccount Destroy (0.1ms)[0m   [0;1mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 7ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_5') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p7', NULL, '2010-02-23 16:08:28', 'FISICA', '2010-02-23 16:08:28', 'cpf_5')[0m
+  [4;35;1mAccount Create (0.3ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:08:28', '2010-02-23 16:08:28', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:08:28) [POST]
+  Parameters: {"id"=>"0", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 0 AND ("accounts".person_id = 1)) [0m
+Redirected to http://test.host/people/1
+Completed in 4ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/0]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_6') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p8', NULL, '2010-02-23 16:08:28', 'FISICA', '2010-02-23 16:08:28', 'cpf_6')[0m
+
+
+Processing PeopleController#create (for 0.0.0.0 at 2010-02-23 13:08:28) [POST]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (160.8ms)
+Rendered people/_sidebar (1.0ms)
+Completed in 181ms (View: 172, DB: 0) | 200 OK [http://test.host/people?id=1]
+
+
+Processing PeopleController#destroy (for 0.0.0.0 at 2010-02-23 13:08:28) [POST]
+  Parameters: {"id"=>"0"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 0) [0m
+Redirected to http://test.host/people
+Completed in 4ms (DB: 0) | 302 Found [http://test.host/people/0]
+  [4;36;1mBank Create (0.5ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-23 16:08:39', 'code1', '2010-02-23 16:08:39')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 16:08:40', 'FISICA', '2010-02-23 16:08:40', 'cpf_1')[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 16:08:40', 'FISICA', '2010-02-23 16:08:40', '123456')[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p4', NULL, '2010-02-23 16:08:40', 'FISICA', '2010-02-23 16:08:40', 'cpf_2')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.2ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-23 16:08:40', 1, '2010-02-23 16:08:40')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_3') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p5', NULL, '2010-02-23 16:08:40', 'FISICA', '2010-02-23 16:08:40', 'cpf_3')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 13:08:40) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Create (0.2ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 16:08:40', '2010-02-23 16:08:40', 1)[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 12ms (DB: 5) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_4') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p6', NULL, '2010-02-23 16:08:40', 'FISICA', '2010-02-23 16:08:40', 'cpf_4')[0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:08:40', '2010-02-23 16:08:40', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:08:40) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;36;1mAccount Destroy (0.1ms)[0m   [0;1mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 5ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_5') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p7', NULL, '2010-02-23 16:08:40', 'FISICA', '2010-02-23 16:08:40', 'cpf_5')[0m
+  [4;35;1mAccount Create (0.1ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:08:40', '2010-02-23 16:08:40', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:08:40) [POST]
+  Parameters: {"id"=>"0", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 0 AND ("accounts".person_id = 1)) [0m
+Redirected to http://test.host/people/1
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/people/1/accounts/0]
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_6') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p8', NULL, '2010-02-23 16:08:40', 'FISICA', '2010-02-23 16:08:40', 'cpf_6')[0m
+
+
+Processing PeopleController#create (for 0.0.0.0 at 2010-02-23 13:08:40) [POST]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (12.6ms)
+Rendered people/_sidebar (0.8ms)
+Completed in 27ms (View: 21, DB: 0) | 200 OK [http://test.host/people?id=1]
+
+
+Processing PeopleController#destroy (for 0.0.0.0 at 2010-02-23 13:08:40) [POST]
+  Parameters: {"id"=>"0"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 0) [0m
+Redirected to http://test.host/people
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/people/0]
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 16:09:19', 'FISICA', '2010-02-23 16:09:19', 'cpf_1')[0m
+
+
+Processing PeopleController#create (for 0.0.0.0 at 2010-02-23 13:09:19) [POST]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (13.0ms)
+Rendered people/_sidebar (0.9ms)
+Completed in 28ms (View: 22, DB: 0) | 200 OK [http://test.host/people?id=1]
+
+
+Processing PeopleController#destroy (for 0.0.0.0 at 2010-02-23 13:09:19) [POST]
+  Parameters: {"id"=>"0"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 0) [0m
+Redirected to http://test.host/people
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/people/0]
+  [4;36;1mBank Create (0.5ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-23 16:09:28', 'code1', '2010-02-23 16:09:28')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 16:09:28', 'FISICA', '2010-02-23 16:09:28', 'cpf_1')[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 16:09:28', 'FISICA', '2010-02-23 16:09:28', '123456')[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p4', NULL, '2010-02-23 16:09:28', 'FISICA', '2010-02-23 16:09:28', 'cpf_2')[0m
+  [4;35;1mCompany Load (0.1ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.1ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-23 16:09:28', 1, '2010-02-23 16:09:28')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_3') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p5', NULL, '2010-02-23 16:09:28', 'FISICA', '2010-02-23 16:09:28', 'cpf_3')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 13:09:28) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Create (0.2ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 16:09:28', '2010-02-23 16:09:28', 1)[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 12ms (DB: 5) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_4') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p6', NULL, '2010-02-23 16:09:28', 'FISICA', '2010-02-23 16:09:28', 'cpf_4')[0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:09:28', '2010-02-23 16:09:28', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:09:28) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;36;1mAccount Destroy (0.1ms)[0m   [0;1mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 4ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_5') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p7', NULL, '2010-02-23 16:09:28', 'FISICA', '2010-02-23 16:09:28', 'cpf_5')[0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:09:28', '2010-02-23 16:09:28', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:09:28) [POST]
+  Parameters: {"id"=>"0", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 0 AND ("accounts".person_id = 1)) [0m
+Redirected to http://test.host/people/1
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/people/1/accounts/0]
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_6') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p8', NULL, '2010-02-23 16:09:28', 'FISICA', '2010-02-23 16:09:28', 'cpf_6')[0m
+
+
+Processing PeopleController#destroy (for 0.0.0.0 at 2010-02-23 13:09:28) [POST]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mPerson Destroy (0.1ms)[0m   [0mDELETE FROM "people" WHERE "id" = 1[0m
+Redirected to http://test.host/people
+Completed in 6ms (DB: 0) | 302 Found [http://test.host/people/1]
+
+
+Processing PeopleController#destroy (for 0.0.0.0 at 2010-02-23 13:09:28) [POST]
+  Parameters: {"id"=>"0"}
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 0) [0m
+Redirected to http://test.host/people
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/people/0]
+  [4;36;1mBank Create (0.5ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-23 16:09:45', 'code1', '2010-02-23 16:09:45')[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 16:09:45', 'FISICA', '2010-02-23 16:09:45', 'cpf_1')[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 16:09:45', 'FISICA', '2010-02-23 16:09:45', '123456')[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p4', NULL, '2010-02-23 16:09:45', 'FISICA', '2010-02-23 16:09:45', 'cpf_2')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.2ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-23 16:09:45', 1, '2010-02-23 16:09:45')[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_3') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p5', NULL, '2010-02-23 16:09:45', 'FISICA', '2010-02-23 16:09:45', 'cpf_3')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 13:09:45) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Create (0.2ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 16:09:45', '2010-02-23 16:09:45', 1)[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 16ms (DB: 6) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_4') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p6', NULL, '2010-02-23 16:09:45', 'FISICA', '2010-02-23 16:09:45', 'cpf_4')[0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:09:45', '2010-02-23 16:09:45', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:09:45) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;36;1mAccount Destroy (0.1ms)[0m   [0;1mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 7ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_5') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p7', NULL, '2010-02-23 16:09:45', 'FISICA', '2010-02-23 16:09:45', 'cpf_5')[0m
+  [4;35;1mAccount Create (0.3ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 16:09:45', '2010-02-23 16:09:45', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 13:09:45) [POST]
+  Parameters: {"id"=>"0", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 0 AND ("accounts".person_id = 1)) [0m
+Redirected to http://test.host/people/1
+Completed in 4ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/0]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_6') LIMIT 1[0m
+  [4;35;1mPerson Create (0.4ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p8', NULL, '2010-02-23 16:09:45', 'FISICA', '2010-02-23 16:09:45', 'cpf_6')[0m
+
+
+Processing PeopleController#destroy (for 0.0.0.0 at 2010-02-23 13:09:45) [POST]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mPerson Destroy (0.1ms)[0m   [0mDELETE FROM "people" WHERE "id" = 1[0m
+Redirected to http://test.host/people
+Completed in 7ms (DB: 0) | 302 Found [http://test.host/people/1]
+
+
+Processing PeopleController#destroy (for 0.0.0.0 at 2010-02-23 13:09:45) [POST]
+  Parameters: {"id"=>"0"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 0) [0m
+Redirected to http://test.host/people
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/people/0]
