@@ -10,7 +10,6 @@ class AccountsController < InheritedResources::Base
 
   def destroy
     destroy! do |format|
-      puts @person
       format.html { redirect_to @person }
     end
   rescue Exception => e

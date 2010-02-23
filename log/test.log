@@ -9975,3 +9975,126 @@ Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-20 10:25:12) [POST
   [4;35;1mAccount Destroy (0.3ms)[0m   [0mDELETE FROM "accounts" WHERE "id" = 1[0m
 Redirected to http://test.host/people/1
 Completed in 11ms (DB: 4) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100116011931)
+Migrating to AddAddressToPerson (20100117121453)
+Migrating to AddTipeToPerson (20100118194044)
+Migrating to CreateBanks (20100118223731)
+Migrating to AddIdentifierToPerson (20100125230232)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "people" ADD "identifier" varchar(255)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100125230232')[0m
+Migrating to CreateCompanies (20100206194651)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "people_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100206194651')[0m
+Migrating to CreateAccounts (20100212064044)
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_id" integer, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100212064044')[0m
+Migrating to RemoveAccountTypeFromAccount (20100212065140)
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TEMPORARY TABLE "altered_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_id" integer, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (44.2ms)[0m   [0mDROP TABLE "accounts"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_accounts")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "altered_accounts"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "accounts"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_accounts")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_accounts"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "accounts" ADD "kind" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100212065140')[0m
+Migrating to AddReferencesPeopleFromAccounts (20100212075545)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "accounts" ADD "people_id" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100212075545')[0m
+Migrating to AddPeopleIdFromAccounts (20100212075804)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "kind" varchar(255), "people_id" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "accounts"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "kind" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_accounts")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_accounts"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "accounts" ADD "person_id" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100212075804')[0m
+Migrating to AddPriceToAccounts (20100220115335)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "accounts" ADD "price" decimal[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100220115335')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("banks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("companies")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("people")[0m
+  [4;36;1mBank Create (0.5ms)[0m   [0;1mINSERT INTO "banks" ("name", "created_at", "code", "updated_at") VALUES('bank_bla_ble_bli', '2010-02-23 15:55:16', 'code1', '2010-02-23 15:55:16')[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 15:55:16', 'FISICA', '2010-02-23 15:55:16', 'cpf_1')[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" IS NULL) LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Create (0.6ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 15:55:16', 'FISICA', '2010-02-23 15:55:16', '123456')[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = '123456') LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p4', NULL, '2010-02-23 15:55:16', 'FISICA', '2010-02-23 15:55:16', 'cpf_2')[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Create (0.1ms)[0m   [0;1mINSERT INTO "companies" ("created_at", "people_id", "updated_at") VALUES('2010-02-23 15:55:16', 1, '2010-02-23 15:55:16')[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."people_id" = 1) LIMIT 1[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_3') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p5', NULL, '2010-02-23 15:55:16', 'FISICA', '2010-02-23 15:55:16', 'cpf_3')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 12:55:16) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Create (0.2ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 15:55:16', '2010-02-23 15:55:16', 1)[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 12ms (DB: 5) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_4') LIMIT 1[0m
+  [4;36;1mPerson Create (0.3ms)[0m   [0;1mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p6', NULL, '2010-02-23 15:55:16', 'FISICA', '2010-02-23 15:55:16', 'cpf_4')[0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 15:55:16', '2010-02-23 15:55:16', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 12:55:16) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;36;1mAccount Destroy (0.1ms)[0m   [0;1mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 5ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_1') LIMIT 1[0m
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p1', NULL, '2010-02-23 15:55:55', 'FISICA', '2010-02-23 15:55:55', 'cpf_1')[0m
+
+
+Processing AccountsController#create (for 0.0.0.0 at 2010-02-23 12:55:55) [POST]
+  Parameters: {"account"=>{"kind"=>"nome"}, "person_id"=>"1"}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mAccount Create (0.2ms)[0m   [0mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('nome', NULL, '2010-02-23 15:55:55', '2010-02-23 15:55:55', 1)[0m
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Redirected to http://test.host/people/1
+Completed in 12ms (DB: 2) | 302 Found [http://test.host/people/1/accounts?account%5Bkind%5D=nome]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."identifier" = 'cpf_2') LIMIT 1[0m
+  [4;35;1mPerson Create (0.3ms)[0m   [0mINSERT INTO "people" ("name", "address", "created_at", "tipe", "updated_at", "identifier") VALUES('p2', NULL, '2010-02-23 15:55:55', 'FISICA', '2010-02-23 15:55:55', 'cpf_2')[0m
+  [4;36;1mAccount Create (0.2ms)[0m   [0;1mINSERT INTO "accounts" ("kind", "price", "created_at", "updated_at", "person_id") VALUES('a receber', NULL, '2010-02-23 15:55:55', '2010-02-23 15:55:55', 1)[0m
+
+
+Processing AccountsController#destroy (for 0.0.0.0 at 2010-02-23 12:55:55) [POST]
+  Parameters: {"id"=>"1", "person_id"=>"1"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1 AND ("accounts".person_id = 1)) [0m
+  [4;35;1mAccount Destroy (0.1ms)[0m   [0mDELETE FROM "accounts" WHERE "id" = 1[0m
+Redirected to http://test.host/people/1
+Completed in 4ms (DB: 2) | 302 Found [http://test.host/people/1/accounts/1]
