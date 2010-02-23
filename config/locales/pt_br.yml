@@ -1,25 +1,25 @@
 pt_br:
   web-app-theme:
-      all: Lista de
-      list: Listar
-      new: Novo
-      save: Salvar
-      cancel: Cancelar
-      show: Visualizar
-      edit: Editar
-      delete: Remover
-      confirm: Tem certeza?
+    all: Lista de
+    list: Listar
+    new: Novo
+    save: Salvar
+    cancel: Cancelar
+    show: Visualizar
+    edit: Editar
+    delete: Remover
+    confirm: Tem certeza?
   checkbox:
     "true": Sim
     "false": Não
   flash:
-      actions:
-          create:
-              notice: "{{resource_name}} criado com sucesso!"
-          update:
-              notice: "{{resource_name}} alterado com sucesso!"
-          destroy:
-              notice: "{{resource_name}} excluído com sucesso!"
+    actions:
+      create:
+        notice: "{{resource_name}} criado com sucesso!"
+      update:
+        notice: "{{resource_name}} alterado com sucesso!"
+      destroy:
+        notice: "{{resource_name}} excluído com sucesso!"
   date:
      formats:
        default: "%d/%m/%Y"
@@ -35,13 +35,17 @@ pt_br:
   errors: "Erro!"
   activerecord:
     labels:
-        name: Nome
-        tipe: Tipo
-        code: "Código"
+      name: Nome
+      tipe: Tipo
+      code: "Código"
     models:
-        Person: Pessoa
-        Account: Conta
-        Accounts: Contas
+      account: Conta
+      accounts: Contas
+      box: Caixa
+      boxes: Caixas
+      bank: Banco
+      banks: Bancos
+      person: Cliente / Fornecedor
     attributes:
       box:
         name: Nome

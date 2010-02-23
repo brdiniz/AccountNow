@@ -12,7 +12,7 @@ I want feature
     And I fill in "Identificador" with "1020"
     And I fill in "Endereço" with "CONSELHEIRO BROTERO"
     And I press "Salvar"
-    Then I should see "Person criado com sucesso!"
+    Then I should see "Cliente / Fornecedor criado com sucesso!"
     And I should see "Bruno Diniz"
     And I should have 1 person
 
