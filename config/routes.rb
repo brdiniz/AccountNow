@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
     person.resources :accounts
   end
 
+  map.resources :boxes
   map.resources :people
   map.resources :banks
 

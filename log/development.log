@@ -8285,3 +8285,87 @@ Rendering template within layouts/application
 Rendering banks/index
 Rendered banks/_sidebar (0.1ms)
 Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/banks]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-23 13:10:20) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.2ms)
+Completed in 18ms (View: 15, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing BanksController#index (for 127.0.0.1 at 2010-02-23 13:11:09) [GET]
+  [4;36;1mBank Load (65.3ms)[0m   [0;1mSELECT * FROM "banks" [0m
+Rendering template within layouts/application
+Rendering banks/index
+Rendered banks/_sidebar (0.1ms)
+Completed in 235ms (View: 7, DB: 65) | 200 OK [http://localhost/banks]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-23 13:11:11) [GET]
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.2ms)
+Completed in 29ms (View: 22, DB: 1) | 200 OK [http://localhost/people]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100116011931)
+Migrating to AddAddressToPerson (20100117121453)
+Migrating to AddTipeToPerson (20100118194044)
+Migrating to CreateBanks (20100118223731)
+Migrating to AddIdentifierToPerson (20100125230232)
+Migrating to CreateCompanies (20100206194651)
+Migrating to CreateAccounts (20100212064044)
+Migrating to RemoveAccountTypeFromAccount (20100212065140)
+Migrating to AddReferencesPeopleFromAccounts (20100212075545)
+Migrating to AddPeopleIdFromAccounts (20100212075804)
+Migrating to AddPriceToAccounts (20100220115335)
+Migrating to CreateBoxes (20100223161542)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "boxes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100223161542')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("banks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("boxes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("companies")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("people")[0m
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-23 13:21:24) [GET]
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Rendered people/_sidebar (0.2ms)
+Completed in 28ms (View: 24, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-23 13:21:26) [GET]
+
+NameError (uninitialized constant BoxesController):
+  
+
+Rendered rescues/_trace (132.8ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BoxesController#index (for 127.0.0.1 at 2010-02-23 13:22:11) [GET]
+  [4;35;1mBox Load (0.5ms)[0m   [0mSELECT * FROM "boxes" [0m
+Rendering template within layouts/application
+Rendering boxes/index
+Rendered boxes/_sidebar (0.7ms)
+Completed in 23ms (View: 20, DB: 0) | 200 OK [http://localhost/boxes]

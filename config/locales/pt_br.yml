@@ -43,15 +43,17 @@ pt_br:
         Account: Conta
         Accounts: Contas
     attributes:
-        accounts:
-            kind: "Tipo"
-        person:
-            name: Nome
-            address: "Endereço"
-            tipe: Tipo
-        bank:
-            code: Código
-            name: Nome
+      box:
+        name: Nome
+      accounts:
+          kind: "Tipo"
+      person:
+          name: Nome
+          address: "Endereço"
+          tipe: Tipo
+      bank:
+          code: Código
+          name: Nome
     errors:
       template:
         body: "Os seguintes erros impediram esta operação:"
