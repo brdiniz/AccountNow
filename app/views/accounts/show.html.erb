@@ -1,22 +1,2 @@
-<div class="block">
-  <div class="secondary-navigation">
-    <ul class="wat-cf">
-      <li class="first active"><%= link_to "Conta", "#" %></li>
-    </ul>
-  </div>          
-  <div class="content">
-    <div class="inner">
-      
-        <p>
-          <b><%= t("activerecord.attributes.account.kind", :default => t("activerecord.labels.kind", :default => "Kind")) %>:</b>
-          <%= @account.kind %>
-        </p>
-      <div class="wat-cf">
-        <%= link_to "#{image_tag("web-app-theme/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}")} #{t("web-app-theme.edit", :default=> "Edit")}", edit_account_path(@account), :class => "button" %> 
-        <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}")} #{t("web-app-theme.delete", :default => "Delete")}", account_path(@account), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
-      </div>      
-    </div>
-  </div>
-</div>
+<%= render :partial => "layouts/item_show", :locals => {:model => "person", :model_item => "account" }  %>
 
-<% content_for :sidebar, render(:partial => 'sidebar') -%>

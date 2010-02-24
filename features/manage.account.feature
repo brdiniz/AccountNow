@@ -20,4 +20,21 @@ I want feature
     Then I should see "Criação de Conta realizada com sucesso!"
     And I should see "a receber"
     And I should see "Home"
+    
+  Scenario: Show a exist account
+    Given I have no Person
+    And I have new Person with name is "Anthony Vivaldi"
+    And I have new Box with name is "Home"
+    And The Person named "Anthony Vivaldi" has an account kind "a receber" and box "Home" and MaturityDate "1/1/1900" and Price "10" 
+    And I go to the list of Person
+    When I follow "Anthony Vivaldi"
+    And I should see "Home"
+    When I follow "Visualizar"
+    And I should see "a receber"
+    And I should see "Conta"
+    And I should see "Home"
+    And I should see "10.0"
+    
+    
+    
 

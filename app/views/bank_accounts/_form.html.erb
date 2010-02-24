@@ -1,6 +1,6 @@
 
   <div class="group">
-    <%= f.label :bank_id, t("activerecord.attributes.account.bank_id", :default => "Bank Id"), :class => :label %>
+    <%= f.label :bank_id, t("activerecord.attributes.bank_account.bank_id", :default => "Bank Id"), :class => :label %>
     <%= f.select :bank_id, Bank.all.collect{|b| [b.name,b.id]}, :include_blank => true %>
   </div>
 

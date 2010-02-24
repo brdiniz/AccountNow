@@ -64,6 +64,11 @@ pt_br:
       bank:
         code: Código
         name: Nome
+      bank_account:
+        bank_id: Banco
+        name: Nome
+        opening_balance: Saldo Inicial
+        opening_balance_date: Data do Saldo Inicial
     errors:
       template:
         body: "Os seguintes erros impediram esta operação:"
