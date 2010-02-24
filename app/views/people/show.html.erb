@@ -39,12 +39,12 @@
           <tr class='<%= cycle("odd", "even") %>'>
             <td><%= link_to  account.id , [@person, account] %></td>
             <td><%= account.kind %></td>
-            <td></td>
-            <td></td>
+            <td><%= account.maturity_date %></td>
+            <td><%= account.price %></td>
             <td></td>
             <td>
               <%= link_to "#{t("web-app-theme.show", :default => "Show")}", "#" %> |
-              <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", "#" %> |
+              <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_person_account_path(@person, account) %> |
               <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", [@person, account], :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
             </td>
           </tr>

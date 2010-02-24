@@ -45,19 +45,22 @@ pt_br:
       boxes: Caixas
       bank: Banco
       banks: Bancos
+      people: Clientes / Fornecedores
       person: Cliente / Fornecedor
     attributes:
       box:
         name: Nome
-      accounts:
-          kind: "Tipo"
+      account:
+        kind: "Tipo"
+        maturity_date: Data de vencimento
+        price: Valor
       person:
-          name: Nome
-          address: "Endereço"
-          tipe: Tipo
+        name: Nome
+        address: "Endereço"
+        tipe: Tipo
       bank:
-          code: Código
-          name: Nome
+        code: Código
+        name: Nome
     errors:
       template:
         body: "Os seguintes erros impediram esta operação:"
