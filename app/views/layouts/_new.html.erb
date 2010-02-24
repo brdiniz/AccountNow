@@ -8,6 +8,7 @@
     <h2 class="title"></h2>
     <div class="inner">
       <% form_for :"#{model}", :url => send("#{model.pluralize}_path"), :html => { :class => :form } do |f| -%>
+        <%= f.error_messages %>
         <%= render :partial => "form", :locals => {:f => f} %>
       <% end -%>
     </div>

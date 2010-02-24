@@ -1,5 +1,6 @@
 Factory.define :person do |f|
   f.sequence(:name) { |n| "p#{n}" }
+  f.sequence(:email) { |n| "email_#{n}" }
   f.tipe "FISICA"
   f.sequence(:identifier) { |n| "cpf_#{n}" }
 end

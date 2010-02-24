@@ -1,9 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :people do |person|
     person.resources :accounts
-  end
+  end  
 
-  map.resources :boxes
+	map.resources :boxes do
+	  map.box_account 'boxes/:box_id/accounts/:id', :controller => 'boxes', :action => 'account', :method => 'get'
+  	map.edit_box_account 'boxes/:box_id/accounts/:id/edit', :controller => 'boxes', :action => 'account_edit'
+  end
+  
   map.resources :people
   map.resources :banks
   map.resources :bank_accounts

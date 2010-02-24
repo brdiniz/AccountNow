@@ -11,6 +11,7 @@ describe Person do
     person.should be_invalid
     person.errors.on(:name).should_not be_blank
     person.errors.on(:tipe).should_not be_blank
+    person.errors.on(:email).should_not be_blank
     person.errors.on(:address).should be_blank
     person.errors.on(:identifier).should_not be_blank
   end

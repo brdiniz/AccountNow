@@ -5,6 +5,11 @@
   </div>
 
   <div class="group">
+    <%= f.label :email, t("activerecord.attributes.person.email", :default => "E-mail"), :class => :label %>
+    <%= f.text_field :email, :class => 'text_field' %>
+  </div>
+
+  <div class="group">
     <%= f.label :tipe, t("activerecord.attributes.person.tipe", :default => "Tipe"), :class => :label %>
     <%= f.select :tipe, Person::TIPES, :include_blank => true %>
   </div>

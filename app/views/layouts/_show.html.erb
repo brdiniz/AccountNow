@@ -1,7 +1,7 @@
 <div class="block">
   <div class="secondary-navigation">
     <ul class="wat-cf">
-      <li class="first active"><%= link_to eval("@#{model}.name"), "#" %></li>
+      <li class="first active"><%= link_to t("activerecord.models.#{model}") + " " + eval("@#{model}.name"), "#" %></li>
     </ul>
   </div>
   <div class="content">

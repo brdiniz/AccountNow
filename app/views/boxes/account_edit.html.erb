@@ -1,0 +1,20 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "Caixa #{@box.name}", @box %></li>
+      <li class="last active"><%= link_to "Alterar Conta #{@account.id}", "#" %></li>
+    </ul>
+  </div>
+    <div class="content">
+      <div class="inner">
+
+        <%= render(:partial => "accounts/details_show") %>
+
+        <p />
+
+      </div>
+    </div>
+  </div>
+
+  <% content_for :sidebar, render(:partial => 'layouts/sidebar', :locals => {:model => "account", :menu_visible => false }) -%>
+
