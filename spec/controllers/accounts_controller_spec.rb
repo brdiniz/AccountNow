@@ -5,8 +5,8 @@ describe AccountsController do
 
   it 'should redirect person when account save' do
     p = Factory(:person)
-    post :create, :account => {:kind => "nome"}, :person_id => p.id
-    response.should redirect_to(person_path(Person.first))
+    post :create, :account => {:kind => "nome", :price => "1", :maturity_date => "1/1/2000"}, :person_id => p.id
+    response.should redirect_to(person_path(p))
   end
 
   it 'should redirect person when destroy account' do

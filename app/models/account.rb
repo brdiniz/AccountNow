@@ -3,6 +3,6 @@ class Account < ActiveRecord::Base
 
   KINDS = ["a pagar", "a receber"]
 
-  validates_presence_of :kind, :person_id
+  validates_presence_of :kind, :person_id, :price, :maturity_date
 end
 
