@@ -1,0 +1,27 @@
+      <table class="table">
+        <tr>
+          <th class="first">
+            <%= t("activerecord.attributes.bank.code", :default => t("activerecord.labels.code", :default => "Code")) %>
+          </th>
+          <th>
+            <%= t("activerecord.attributes.bank.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+          </th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @banks.each do |bank| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td class="first">
+            <%= link_to bank.code, bank_path(bank) %>
+          </td>
+          <td>
+            <%= bank.name %>
+          </td>
+          <td class="last">
+            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", bank_path(bank) %> |
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_bank_path(bank) %> |
+            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", bank_path(bank), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+          </td>
+        </tr>
+        <% end -%>
+      </table>
+

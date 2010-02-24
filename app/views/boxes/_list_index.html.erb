@@ -1,0 +1,25 @@
+      <table class="table">
+        <tr>
+          <th class="first">ID</th>
+          <th><%= t("activerecord.attributes.box.name", :default => t("activerecord.labels.name", :default => "Name")) %></th>
+	        <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @boxes.each do |box| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td>
+            <%= box.id %>
+          </td>
+          <td><%= link_to box.name, box_path(box) %></td>
+          <td>
+            <%= box.created_at %>
+          </td>
+          <td class="last">
+            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", box_path(box) %> |
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_box_path(box) %> |
+            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", box_path(box), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+          </td>
+        </tr>
+        <% end -%>
+      </table>
+

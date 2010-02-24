@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :boxes
   map.resources :people
   map.resources :banks
+  map.resources :bank_accounts
 
   # The priority is based upon order of creation: first created -> highest priority.
 

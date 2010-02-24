@@ -17,6 +17,13 @@ Factory.define :account do |f|
   f.association :person, :factory => :person
 end
 
+Factory.define :bank_account do |f|
+  f.name "name"
+  f.opening_balance "10"
+  f.opening_balance_date "1/5/2011"
+  f.association :bank, :factory => :bank
+end
+
 Factory.define :box do |f|
   f.sequence(:name) { |n| "box_#{n}" }
 end

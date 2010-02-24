@@ -1,0 +1,22 @@
+      <table class="table" id="accounts_table">
+        <th class="first">ID</th>
+        <th>Cliente / Fornecedor</th>
+        <th>Tipo</th>
+        <th>Data do vencimento</th>
+        <th>Valor</th>
+        <th class="last">&nbsp;</th>
+        <% @box.accounts.each do |account| %>
+          <tr class='<%= cycle("odd", "even") %>'>
+            <td><%= link_to  account.id , "#" %></td>
+            <td><%= account.person.name %></td>
+            <td><%= account.kind %></td>
+            <td><%= account.maturity_date %></td>
+            <td><%= account.price %></td>
+            <td>
+              <%= link_to "#{t("web-app-theme.show", :default => "Show")}", "#" %> |
+              <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", "#" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+

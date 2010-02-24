@@ -44,6 +44,8 @@ pt_br:
       box: Caixa
       boxes: Caixas
       bank: Banco
+      bank_account: "Conta Bancária"
+      bank_accounts: "Contas Bancárias"
       banks: Bancos
       people: Clientes / Fornecedores
       person: Cliente / Fornecedor

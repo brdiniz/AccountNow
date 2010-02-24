@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  bank_id: 
+  opening_balance: 9.99
+  openin_balance_date: 2010-02-24
+
+two:
+  name: MyString
+  bank_id: 
+  opening_balance: 9.99
+  openin_balance_date: 2010-02-24

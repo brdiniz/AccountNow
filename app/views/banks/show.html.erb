@@ -1,28 +1,2 @@
-<div class="block">
-  <div class="secondary-navigation">
-    <ul class="wat-cf">
-      <li class="first active"><%= link_to "#{@bank.name}", "#" %></li>
-    </ul>
-  </div>
-  <div class="content">
-    <div class="inner">
-
-        <p>
-          <b><%= t("activerecord.attributes.bank.code", :default => t("activerecord.labels.code", :default => "Code")) %>:</b>
-          <%= @bank.code %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.bank.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</b>
-          <%= @bank.name %>
-        </p>
-      <div class="wat-cf">
-        <%= link_to "#{image_tag("web-app-theme/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}")} #{t("web-app-theme.edit", :default=> "Edit")}", edit_bank_path(@bank), :class => "button" %>
-        <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}")} #{t("web-app-theme.delete", :default => "Delete")}", bank_path(@bank), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<% content_for :sidebar, render(:partial => 'sidebar') -%>
+ <%= render :partial => "layouts/show", :locals => {:model => "bank" }  %>
 
