@@ -30,6 +30,7 @@
 
       <table class="table" id="accounts_table">
         <th class="first">ID</th>
+        <th>Caixa</th>
         <th>Tipo</th>
         <th>Data do vencimento</th>
         <th>Valor</th>
@@ -38,6 +39,7 @@
         <% @person.accounts.each do |account| %>
           <tr class='<%= cycle("odd", "even") %>'>
             <td><%= link_to  account.id , [@person, account] %></td>
+            <td><%= account.box.name %></td>
             <td><%= account.kind %></td>
             <td><%= account.maturity_date %></td>
             <td><%= account.price %></td>

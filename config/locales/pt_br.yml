@@ -15,11 +15,11 @@ pt_br:
   flash:
     actions:
       create:
-        notice: "{{resource_name}} criado com sucesso!"
+        notice: "Criação de {{resource_name}} realizada com sucesso!"
       update:
-        notice: "{{resource_name}} alterado com sucesso!"
+        notice: "Alteração de {{resource_name}} realizada com sucesso!"
       destroy:
-        notice: "{{resource_name}} excluído com sucesso!"
+        notice: "Exclusão de {{resource_name}} realizada com sucesso!"
   date:
      formats:
        default: "%d/%m/%Y"
@@ -54,6 +54,7 @@ pt_br:
         kind: "Tipo"
         maturity_date: Data de vencimento
         price: Valor
+        box_id: Caixa
       person:
         name: Nome
         address: "Endereço"

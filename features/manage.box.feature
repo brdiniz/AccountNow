@@ -9,8 +9,7 @@ I want feature
     When I follow "Criar caixa"
     And I fill in "Nome" with "Casa"
     And I press "Salvar"
-    Then I should see "Caixa criado com sucesso!"
+    Then I should see "Criação de Caixa realizada com sucesso!"
     And I should see "Casa"
     And I should have 1 box
-
 

@@ -1,5 +1,10 @@
 
   <div class="group">
+    <%= f.label :box_id, t("activerecord.attributes.account.box_id", :default => "Box Id"), :class => :label %>
+    <%= f.select :box_id, Box.all.collect{|b| [b.name,b.id]}, :include_blank => true %>
+  </div>
+
+  <div class="group">
     <%= f.label :kind, t("activerecord.attributes.account.kind", :default => "Kind"), :class => :label %>
     <%= f.select :kind, Account::KINDS, :include_blank => true %>
   </div>
