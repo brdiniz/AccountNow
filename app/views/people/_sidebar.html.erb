@@ -1,4 +1,5 @@
     <% if !@person.nil? && !@person.id.nil? %>
       <li><%= link_to "Registrar uma conta", new_person_account_path(@person)  %></li>
+      <li><%= link_to "Gerar Contrato / Financiamento", new_person_contract_path(@person)  %></li>
     <% end %>
 

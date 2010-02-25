@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :people do |person|
     person.resources :accounts
+    person.resources :contracts
   end  
 
 	map.resources :boxes do

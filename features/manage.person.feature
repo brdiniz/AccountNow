@@ -23,7 +23,9 @@ I want feature
     And I go to the list of Person
     And I should see "Nome"
     And I should see "Tipo"
+    And I should see "E-mail"
     And I should see "Steve Jobs"
+    And I should see "Steve Jobs@email.com"
     And I should see "Ações"
     And I should see "Criar Cliente / Fornecedor"
     And I should not see "Link 1"
@@ -35,5 +37,6 @@ I want feature
     And I go to the list of Person
     And I should see "Willian Gates"
     When I follow "Willian Gates"
+    And I should see "Willian Gates@email.com"
     And I should see "Registrar uma conta"
 

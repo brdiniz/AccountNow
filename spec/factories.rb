@@ -14,6 +14,7 @@ Factory.define :account do |f|
   f.kind "a receber"
   f.price "10"
   f.maturity_date "1/1/2011"
+  f.document "doc_12"
   f.association :box, :factory => :box
   f.association :person, :factory => :person
 end

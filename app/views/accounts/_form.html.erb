@@ -10,6 +10,11 @@
   </div>
 
   <div class="group">
+    <%= f.label :document, t("activerecord.attributes.account.document", :default => "Document"), :class => :label %>
+    <%= f.text_field :document, :class => 'text_field' %>
+  </div>
+  
+  <div class="group">
     <%= f.label :maturity_date, t("activerecord.attributes.account.maturity_date", :default => "Maturity Date"), :class => :label %>
     <%= f.text_field :maturity_date, :class => 'text_field' %>
   </div>

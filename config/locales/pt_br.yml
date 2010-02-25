@@ -57,6 +57,7 @@ pt_br:
         maturity_date: Data de vencimento
         price: Valor
         box_id: Caixa
+        document: Documento
       person:
         name: Nome
         address: "Endereço"

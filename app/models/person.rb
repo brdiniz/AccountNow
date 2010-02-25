@@ -1,5 +1,6 @@
 class Person < ActiveRecord::Base
   has_many :accounts
+  has_many :contracts
 
   TIPES = ["Física", "Juridica"]
 
