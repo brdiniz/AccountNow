@@ -3,7 +3,7 @@ class ContractsController < InheritedResources::Base
 
   def create
     create! do |success, failure|
-      success.html { redirect_to @account.person }
+      success.html { redirect_to @contract.person }
       failure.html { render :action => "new" }
     end
   end
@@ -17,3 +17,4 @@ class ContractsController < InheritedResources::Base
     redirect_to(person_path(@person))
   end
 end
+

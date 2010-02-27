@@ -16,5 +16,5 @@
   </div>
 </div>
 
-<% content_for :sidebar, render(:partial => 'layouts/sidebar', :locals => {:model => model, :menu_visible => false }) -%>
+<% content_for :sidebar, render(:partial => model.pluralize + '/sidebar_item', :locals => {:model => model }) -%>
 

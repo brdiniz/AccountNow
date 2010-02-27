@@ -1,3 +1,15 @@
+Factory.define :contract do |f|
+  f.name "teste"
+  f.date_registry "1/1/2011"
+  f.document "doc_1"
+  f.account_kind "a receber"
+  f.account_date "1/2/2011"
+  f.account_quantity "10"
+  f.account_price "10"
+  f.account_box_id {|p| Factory(:box).id }
+  f.association :person, :factory => :person
+end
+
 Factory.define :person do |f|
   f.sequence(:name) { |n| "p#{n}" }
   f.sequence(:email) { |n| "email_#{n}" }

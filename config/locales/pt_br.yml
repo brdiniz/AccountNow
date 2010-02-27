@@ -43,8 +43,8 @@ pt_br:
       accounts: Contas
       box: Caixa
       boxes: Caixas
-      contract: Contrato
-      contracts: Contratos
+      contract: Contrato / Financiamento
+      contracts: Contratos / Financiamentos
       bank: Banco
       bank_account: "Conta Bancária"
       bank_accounts: "Contas Bancárias"
