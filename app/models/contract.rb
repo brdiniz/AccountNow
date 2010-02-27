@@ -1,6 +1,6 @@
 class Contract < ActiveRecord::Base
   belongs_to :person
-  has_many :accounts
+  has_many :accounts, :dependent => :destroy
 
   attr_accessor :account_kind
   attr_accessor :account_box_id
