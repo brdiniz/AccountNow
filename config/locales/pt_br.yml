@@ -43,6 +43,8 @@ pt_br:
       accounts: Contas
       box: Caixa
       boxes: Caixas
+      contract: Contrato
+      contracts: Contratos
       bank: Banco
       bank_account: "Conta Bancária"
       bank_accounts: "Contas Bancárias"
@@ -58,6 +60,13 @@ pt_br:
         price: Valor
         box_id: Caixa
         document: Documento
+      contract:
+        name: Nome
+        date_registry: Data do contrato
+        document: Número do contrato
+        account_date: Data do vencimento
+        account_quantity: Quantidade de parcelas
+        account_price: Valor da parcela
       person:
         name: Nome
         address: "Endereço"
