@@ -14,5 +14,20 @@ describe BoxesController do
     response.should redirect_to(boxes_path)
   end
 
+  it 'should redirect show account in the box' do
+    account = Factory(:account)
+    get :account, :box_id => account.box.id, :id => account.id
+    assigns[:account].should == account
+    assigns[:box].should == account.box
+  end
+
+
+  it 'should redirect show account in the box' do
+    account = Factory(:account)
+    get :account_edit, :box_id => account.box.id, :id => account.id
+    assigns[:account].should == account
+    assigns[:box].should == account.box
+  end
+
 end
 
