@@ -1,0 +1,28 @@
+    <h3><a href="#accounts"><%= t("activerecord.models.accounts") %></a></h3>
+    <div class="inner">
+      <table class="table" id="accounts_table">
+        <th class="first">ID</th>
+        <th>Caixa</th>
+        <th>Tipo</th>
+        <th>Data do vencimento</th>
+        <th>Valor</th>
+        <th></th>
+        <th class="last"></th>
+        <% @person.accounts.each do |account| %>
+          <tr class='<%= cycle("odd", "even") %>'>
+            <td><%= link_to  account.id , [@person, account] %></td>
+            <td><%= account.box.name %></td>
+            <td><%= account.kind %></td>
+            <td><%= account.maturity_date %></td>
+            <td><%= account.price %></td>
+            <td></td>
+            <td>
+              <%= link_to "#{t("web-app-theme.show", :default => "Show")}", [@person, account] %> |
+              <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_person_account_path(@person, account) %> |
+              <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", [@person, account], :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+

@@ -1,0 +1,24 @@
+    <h3><a href="#contracts"><%= t("activerecord.models.contracts") %></a></h3>
+    <div class="inner">
+      <table class="table" id="contracts_table">
+        <th class="first">ID</th>
+        <th>Contrato</th>
+        <th>Data do contrato</th>
+        <th>Número do contrato</th>
+        <th class="last"></th>
+        <% @person.contracts.each do |contract| %>
+          <tr class='<%= cycle("odd", "even") %>'>
+            <td><%= link_to  contract.id , [@person, contract] %></td>
+            <td><%= contract.name %></td>
+            <td><%= contract.date_registry %></td>
+            <td><%= contract.document %></td>
+            <td>
+              <%= link_to "#{t("web-app-theme.show", :default => "Show")}", [@person, contract] %> |
+              <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_person_contract_path(@person, contract) %> |
+              <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", [@person, contract], :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
