@@ -61,6 +61,7 @@ pt_br:
         box_id: Caixa
         document: Documento
         person_id: Nome
+        bank_account_id: Conta Bancária
       contract:
         name: Nome
         date_registry: Data do contrato

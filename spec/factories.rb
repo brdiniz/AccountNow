@@ -27,6 +27,7 @@ Factory.define :account do |f|
   f.price "10"
   f.maturity_date "1/1/2011"
   f.document "doc_12"
+  f.association :bank_account, :factory => :bank_account
   f.association :box, :factory => :box
   f.association :person, :factory => :person
 end

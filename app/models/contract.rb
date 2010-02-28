@@ -7,6 +7,7 @@ class Contract < ActiveRecord::Base
   attr_accessor :account_date
   attr_accessor :account_quantity
   attr_accessor :account_price
+  attr_accessor :bank_account_id
 
   validates_presence_of :name, :person_id, :date_registry, :document
   validates_presence_of :account_box_id, :account_kind, :account_date, :account_quantity, :account_price
@@ -16,7 +17,7 @@ class Contract < ActiveRecord::Base
   def create_accounts
     @account_quantity.to_i.times do |i|
       maturity_date = @account_date.to_date.months_since(i)
-      self.accounts << Account.create(:document => "Contrato", :kind => @account_kind, :box_id => @account_box_id, :person => self.person, :price => @account_price, :maturity_date => maturity_date)
+      self.accounts << Account.create(:bank_account_id => @bank_account_id, :document => "Contrato", :kind => @account_kind, :box_id => @account_box_id, :person => self.person, :price => @account_price, :maturity_date => maturity_date)
     end
   end
 end

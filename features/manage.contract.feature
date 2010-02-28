@@ -6,6 +6,8 @@ I want feature
 Scenario: Create a new contract
   Given I have new Person with name is "Fornecedor contrato"
   And I have new Box with name is "Home"
+  And I have a Bank with name "BankBoston" and code "001"
+  And I have a bank account with name "TesteBank" and Bank "BankBoston"
   And I go to the list of Person
   And I should see "Fornecedor contrato"
   When I follow "Fornecedor contrato"
@@ -15,6 +17,7 @@ Scenario: Create a new contract
   And I fill in "Número do contrato" with "000123"
   And I fill in "Data do contrato" with "1/10/2011"
   And I select "a receber" from "contract_account_kind"
+  And I select "TesteBank" from "contract_bank_account_id"
   And I select "Home" from "contract_account_box_id"
   And I fill in "Data do vencimento" with "1/10/2011"
   And I fill in "Quantidade de parcelas" with "10"

@@ -19,6 +19,10 @@
         <%= f.select :account_box_id, Box.all.collect{|b| [b.name,b.id]}, :include_blank => true %>
       </div>
       <div class="group">
+        <%= f.label :bank_account_id, t("activerecord.attributes.account.bank_account_id", :default => "Bank Account Id"), :class => :label %>
+        <%= f.select :bank_account_id, BankAccount.all.collect{|b| [b.name,b.id]}, :include_blank => true %>
+      </div>
+      <div class="group">
         <%= f.label :account_kind, t("activerecord.attributes.account.kind", :default => "Kind"), :class => :label %>
         <%= f.select :account_kind, Account::KINDS, :include_blank => true %>
       </div>
