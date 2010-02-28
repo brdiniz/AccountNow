@@ -1,4 +1,9 @@
   <p>
+    <b><%= t("activerecord.attributes.account.person_id", :default => "Person Id") %>:</b>
+      <%= @account.person.name %>
+  </p>
+
+  <p>
     <b><%= t("activerecord.attributes.account.box_id", :default => "Box Id") %>:</b>
       <%= @account.box.name %>
   </p>
@@ -17,4 +22,4 @@
     <b><%= t("activerecord.attributes.account.price", :default => t("activerecord.labels.price", :default => "Price")) %>:</b>
     <%= @account.price %>
   </p>
-    
+

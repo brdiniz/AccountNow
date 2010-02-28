@@ -60,6 +60,7 @@ pt_br:
         price: Valor
         box_id: Caixa
         document: Documento
+        person_id: Nome
       contract:
         name: Nome
         date_registry: Data do contrato
