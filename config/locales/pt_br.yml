@@ -57,10 +57,11 @@ pt_br:
       account:
         kind: "Tipo"
         maturity_date: Data de vencimento
-        price: Valor
+        price: Valor da conta
         box_id: Caixa
         document: Documento
         person_id: Nome
+        situation_id: Status
         bank_account_id: Conta Bancária
       contract:
         name: Nome
@@ -76,6 +77,7 @@ pt_br:
       bank:
         code: Código
         name: Nome
+        person_id: Instituição Bancária
       bank_account:
         bank_id: Banco
         name: Nome

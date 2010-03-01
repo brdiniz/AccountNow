@@ -3,7 +3,7 @@ Factory.define :contract do |f|
   f.date_registry "1/1/2011"
   f.document "doc_1"
   f.account_kind "a receber"
-  f.account_date "1/2/2011"
+  f.account_date "1/2/2020"
   f.account_quantity "10"
   f.account_price "10"
   f.account_box_id {|p| Factory(:box).id }
@@ -20,12 +20,13 @@ end
 Factory.define :bank do |f|
   f.sequence(:code) { |n| "code#{n}" }
   f.name "bank_bla_ble_bli"
+  f.association :person, :factory => :person
 end
 
 Factory.define :account do |f|
   f.kind "a receber"
   f.price "10"
-  f.maturity_date "1/1/2011"
+  f.maturity_date "1/1/2020"
   f.document "doc_12"
   f.association :bank_account, :factory => :bank_account
   f.association :box, :factory => :box

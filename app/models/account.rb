@@ -3,6 +3,7 @@ class Account < ActiveRecord::Base
   belongs_to :box
   belongs_to :contract
   belongs_to :bank_account
+  belongs_to :situation
 
   KINDS = ["a pagar", "a receber"]
 

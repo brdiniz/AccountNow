@@ -1,0 +1,600 @@
+Script started on Sun 28 Feb 2010 05:53:18 PM BRT
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ script/consolerake db:migrate RAILS_ENV=test[16Pscript/console[Kscript/generate model situation name:string
+      exists  app/models/
+      exists  test/unit/
+      exists  test/fixtures/
+      create  app/models/situation.rb
+      create  test/unit/situation_test.rb
+      create  test/fixtures/situations.yml
+      exists  db/migrate
+      create  db/migrate/20100228205334_create_situations.rb
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ script/generate mihg[K[Kgration DB[K[KAddSituationAccount situation_i d:int
+      exists  db/migrate
+      create  db/migrate/20100228205402_add_situation_account.rb
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ script/generate migar[K[Kration INsert[K[K[K[K[KnSe[K[KsertSituation
+      exists  db/migrate
+      create  db/migrate/20100228205432_insert_situation.rb
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:migrate
+(in /home/bruno/Documents/Projects/account-now)
+==  CreateSituations: migrating ===============================================
+-- create_table(:situations)
+   -> 0.0025s
+==  CreateSituations: migrated (0.0028s) ======================================
+
+==  AddSituationAccount: migrating ============================================
+==  AddSituationAccount: migrated (0.0000s) ===================================
+
+==  InsertSituation: migrating ================================================
+==  InsertSituation: migrated (0.0453s) =======================================
+
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:migrate RAILS_ENV=test
+(in /home/bruno/Documents/Projects/account-now)
+==  CreateSituations: migrating ===============================================
+-- create_table(:situations)
+   -> 0.0023s
+==  CreateSituations: migrated (0.0025s) ======================================
+
+==  AddSituationAccount: migrating ============================================
+==  AddSituationAccount: migrated (0.0000s) ===================================
+
+==  InsertSituation: migrating ================================================
+==  InsertSituation: migrated (0.0262s) =======================================
+
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:migrate RAILS_ENV=test[K
+(in /home/bruno/Documents/Projects/account-now)
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:reset
+(in /home/bruno/Documents/Projects/account-now)
+-- create_table("accounts", {:force=>true})
+   -> 0.1932s
+-- create_table("bank_accounts", {:force=>true})
+   -> 0.1224s
+-- create_table("banks", {:force=>true})
+   -> 0.1052s
+-- create_table("boxes", {:force=>true})
+   -> 0.1700s
+-- create_table("companies", {:force=>true})
+   -> 0.1972s
+-- create_table("contracts", {:force=>true})
+   -> 0.1594s
+-- create_table("people", {:force=>true})
+   -> 0.2160s
+-- create_table("situations", {:force=>true})
+   -> 0.2115s
+-- create_table("status", {:force=>true})
+   -> 0.2517s
+-- initialize_schema_migrations_table()
+   -> 0.3295s
+-- assume_migrated_upto_version(20100228205432)
+   -> 2.3945s
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:migrate
+(in /home/bruno/Documents/Projects/account-now)
+==  CreatePeople: migrating ===================================================
+-- create_table(:people)
+   -> 0.0028s
+==  CreatePeople: migrated (0.0030s) ==========================================
+
+==  AddAddressToPerson: migrating =============================================
+-- add_column(:people, :address, :string)
+   -> 0.0019s
+==  AddAddressToPerson: migrated (0.0020s) ====================================
+
+==  AddTipeToPerson: migrating ================================================
+-- add_column(:people, :tipe, :string)
+   -> 0.0015s
+==  AddTipeToPerson: migrated (0.0017s) =======================================
+
+==  CreateBanks: migrating ====================================================
+-- create_table(:banks)
+   -> 0.0038s
+==  CreateBanks: migrated (0.0042s) ===========================================
+
+==  AddIdentifierToPerson: migrating ==========================================
+-- add_column(:people, :identifier, :string)
+   -> 0.0027s
+==  AddIdentifierToPerson: migrated (0.0030s) =================================
+
+==  CreateCompanies: migrating ================================================
+-- create_table(:companies)
+   -> 0.0044s
+==  CreateCompanies: migrated (0.0046s) =======================================
+
+==  CreateAccounts: migrating =================================================
+-- create_table(:accounts)
+   -> 0.0033s
+==  CreateAccounts: migrated (0.0035s) ========================================
+
+==  RemoveAccountTypeFromAccount: migrating ===================================
+-- remove_column(:accounts, :account_id)
+   -> 0.0586s
+-- remove_column(:accounts, :account_type)
+   -> 0.0487s
+-- add_column(:accounts, :kind, :string)
+   -> 0.0010s
+==  RemoveAccountTypeFromAccount: migrated (0.1091s) ==========================
+
+==  AddReferencesPeopleFromAccounts: migrating ================================
+-- add_column(:accounts, :people_id, :integer)
+   -> 0.0024s
+==  AddReferencesPeopleFromAccounts: migrated (0.0026s) =======================
+
+==  AddPeopleIdFromAccounts: migrating ========================================
+-- remove_column(:accounts, :people_id)
+   -> 0.0897s
+-- add_column(:accounts, :person_id, :integer)
+   -> 0.0013s
+==  AddPeopleIdFromAccounts: migrated (0.0914s) ===============================
+
+==  AddPriceToAccounts: migrating =============================================
+-- add_column(:accounts, :price, :decimal)
+   -> 0.0021s
+==  AddPriceToAccounts: migrated (0.0024s) ====================================
+
+==  CreateBoxes: migrating ====================================================
+-- create_table(:boxes)
+   -> 0.0021s
+==  CreateBoxes: migrated (0.0023s) ===========================================
+
+==  AddMaturityToAccounts: migrating ==========================================
+-- add_column(:accounts, :maturity_date, :date)
+   -> 0.0014s
+==  AddMaturityToAccounts: migrated (0.0015s) =================================
+
+==  AddBoxToAccounts: migrating ===============================================
+-- add_column(:accounts, :box_id, :int)
+   -> 0.0058s
+==  AddBoxToAccounts: migrated (0.0062s) ======================================
+
+==  CreateBankAccounts: migrating =============================================
+-- create_table(:bank_accounts)
+   -> 0.0034s
+==  CreateBankAccounts: migrated (0.0036s) ====================================
+
+==  RenameOpeningGenerateDateToBankAccount: migrating =========================
+-- remove_column(:bank_accounts, :openin_balance_date)
+   -> 0.0253s
+-- add_column(:bank_accounts, :opening_balance_date, :date)
+   -> 0.0010s
+==  RenameOpeningGenerateDateToBankAccount: migrated (0.0266s) ================
+
+==  AddBankIdToBankAccounts: migrating ========================================
+-- add_column(:bank_accounts, :bank_id, :integer)
+   -> 0.0013s
+==  AddBankIdToBankAccounts: migrated (0.0015s) ===============================
+
+==  AddEmailToPeople: migrating ===============================================
+-- add_column(:people, :email, :string)
+   -> 0.0015s
+==  AddEmailToPeople: migrated (0.0016s) ======================================
+
+==  AddDocumentToAccount: migrating ===========================================
+-- add_column(:accounts, :document, :string)
+   -> 0.0014s
+==  AddDocumentToAccount: migrated (0.0016s) ==================================
+
+==  CreateContracts: migrating ================================================
+-- create_table(:contracts)
+   -> 0.0027s
+==  CreateContracts: migrated (0.0029s) =======================================
+
+==  AddPersonToContract: migrating ============================================
+-- add_column(:contracts, :person_idid, :int)
+   -> 0.0014s
+==  AddPersonToContract: migrated (0.0015s) ===================================
+
+==  RenamePersonIdToContract: migrating =======================================
+-- remove_column(:contracts, :person_idid)
+   -> 0.0260s
+-- add_column(:contracts, :person_id, :int)
+   -> 0.0035s
+==  RenamePersonIdToContract: migrated (0.0298s) ==============================
+
+==  AddContractToAccount: migrating ===========================================
+-- add_column(:accounts, :contract_id, :int)
+   -> 0.0013s
+==  AddContractToAccount: migrated (0.0015s) ==================================
+
+==  AddBankAccountToAccount: migrating ========================================
+-- add_column(:accounts, :bank_account_id, :int)
+   -> 0.0014s
+==  AddBankAccountToAccount: migrated (0.0016s) ===============================
+
+==  AddPersonToBank: migrating ================================================
+-- add_column(:banks, :person_id, :int)
+   -> 0.0013s
+==  AddPersonToBank: migrated (0.0015s) =======================================
+
+==  CreateSituations: migrating ===============================================
+-- create_table(:situations)
+   -> 0.0067s
+==  CreateSituations: migrated (0.0072s) ======================================
+
+==  AddSituationAccount: migrating ============================================
+-- add_column(:accounts, :situation_id, :int)
+   -> 0.0014s
+==  AddSituationAccount: migrated (0.0016s) ===================================
+
+==  InsertSituation: migrating ================================================
+==  InsertSituation: migrated (0.0798s) =======================================
+
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:migrate RAILS_ENV=test
+(in /home/bruno/Documents/Projects/account-now)
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:migrate RAILS_ENV=test[C[C[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=testr RAILS_ENV=teste RAILS_ENV=tests RAILS_ENV=teste RAILS_ENV=testt RAILS_ENV=test
+(in /home/bruno/Documents/Projects/account-now)
+-- create_table("accounts", {:force=>true})
+   -> 0.0831s
+-- create_table("bank_accounts", {:force=>true})
+   -> 0.2976s
+-- create_table("banks", {:force=>true})
+   -> 0.0906s
+-- create_table("boxes", {:force=>true})
+   -> 0.0904s
+-- create_table("companies", {:force=>true})
+   -> 0.1467s
+-- create_table("contracts", {:force=>true})
+   -> 0.2016s
+-- create_table("people", {:force=>true})
+   -> 0.2189s
+-- create_table("situations", {:force=>true})
+   -> 0.1701s
+-- create_table("statuses", {:force=>true})
+   -> 0.1208s
+-- initialize_schema_migrations_table()
+   -> 0.4097s
+-- assume_migrated_upto_version(20100228205432)
+   -> 1.7016s
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:reset RAILS_ENV=test[C[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=testm RAILS_ENV=testi RAILS_ENV=testg RAILS_ENV=testr RAILS_ENV=teste RAILS_ENV=test[1P RAILS_ENV=testa RAILS_ENV=testt RAILS_ENV=teste RAILS_ENV=test
+(in /home/bruno/Documents/Projects/account-now)
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:migrate RAILS_ENV=test
+(in /home/bruno/Documents/Projects/account-now)
+==  CreatePeople: migrating ===================================================
+-- create_table(:people)
+   -> 0.0022s
+==  CreatePeople: migrated (0.0024s) ==========================================
+
+==  AddAddressToPerson: migrating =============================================
+-- add_column(:people, :address, :string)
+   -> 0.0046s
+==  AddAddressToPerson: migrated (0.0049s) ====================================
+
+==  AddTipeToPerson: migrating ================================================
+-- add_column(:people, :tipe, :string)
+   -> 0.0019s
+==  AddTipeToPerson: migrated (0.0022s) =======================================
+
+==  CreateBanks: migrating ====================================================
+-- create_table(:banks)
+   -> 0.0044s
+==  CreateBanks: migrated (0.0047s) ===========================================
+
+==  AddIdentifierToPerson: migrating ==========================================
+-- add_column(:people, :identifier, :string)
+   -> 0.0019s
+==  AddIdentifierToPerson: migrated (0.0022s) =================================
+
+==  CreateCompanies: migrating ================================================
+-- create_table(:companies)
+   -> 0.0038s
+==  CreateCompanies: migrated (0.0041s) =======================================
+
+==  CreateAccounts: migrating =================================================
+-- create_table(:accounts)
+   -> 0.0044s
+==  CreateAccounts: migrated (0.0047s) ========================================
+
+==  RemoveAccountTypeFromAccount: migrating ===================================
+-- remove_column(:accounts, :account_id)
+   -> 0.2296s
+-- remove_column(:accounts, :account_type)
+   -> 0.0251s
+-- add_column(:accounts, :kind, :string)
+   -> 0.0010s
+==  RemoveAccountTypeFromAccount: migrated (0.2563s) ==========================
+
+==  AddReferencesPeopleFromAccounts: migrating ================================
+-- add_column(:accounts, :people_id, :integer)
+   -> 0.0013s
+==  AddReferencesPeopleFromAccounts: migrated (0.0014s) =======================
+
+==  AddPeopleIdFromAccounts: migrating ========================================
+-- remove_column(:accounts, :people_id)
+   -> 0.0297s
+-- add_column(:accounts, :person_id, :integer)
+   -> 0.0008s
+==  AddPeopleIdFromAccounts: migrated (0.0310s) ===============================
+
+==  AddPriceToAccounts: migrating =============================================
+-- add_column(:accounts, :price, :decimal)
+   -> 0.0012s
+==  AddPriceToAccounts: migrated (0.0013s) ====================================
+
+==  CreateBoxes: migrating ====================================================
+-- create_table(:boxes)
+   -> 0.0039s
+==  CreateBoxes: migrated (0.0042s) ===========================================
+
+==  AddMaturityToAccounts: migrating ==========================================
+-- add_column(:accounts, :maturity_date, :date)
+   -> 0.0020s
+==  AddMaturityToAccounts: migrated (0.0024s) =================================
+
+==  AddBoxToAccounts: migrating ===============================================
+-- add_column(:accounts, :box_id, :int)
+   -> 0.0022s
+==  AddBoxToAccounts: migrated (0.0025s) ======================================
+
+==  CreateBankAccounts: migrating =============================================
+-- create_table(:bank_accounts)
+   -> 0.0055s
+==  CreateBankAccounts: migrated (0.0058s) ====================================
+
+==  RenameOpeningGenerateDateToBankAccount: migrating =========================
+-- remove_column(:bank_accounts, :openin_balance_date)
+   -> 0.0329s
+-- add_column(:bank_accounts, :opening_balance_date, :date)
+   -> 0.0008s
+==  RenameOpeningGenerateDateToBankAccount: migrated (0.0341s) ================
+
+==  AddBankIdToBankAccounts: migrating ========================================
+-- add_column(:bank_accounts, :bank_id, :integer)
+   ->counts: migrated (0.0035s) ========================================
+
+==  RemoveAccountTypeFromAccount: migrating ===================================
+-- remove_column(:accounts, :account_id)
+   -> 0.0586s
+-- remove_column(:accounts, :account_type)
+   -> 0.0487s
+-- add_column(:accounts, :kind, :string)
+   -> 0.0010s
+==  RemoveAccountTypeFromAccount: migrated (0.1091s) ==========================
+
+==  AddReferencesPeopleFromAccounts: migrating ================================
+-- add_column(:accounts, :people_id, :integer)
+   -> 0.0024s
+==  AddReferencesPeopleFromAccounts: migrated (0.0026s) =======================
+
+==  AddPeopleIdFromAccounts: migrating ========================================
+-- remove_column(:accounts, :people_id)
+   -> 0.0897s
+-- add_column(:accounts, :person_id, :integer)
+   -> 0.0013s
+==  AddPeopleIdFromAccounts: migrated (0.0914s) ===============================
+
+==  AddPriceToAccounts: migrating =============================================
+-- add_column(:accounts, :price, :decimal)
+   -> 0.0021s
+==  AddPriceToAccounts: migrated (0.0024s) ====================================
+
+==  CreateBoxes: migrating ====================================================
+-- create_table(:boxes)
+   -> 0.0021s
+==  CreateBoxes: migrated (0.0023s) ===========================================
+
+==  AddMaturityToAccounts: migrating ==========================================
+-- add_column(:accounts, :maturity_date, :date)
+   -> 0.0014s
+==  AddMaturityToAccounts: migrated (0.0015s) =================================
+
+==  AddBoxToAccounts: migrating ===============================================
+-- add_column(:accounts, :box_id, :int)
+   -> 0.0058s
+==  AddBoxToAccounts: migrated (0.0062s) ======================================
+
+==  CreateBankAccounts: migrating =============================================
+-- create_table(:bank_accounts)
+   -> 0.0034s
+==  CreateBankAccounts: migrated (0.0036s) ====================================
+
+==  RenameOpeningGenerateDateToBankAccount: migrating =========================
+-- remove_column(:bank_accounts, :openin_balance_date)
+   -> 0.0253s
+-- add_column(:bank_accounts, :opening_balance_date, :date)
+   -> 0.0010s
+==  RenameOpeningGenerateDateToBankAccount: migrated (0.0266s) ================
+
+==  AddBankIdToBankAccounts: migrating ========================================
+-- add_column(:bank_accounts, :bank_id, :integer)
+   -> 0.0013s
+==  AddBankIdToBankAccounts: migrated (0.0015s) ===============================
+
+==  AddEmailToPeople: migrating ===============================================
+-- add_column(:people, :email, :string)
+   -> 0.0015s
+==  AddEmailToPeople: migrated (0.0016s) ======================================
+
+==  AddDocumentToAccount: migrating ===========================================
+-- add_column(:accounts, :document, :string)
+   -> 0.0014s
+==  AddDocumentToAccount: migrated (0.0016s) ==================================
+
+==  CreateContracts: migrating ================================================
+-- create_table(:contracts)
+   -> 0.0027s
+==  CreateContracts: migrated (0.0029s) =======================================
+
+==  AddPersonToContract: migrating ============================================
+-- add_column(:contracts, :person_idid, :int)
+   -> 0.0014s
+==  AddPersonToContract: migrated (0.0015s) ===================================
+
+==  RenamePersonIdToContract: migrating =======================================
+-- remove_column(:contracts, :person_idid)
+   -> 0.0260s
+-- add_column(:contracts, :person_id, :int)
+   -> 0.0035s
+==  RenamePersonIdToContract: migrated (0.0298s) ==============================
+
+==  AddContractToAccount: migrating ===========================================
+-- add_column(:accounts, :contract_id, :int)
+   -> 0.0013s
+==  AddContractToAccount: migrated (0.0015s) ==================================
+
+==  AddBankAccountToAccount: migrating ========================================
+-- add_column(:accounts, :bank_account_id, :int)
+   -> 0.0014s
+==  AddBankAccountToAccount: migrated (0.0016s) ===============================
+
+==  AddPersonToBank: migrating ================================================
+-- add_column(:banks, :person_id, :int)
+   -> 0.0013s
+==  AddPersonToBank: migrated (0.0015s) =======================================
+
+==  CreateSituations: migrating ===============================================
+-- create_table(:situations)
+   -> 0.0067s
+==  CreateSituations: migrated (0.0072s) ======================================
+
+==  AddSituationAccount: migrating ============================================
+-- add_column(:accounts, :situation_id, :int)
+   -> 0.0014s
+==  AddSituationAccount: migrated (0.0016s) ===================================
+
+==  InsertSituation: migrating ================================================
+==  InsertSituation: migrated (0.0798s) =======================================
+
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:migrate RAILS_ENV=test
+(in /home/bruno/Documents/Projects/account-now)
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:migrate RAILS_ENV=test[C[C[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=testr RAILS_ENV=teste RAILS_ENV=tests RAILS_ENV=teste RAILS_ENV=testt RAILS_ENV=test
+(in /home/bruno/Documents/Projects/account-now)
+-- create_table("accounts", {:force=>true})
+   -> 0.0831s
+-- create_table("bank_accounts", {:force=>true})
+   -> 0.2976s
+-- create_table("banks", {:force=>true})
+   -> 0.0906s
+-- create_table("boxes", {:force=>true})
+   -> 0.0904s
+-- create_table("companies", {:force=>true})
+   -> 0.1467s
+-- create_table("contracts", {:force=>true})
+   -> 0.2016s
+-- create_table("people", {:force=>true})
+   -> 0.2189s
+-- create_table("situations", {:force=>true})
+   -> 0.1701s
+-- create_table("statuses", {:force=>true})
+   -> 0.1208s
+-- initialize_schema_migrations_table()
+   -> 0.4097s
+-- assume_migrated_upto_version(20100228205432)
+   -> 1.7016s
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:reset RAILS_ENV=test[C[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=test[1P RAILS_ENV=testm RAILS_ENV=testi RAILS_ENV=testg RAILS_ENV=testr RAILS_ENV=teste RAILS_ENV=test[1P RAILS_ENV=testa RAILS_ENV=testt RAILS_ENV=teste RAILS_ENV=test
+(in /home/bruno/Documents/Projects/account-now)
+]0;bruno@U90HM0001: ~/Documents/Projects/account-nowbruno@U90HM0001:~/Documents/Projects/account-now$ rake db:migrate RAILS_ENV=test
+(in /home/bruno/Documents/Projects/account-now)
+==  CreatePeople: migrating ===================================================
+-- create_table(:people)
+   -> 0.0022s
+==  CreatePeople: migrated (0.0024s) ==========================================
+
+==  AddAddressToPerson: migrating =============================================
+-- add_column(:people, :address, :string)
+   -> 0.0046s
+==  AddAddressToPerson: migrated (0.0049s) ====================================
+
+==  AddTipeToPerson: migrating ================================================
+-- add_column(:people, :tipe, :string)
+   -> 0.0019s
+==  AddTipeToPerson: migrated (0.0022s) =======================================
+
+==  CreateBanks: migrating ====================================================
+-- create_table(:banks)
+   -> 0.0044s
+==  CreateBanks: migrated (0.0047s) ===========================================
+
+==  AddIdentifierToPerson: migrating ==========================================
+-- add_column(:people, :identifier, :string)
+   -> 0.0019s
+==  AddIdentifierToPerson: migrated (0.0022s) =================================
+
+==  CreateCompanies: migrating ================================================
+-- create_table(:companies)
+   -> 0.0038s
+==  CreateCompanies: migrated (0.0041s) =======================================
+
+==  CreateAccounts: migrating =================================================
+-- create_table(:accounts)
+   -> 0.0044s
+==  CreateAccounts: migrated (0.0047s) ========================================
+
+==  RemoveAccountTypeFromAccount: migrating ===================================
+-- remove_column(:accounts, :account_id)
+   -> 0.2296s
+-- remove_column(:accounts, :account_type)
+   -> 0.0251s
+-- add_column(:accounts, :kind, :string)
+   -> 0.0010s
+==  RemoveAccountTypeFromAccount: migrated (0.2563s) ==========================
+
+==  AddReferencesPeopleFromAccounts: migrating ================================
+-- add_column(:accounts, :people_id, :integer)
+   -> 0.0013s
+==  AddReferencesPeopleFromAccounts: migrated (0.0014s) =======================
+
+==  AddPeopleIdFromAccounts: migrating ========================================
+-- remove_column(:accounts, :people_id)
+   -> 0.0297s
+-- add_column(:accounts, :person_id, :integer)
+   -> 0.0008s
+==  AddPeopleIdFromAccounts: migrated (0.0310s) ===============================
+
+==  AddPriceToAccounts: migrating =============================================
+-- add_column(:accounts, :price, :decimal)
+   -> 0.0012s
+==  AddPriceToAccounts: migrated (0.0013s) ====================================
+
+==  CreateBoxes: migrating ====================================================
+-- create_table(:boxes)
+   -> 0.0039s
+==  CreateBoxes: migrated (0.0042s) ===========================================
+
+==  AddMaturityToAccounts: migrating ==========================================
+-- add_column(:accounts, :maturity_date, :date)
+   -> 0.0020s
+==  AddMaturityToAccounts: migrated (0.0024s) =================================
+
+==  AddBoxToAccounts: migrating ===============================================
+-- add_column(:accounts, :box_id, :int)
+   -> 0.0022s
+==  AddBoxToAccounts: migrated (0.0025s) ======================================
+
+==  CreateBankAccounts: migrating =============================================
+-- create_table(:bank_accounts)
+   -> 0.0055s
+==  CreateBankAccounts: migrated (0.0058s) ====================================
+
+==  RenameOpeningGenerateDateToBankAccount: migrating =========================
+-- remove_column(:bank_accounts, :openin_balance_date)
+   -> 0.0329s
+-- add_column(:bank_accounts, :opening_balance_date, :date)
+   -> 0.0008s
+==  RenameOpeningGenerateDateToBankAccount: migrated (0.0341s) ================
+
+==  AddBankIdToBankAccounts: migrating ========================================
+-- add_column(:bank_accounts, :bank_id, :integer)
+   -> 0.0019s
+==  AddBankIdToBankAccounts: migrated (0.0022s) ===============================
+
+==  AddEmailToPeople: migrating ===============================================
+-- add_column(:people, :email, :string)
+   -> 0.0013s
+==  AddEmailToPeople: migrated (0.0015s) ======================================
+
+==  AddDocumentToAccount: migrating ===========================================
+-- add_column(:accounts, :document, :string)
+   -> 0.0021s
+==  AddDocumentToAccount: migrated (0.0024s) ==================================
+
+==  CreateContracts: migrating ================================================
+-- create_table(:contracts)
+   -> 0.0038s
+==  CreateContracts: migrated (0.0040s) =======================================
+
+==  AddPersonToContract: migrating ============================================
+-- add_column(:contracts, :person_idid, :int)
+   -> 0.0019s
+==  AddPersonToContract: migrated (0.0022s) ===================================
+
+==  RenamePersonIdToContract: migrating =======================================
+-- remove_column(:contracts, :person_idid)
+   -> 0.0286s
+-- add_column(:contracts

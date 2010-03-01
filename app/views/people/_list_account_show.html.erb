@@ -6,7 +6,7 @@
         <th>Tipo</th>
         <th>Data do vencimento</th>
         <th>Valor</th>
-        <th></th>
+        <th>Status</th>
         <th class="last"></th>
         <% @person.accounts.each do |account| %>
           <tr class='<%= cycle("odd", "even") %>'>
@@ -15,7 +15,7 @@
             <td><%= account.kind %></td>
             <td><%= account.maturity_date %></td>
             <td><%= account.price %></td>
-            <td></td>
+            <td><%= account.situation.name if account.situation %></td>
             <td>
               <%= link_to "#{t("web-app-theme.show", :default => "Show")}", [@person, account] %> |
               <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_person_account_path(@person, account) %> |

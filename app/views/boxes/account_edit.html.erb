@@ -8,7 +8,20 @@
     <div class="content">
       <div class="inner">
 
-        <%= render(:partial => "accounts/details_show") %>
+      <% form_for :account, @account, :url => edit_box_account_path(@account), :html => { :class => :form } do |f| -%>
+        <%= f.error_messages %>
+        <div class="columns wat-cf">
+          <div class="column left">
+            <%= render(:partial => "accounts/details_show") %>
+          </div>
+          <div class="column right">
+            <div class="group">
+              <%= f.label :situation_id, t("activerecord.attributes.account.situation_id", :default => "Situation Id"), :class => :label %>
+              <%= f.select :situation_id, Situation.all.collect{|s| [s.name,s.id]}, :include_blank => true %>
+            </div>
+          </div>
+        </div>
+      <% end %>
 
         <p />
 

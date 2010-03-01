@@ -1,0 +1,22 @@
+    <h3><a href="#accounts"><%= t("activerecord.models.accounts") %></a></h3>
+    <div class="inner">
+      <table class="table" id="accounts_table">
+        <th class="first">ID</th>
+        <th>Tipo</th>
+        <th>Nome</th>
+        <th>Caixa</th>
+        <th>Data do vencimento</th>
+        <th class="last">Valor</th>
+        <% @bank_account.accounts.each do |account| %>
+          <tr class='<%= cycle("odd", "even") %>'>
+            <td><%= link_to account.id, [account.box, account] %></td>
+            <td><%= account.kind %></td>
+            <td><%= link_to account.person.name, [account.person] %></td>
+            <td><%= account.box.name %></td>
+            <td><%= account.maturity_date %></td>
+            <td><%= account.price %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+

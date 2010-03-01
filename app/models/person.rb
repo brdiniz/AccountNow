@@ -1,6 +1,7 @@
 class Person < ActiveRecord::Base
   has_many :accounts, :dependent => :destroy
   has_many :contracts, :dependent => :destroy
+  has_many :bank
 
   TIPES = ["Física", "Juridica"]
 
