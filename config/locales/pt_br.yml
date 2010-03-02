@@ -85,8 +85,29 @@ pt_br:
         name: Nome
         opening_balance: Saldo Inicial
         opening_balance_date: Data do Saldo Inicial
-    errors:
+    errors: 
       template:
         body: "Os seguintes erros impediram esta operação:"
         header: "Ocorreram erros nesta operação!"
+      messages:
+        blank: "é um campo obrigatório"
+        taken: "já existe"
+        too_long: "é muito longo (não mais do que {{count}} caracteres)"
+        too_short: "é muito curto (não menos do que {{count}} caracteres)"
+        invalid: "não é válido"
+        record_invalid: "o valor não faz parte dos valores possíveis"
+        inclusion: "não está incluso na lista"
+        exclusion: "não está disponível"
+        confirmation: "não bate com a confirmação"
+        accepted: "precisa ser aceito"
+        empty: "não pode ser vazio"
+        wrong_length: "não é do tamanho correto (precisa ter {{count}} caracteres)"
+        not_a_number: "não é um número"
+        greater_than: "precisa ser maior do que {{count}}"
+        greater_than_or_equal_to: "precisa ser maior ou igual a {{count}}"
+        equal_to: "precisa ser igual a {{count}}"
+        less_than: "precisa ser menor do que {{count}}"
+        less_than_or_equal_to: "precisa ser menor ou igual a {{count}}"
+        odd: "precisa ser ímpar"
+        even: "precisa ser par"
 
