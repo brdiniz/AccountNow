@@ -8,7 +8,6 @@ class AccountsController < InheritedResources::Base
     end
   end
 
-
   def destroy
     destroy! do |format|
       format.html { redirect_to @person }
