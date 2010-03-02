@@ -38,4 +38,25 @@ I want feature
     And I should not see "Visualizar"
     And I should not see "Editar"
     And I should not see "Remover"
+    
+  Scenario: List Bank Account
+    Given I have no BankAccount
+    And I have a Bank with name "BankBoston" and code "001"
+    And I have a bank account with name "TesteBank" and Bank "BankBoston"
+    When I go to the list of bank_account
+    And I should see "TesteBank"
+    Then I follow "Visualizar"
+    And I should see "Conta Bancária TesteBank"
+    And I should see "Contas"
+    And I should see "ID"
+    And I should see "Nome"
+    And I should see "Caixa"
+    And I should see "Data do vencimento"
+    And I should see "Valor"
+    And I should see "Saldo Realizado"
+    And I should see "Saldo Estimado"
+    And I should see "Saldo inicial"
+  
+  
+  
 

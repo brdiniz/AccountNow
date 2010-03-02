@@ -63,6 +63,8 @@ pt_br:
         person_id: Nome
         situation_id: Status
         bank_account_id: Conta Bancária
+        payment_date: Data do pagamento
+        payment_price: Valor do pagamento
       contract:
         name: Nome
         date_registry: Data do contrato

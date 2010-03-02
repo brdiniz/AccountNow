@@ -1,20 +1,37 @@
+    <% opening_balance = @bank_account.opening_balance %>
     <h3><a href="#accounts"><%= t("activerecord.models.accounts") %></a></h3>
     <div class="inner">
       <table class="table" id="accounts_table">
         <th class="first">ID</th>
-        <th>Tipo</th>
         <th>Nome</th>
         <th>Caixa</th>
         <th>Data do vencimento</th>
-        <th class="last">Valor</th>
+        <th>Valor do documento</th>
+        <th>Valor pago</th>
+        <th>Saldo Estimado</th>
+        <th class="last">Saldo Realizado</th>
+        <tr class='<%= cycle("odd", "even") %>'>
+          <td></td>
+          <td>Saldo inicial</td>
+          <td></td>
+          <td><%= @bank_account.opening_balance_date %></td>
+          <td><%= opening_balance %></td>
+          <td></td>
+          <td><%= opening_balance %></td>
+          <td><%= opening_balance %></td>
+        </tr>
         <% @bank_account.accounts.each do |account| %>
+          <% opening_balance = opening_balance - account.price if account.kind == "a pagar" %>
+          <% opening_balance = opening_balance + account.price if account.kind == "a receber" %>
           <tr class='<%= cycle("odd", "even") %>'>
             <td><%= link_to account.id, [account.box, account] %></td>
-            <td><%= account.kind %></td>
             <td><%= link_to account.person.name, [account.person] %></td>
-            <td><%= account.box.name %></td>
+            <td><%= link_to account.box.name, [account.box] %></td>
             <td><%= account.maturity_date %></td>
-            <td><%= account.price %></td>
+            <td style="<%= "color: red;" if account.kind == "a pagar" %>"><%= account.price %></td>
+            <td></td>
+            <td><%= opening_balance %></td>
+            <td><%= @bank_account.opening_balance %></td>
           </tr>
         <% end %>
       </table>
