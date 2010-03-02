@@ -9,7 +9,6 @@
     <p />
     <div class="inner">
       <% form_for "#{model_item}".to_sym, eval("@#{model_item}"), :url => send("#{model}_#{model_item.pluralize}_path", eval("@#{model}")), :html => { :class => :form } do |f| -%>
-        <%= f.error_messages %>
         <%= render :partial => "form", :locals => {:f => f} %>
       <% end -%>
     </div>
