@@ -1,0 +1,12 @@
+<div class="group">
+  <%= f.label :situation_id, t("activerecord.attributes.account.situation_id", :default => "Situation Id"), :class => :label %>
+  <%= f.select :situation_id, Situation.all.collect{|s| [s.name,s.id]}, :include_blank => true %>
+</div>
+<div class="group">
+  <%= f.label :payment_date, t("activerecord.attributes.account.payment_date", :default => "Payment Date"), :class => :label %>
+  <%= f.text_field :payment_date, :class => 'text_field' %>
+</div>
+<div class="group">
+  <%= f.label :payment_price, t("activerecord.attributes.account.payment_price", :default => "Payment Price"), :class => :label %>
+  <%= f.text_field :payment_price, :class => 'text_field' %>
+</div>
