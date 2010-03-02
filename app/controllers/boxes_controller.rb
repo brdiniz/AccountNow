@@ -13,6 +13,13 @@ class BoxesController < InheritedResources::Base
 
   def account_edit
     find_account
+    if request.post?
+      @account.update_attributes(params[:account])
+      if @account.save
+        flash[:notice] = "Alteração de Conta realizada com sucesso!"
+        redirect_to(@box)
+      end
+    end
   end
 
   private

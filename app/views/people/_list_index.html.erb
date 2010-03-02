@@ -5,7 +5,7 @@
           <th><%= t("activerecord.attributes.people.email", :default => t("activerecord.labels.email", :default => "E-mail")) %></th>
           <th class="last">&nbsp;</th>
         </tr>
-        <% @people.each do |person| -%>
+        <% @people.sort.each do |person| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td><%= person.tipe %></td>
           <td><%= link_to person.name, person_path(person) %></td>

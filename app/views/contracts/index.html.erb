@@ -9,12 +9,10 @@
     <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Contracts</h2>
     <div class="inner">
       <table class="table">
-        <tr>             
+        <tr>
           <th class="first">ID</th>
-										<th>
-					<%= t("activerecord.attributes.contract.name", :default => t("activerecord.labels.name", :default => "Name")) %>
-</th>
-					          <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+						<th><%= t("activerecord.attributes.contract.name", :default => t("activerecord.labels.name", :default => "Name")) %></th>
+					  <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @contracts.each do |contract| -%>
@@ -22,10 +20,10 @@
           <td>
             <%= contract.id %>
           </td>
-										<td>
+					<td>
 						<%= link_to contract.name, contract_path(contract) %>
 					</td>
-										<td>
+					<td>
             <%= contract.created_at %>
           </td>
           <td class="last">
@@ -33,7 +31,7 @@
             <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_contract_path(contract) %> |
             <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", contract_path(contract), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
           </td>
-        </tr>          
+        </tr>
         <% end -%>
       </table>
       <div class="actions-bar wat-cf">

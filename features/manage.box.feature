@@ -26,7 +26,8 @@ I want feature
     And I select "Realizada" from "account_situation_id"
     #And I fill in "Valor do pagamento" with "10"
     #And I fill in "Valor pago" with "10"
-    #Then I press "Salvar"
-    #And I should see "Alteração de Conta realizada com sucesso!"
-    #And I should see "Caixa Home"
+    Then I press "Salvar"
+    And I should see "Alteração de Conta realizada com sucesso!"
+    And I should see "Caixa Home"
+    And I should see "Realizada"
 
