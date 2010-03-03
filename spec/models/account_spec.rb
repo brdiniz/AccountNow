@@ -17,6 +17,24 @@ describe Account do
     account.errors.on(:maturity_date).should_not be_blank
     account.errors.on(:box_id).should_not be_blank
   end
+  
+  it "should not save situation ok when not inform date and price payment" do
+    account = Factory.create(:account)
+    account.situation = Situation.find_by_name("Realizada")
+    account.save_payment
+    account.errors.on(:payment_date).should_not be_blank
+    account.errors.on(:payment_price).should_not be_blank
+    Account.find(account.id).situation.should == nil
+  end
+  
+  it "should save situation cancel" do
+    account = Factory.create(:account)
+    account.situation = Situation.find_by_name("Cancelada")
+    account.save_payment
+    account.errors.on(:payment_date).should be_blank
+    account.errors.on(:payment_price).should be_blank
+    Account.find(account.id).situation.should == Situation.find_by_name("Cancelada")
+  end
 
 end
 
