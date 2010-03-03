@@ -7,7 +7,7 @@ I want feature
     Given I have no Person
     And I have new Person with name is "Anthony Vivaldi"
     And I have new Box with name is "Home"
-    And I have a Bank with name "BankBoston" and code "001"
+    And I have a Bank with name "BankBoston" and code "1001x"
     And I have a bank account with name "TesteBank" and Bank "BankBoston"
     And I go to the list of Person
     When I follow "Anthony Vivaldi"

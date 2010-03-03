@@ -9,7 +9,7 @@ I want feature
     And I go to the list of Bank
     And I should see "Listagem de Bancos"
     When I follow "Criar Banco"
-    And I fill in "Código" with "001"
+    And I fill in "Código" with "001x"
     And I select "Banco do Brasil" from "bank_person_id"
     And I fill in "Nome" with "BANCO DO BRASIL"
     And I press "Salvar"
@@ -19,7 +19,7 @@ I want feature
 
   Scenario: List and Remove Banks
     Given I have no Bank
-    And I have a Bank with name "Banco do Brasil" and code "001"
+    And I have a Bank with name "Banco do Brasil" and code "1001"
     When I go to the list of Bank
     And I should see "Listar Bancos"
     And I should see "Criar Banco"
@@ -34,10 +34,10 @@ I want feature
     And I should not see "Remover"
 
   Scenario: Update a Bank
-    Given I have a Bank with name "Banco Iphone" and code "409"
+    Given I have a Bank with name "Banco Iphone" and code "1409"
     And I go to the list of Bank
     And I should see "Banco Iphone"
-    When I follow "Editar"
+    When I follow "Editar" within "#bank_1409_actions"
     And I should see "Alterar Banco Iphone"
     And I fill in "Código" with "408"
     And I fill in "Nome" with "Banco Mac"

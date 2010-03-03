@@ -6,7 +6,7 @@ I want feature
 Scenario: Create a new contract
   Given I have new Person with name is "Fornecedor contrato"
   And I have new Box with name is "Home"
-  And I have a Bank with name "BankBoston" and code "001"
+  And I have a Bank with name "BankBoston" and code "4561"
   And I have a bank account with name "TesteBank" and Bank "BankBoston"
   And I go to the list of Person
   And I should see "Fornecedor contrato"

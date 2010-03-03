@@ -5,7 +5,7 @@ I want feature
 
   Scenario: Create a new Bank Account
     Given I have no BankAccount
-    And I have a Bank with name "BankBoston" and code "0001"
+    And I have a Bank with name "BankBoston" and code "4561"
     And I go to the list of bank_account
     When I follow "Criar Conta Bancária"
     And I select "BankBoston" from "bank_account_bank_id"
@@ -20,7 +20,7 @@ I want feature
 
   Scenario: List and remove Bank Account
     Given I have no BankAccount
-    And I have a Bank with name "BankBoston" and code "001"
+    And I have a Bank with name "BankBoston" and code "4561"
     And I have a bank account with name "TesteBank" and Bank "BankBoston"
     When I go to the list of bank_account
     And I should see "Listagem de Contas Bancárias"
@@ -41,7 +41,7 @@ I want feature
     
   Scenario: List Bank Account
     Given I have no BankAccount
-    And I have a Bank with name "BankBoston" and code "001"
+    And I have a Bank with name "BankBoston" and code "4561"
     And I have a bank account with name "TesteBank" and Bank "BankBoston"
     When I go to the list of bank_account
     And I should see "TesteBank"

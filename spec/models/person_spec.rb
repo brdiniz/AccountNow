@@ -22,5 +22,19 @@ describe Person do
     person.should_not be_valid
     person.errors.on(:identifier).should_not be_blank
   end
+  
+  it "should sort by name" do
+    people = []
+    people << Factory(:person, :name => "d")
+    people << Factory(:person, :name => "a")
+    people << Factory(:person, :name => "c")
+    people << Factory(:person, :name => "b")
+    people
+    people.sort!
+    people.delete_at(0).name.should == "a"
+    people.delete_at(0).name.should == "b"
+    people.delete_at(0).name.should == "c"
+    people.delete_at(0).name.should == "d"
+  end
 end
 

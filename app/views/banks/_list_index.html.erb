@@ -16,7 +16,7 @@
           <td>
             <%= bank.name %>
           </td>
-          <td class="last">
+          <td id="bank_<%= bank.code %>_actions" class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", bank_path(bank) %> |
             <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_bank_path(bank) %> |
             <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", bank_path(bank), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
