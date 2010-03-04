@@ -8,6 +8,7 @@ class Account < ActiveRecord::Base
   KINDS = ["a pagar", "a receber"]
 
   validates_presence_of :kind, :bank_account_id, :person_id, :document, :price, :maturity_date, :box_id
+  validate :validate_maturity_date
   
   def save_payment
     return false unless validate_update_payment
@@ -21,6 +22,11 @@ class Account < ActiveRecord::Base
     errors.add_on_blank(:payment_date, 'é um campo obrigatório') if self.situation.id == 2
     errors.add_on_blank(:payment_price, 'é um campo obrigatório') if self.situation.id == 2
     return errors.empty?
+  end
+  
+  def validate_maturity_date
+    return unless !self.nil? && !self.bank_account.nil?
+    errors.add(:maturity_date, "menor que saldo inicial da conta") if self.bank_account.opening_balance_date > self.maturity_date
   end
 end
 

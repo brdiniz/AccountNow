@@ -16,7 +16,7 @@ I want feature
     And I select "a receber" from "account_kind"
     And I select "Home" from "account_box_id"
     And I select "TesteBank" from "account_bank_account_id"
-    And I fill in "Data de vencimento" with "1/1/1900"
+    And I fill in "Data de vencimento" with "1/1/2020"
     And I fill in "Documento" with "doc1"
     And I fill in "Valor" with "10"
     And I should not see "Ex: a simple text"
@@ -29,7 +29,7 @@ I want feature
     Given I have no Person
     And I have new Person with name is "Anthony Vivaldi"
     And I have new Box with name is "Home"
-    And The Person named "Anthony Vivaldi" has an account kind "a receber" and document "doc_1" and box "Home" and MaturityDate "1/1/1900" and Price "10"
+    And The Person named "Anthony Vivaldi" has an account kind "a receber" and document "doc_1" and box "Home" and MaturityDate "1/1/2020" and Price "10"
     And I go to the list of Person
     When I follow "Anthony Vivaldi"
     And I should see "Home"

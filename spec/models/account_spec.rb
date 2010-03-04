@@ -35,6 +35,12 @@ describe Account do
     account.errors.on(:payment_price).should be_blank
     Account.find(account.id).situation.should == Situation.find_by_name("Cancelada")
   end
+  
+  it "should not create an account to date less than the initial balance" do
+    bank_account = Factory(:bank_account, :opening_balance_date => "1/1/2010")
+    account = Factory.build(:account, :maturity_date => "1/1/2009", :bank_account => bank_account)
+    account.should_not be_valid
+  end
 
 end
 

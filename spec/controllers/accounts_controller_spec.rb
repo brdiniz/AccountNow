@@ -7,7 +7,7 @@ describe AccountsController do
     p = Factory(:person)
     b = Factory(:box)
     bank_account = Factory(:bank_account)
-    post :create, :account => {:bank_account_id => bank_account.id, :box_id => b.id, :kind => "nome", :document => "doc_1", :price => "1", :maturity_date => "1/1/2000"}, :person_id => p.id
+    post :create, :account => {:bank_account_id => bank_account.id, :box_id => b.id, :kind => "nome", :document => "doc_1", :price => "1", :maturity_date => "1/1/2020"}, :person_id => p.id
     response.should redirect_to(person_path(p))
   end
 

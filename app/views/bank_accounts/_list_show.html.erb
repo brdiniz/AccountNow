@@ -1,4 +1,5 @@
     <% opening_balance = @bank_account.opening_balance %>
+    <% opening_payment = @bank_account.opening_balance %>
     <h3><a href="#accounts"><%= t("activerecord.models.accounts") %></a></h3>
     <div class="inner">
       <table class="table" id="accounts_table">
@@ -12,9 +13,9 @@
         <th class="last">Saldo Realizado</th>
         <tr class='<%= cycle("odd", "even") %>'>
           <td></td>
-          <td>Saldo inicial</td>
+          <td>Saldo Anterior</td>
           <td></td>
-          <td><%= @bank_account.opening_balance_date %></td>
+          <td><%= @bank_account.opening_balance_date.strftime("%d/%m/%Y") %></td>
           <td><%= opening_balance %></td>
           <td></td>
           <td><%= opening_balance %></td>
@@ -23,17 +24,45 @@
         <% @bank_account.accounts.each do |account| %>
           <% opening_balance = opening_balance - account.price if account.kind == "a pagar" %>
           <% opening_balance = opening_balance + account.price if account.kind == "a receber" %>
+          <% opening_payment = opening_payment - account.payment_price if account.kind == "a pagar" && account.payment_price %>
+          <% opening_payment = opening_payment + account.payment_price if account.kind == "a receber" && account.payment_price %>
           <tr class='<%= cycle("odd", "even") %>'>
             <td><%= link_to account.id, [account.box, account] %></td>
             <td></td>
             <td><%= link_to account.box.name, [account.box] %></td>
-            <td><%= account.maturity_date %></td>
+            <td><%= account.maturity_date.strftime("%d/%m/%Y") %></td>
             <td style="<%= "color: red;" if account.kind == "a pagar" %>"><%= account.price %></td>
-            <td></td>
+            <td style="<%= "color: red;" if account.kind == "a pagar" %>"><%= account.payment_price %></td>
             <td><%= opening_balance %></td>
-            <td><%= @bank_account.opening_balance %></td>
+            <td><%= opening_payment %></td>
           </tr>
         <% end %>
+        <tr class='<%= cycle("odd", "even") %>'>
+          <td></td>
+          <td>Saldo do Período</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><%= opening_balance %></td>
+          <td><%= opening_payment %></td>
+        </tr>
       </table>
+      <div class="pagination">
+        <a rel="next" class="prev_page" href="#">« 12/2009</a>
+        <span class="current">1</span>
+        <a rel="next" href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+        <a href="#">10</a>
+        <a href="#">11</a>
+        <a href="#">12</a>
+        <a rel="next" class="next_page" href="#">01/2011 »</a>
+      </div>
     </div>
 

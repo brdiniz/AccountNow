@@ -55,7 +55,8 @@ I want feature
     And I should see "Valor"
     And I should see "Saldo Realizado"
     And I should see "Saldo Estimado"
-    And I should see "Saldo inicial"
+    And I should see "Saldo Anterior"
+    And I should see "Saldo do Período"
   
   
   
