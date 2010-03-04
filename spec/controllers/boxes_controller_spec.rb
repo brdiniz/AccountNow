@@ -34,6 +34,14 @@ describe BoxesController do
     post :account_edit, :box_id => account.box.id, :id => account.id, :account => {:situation_id => 1}
     response.should redirect_to(box_path(account.box))
   end
+  
+  it "should not update account in the box" do
+    account = Factory(:account)
+    post :account_edit, :box_id => account.box.id, :id => account.id, :account => {:situation_id => 2}
+
+    Account.find(account.id).situation.should == nil
+    response.should_not redirect_to(box_path(account.box))
+  end
 
 end
 

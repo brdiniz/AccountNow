@@ -9,7 +9,6 @@
       <div class="inner">
 
       <% form_for :account, @account, :url => edit_box_account_path(@box), :html => { :class => :form } do |f| -%>
-        <%= f.error_messages %>
         <div class="columns wat-cf">
           <div class="column left">
             <%= render(:partial => "accounts/details_show") %>
