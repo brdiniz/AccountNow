@@ -32,6 +32,10 @@ pt_br:
      month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
      abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
      order: [ :day, :month, :year ]
+  number:
+    format:
+      separator: ","
+      delimiter: "."
   errors: "Erro!"
   activerecord:
     labels:
@@ -85,7 +89,7 @@ pt_br:
         name: Nome
         opening_balance: Saldo Inicial
         opening_balance_date: Data do Saldo Inicial
-    errors: 
+    errors:
       template:
         body: "Os seguintes erros impediram esta operação:"
         header: "Ocorreram erros nesta operação!"
