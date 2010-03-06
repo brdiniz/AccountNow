@@ -16,7 +16,7 @@
             <td><%= account.maturity_date %></td>
             <td><%= account.price %></td>
             <td><%= account.situation.name if account.situation %></td>
-            <td>
+            <td class="last">
               <%= link_to "#{t("web-app-theme.show", :default => "Show")}", [@person, account] %> |
               <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_person_account_path(@person, account) %> |
               <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", [@person, account], :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
