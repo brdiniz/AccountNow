@@ -6,10 +6,10 @@
         <% @bank_accounts.each do |bank_account| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td>
-            <%= link_to bank_account.name, bank_account_path(bank_account) %>
+            <%= link_to bank_account.name, bank_account_show_month_year_path(bank_account, DateTime.now.month, DateTime.now.year) %>
           </td>
           <td class="last">
-            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", bank_account_path(bank_account) %> |
+            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", bank_account_show_month_year_path(bank_account, DateTime.now.month, DateTime.now.year) %> |
             <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_bank_account_path(bank_account) %> |
             <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", bank_account_path(bank_account), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
           </td>

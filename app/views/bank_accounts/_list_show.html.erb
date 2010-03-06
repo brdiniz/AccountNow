@@ -21,7 +21,9 @@
           <td><%= opening_balance %></td>
           <td><%= opening_balance %></td>
         </tr>
-        <% @bank_account.accounts.each do |account| %>
+        <% initial_date = "#{@year}-#{@month}-01" %>
+        <% final_date = initial_date.to_date.months_since(1) %>
+        <% @bank_account.accounts.find(:all, :conditions => ["maturity_date >= ? and maturity_date < ?", initial_date, final_date]).sort.each do |account| %>
           <% opening_balance = opening_balance - account.price if account.kind == "a pagar" %>
           <% opening_balance = opening_balance + account.price if account.kind == "a receber" %>
           <% opening_payment = opening_payment - account.payment_price if account.kind == "a pagar" && account.payment_price %>
@@ -49,20 +51,12 @@
         </tr>
       </table>
       <div class="pagination">
-        <a rel="next" class="prev_page" href="#">« 12/2009</a>
-        <span class="current">1</span>
-        <a rel="next" href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">7</a>
-        <a href="#">8</a>
-        <a href="#">9</a>
-        <a href="#">10</a>
-        <a href="#">11</a>
-        <a href="#">12</a>
-        <a rel="next" class="next_page" href="#">01/2011 »</a>
+        <a rel="next" class="prev_page" href="<%= "/bank_accounts/#{@bank_account.id}/month/12/year/#{@year.to_i - 1}" %>">« 12/<%= @year.to_i - 1%></a>
+        <% (1..12).each do |i| %>
+            <%= "<span class='current'>#{i.to_s}</span>" if @month.to_i == i %>
+            <%= link_to i.to_s, bank_account_show_month_year_path(@bank_account, i, @year) if @month.to_i != i %>
+        <% end %>
+        <a rel="next" class="next_page" href="<%= "/bank_accounts/#{@bank_account.id}/month/1/year/#{@year.to_i + 1}" %>">01/<%= @year.to_i + 1%> »</a>
       </div>
     </div>
 
