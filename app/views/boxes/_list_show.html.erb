@@ -1,3 +1,5 @@
+    <h3><a href="#accounts"><%= t("activerecord.models.accounts") %></a></h3>
+    <div class="inner">
       <table class="table" id="accounts_table">
         <th class="first">ID</th>
         <th>Cliente / Fornecedor</th>
@@ -6,9 +8,9 @@
         <th>Valor</th>
         <th>Status</th>
         <th class="last">&nbsp;</th>
-        <% @box.accounts.each do |account| %>
+        <% @box.find_account_month_year(@month, @year).each do |account| %>
           <tr class='<%= cycle("odd", "even") %>'>
-            <td><%= link_to  account.id , edit_box_account_path(@box, account) %></td>
+            <td><%= link_to  account.id , box_edit_account_path(@box, account) %></td>
             <td><%= account.person.name %></td>
             <td><%= account.kind %></td>
             <td><%= account.maturity_date %></td>
@@ -16,9 +18,18 @@
             <td><%= account.situation.name if account.situation %></td>
             <td>
               <%= link_to "#{t("web-app-theme.show", :default => "Show")}", box_account_path(@box, account) %> |
-              <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_box_account_path(@box, account) %>
+              <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", box_edit_account_path(@box, account) %>
             </td>
           </tr>
         <% end %>
       </table>
+      <div class="pagination">
+        <a rel="next" class="prev_page" href="<%= "#{box_show_month_year_path(@box, 12, @year.to_i - 1)}" %>">« 12/<%= @year.to_i - 1%></a>
+        <% (1..12).each do |i| %>
+            <%= "<span class='current'>#{i.to_s}</span>" if @month.to_i == i %>
+            <%= link_to i.to_s, box_show_month_year_path(@box, i, @year) if @month.to_i != i %>
+        <% end %>
+        <a rel="next" class="next_page" href="#{box_show_month_year_path(@box, 12, @year.to_i + 1)}" %>01/<%= @year.to_i + 1%> »</a>
+      </div>
+    </div>
 

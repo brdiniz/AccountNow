@@ -1,4 +1,7 @@
 class BankAccount < ActiveRecord::Base
+
+  include AccountFind
+
   belongs_to :bank
   has_many :accounts
 

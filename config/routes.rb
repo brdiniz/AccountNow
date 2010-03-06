@@ -2,11 +2,13 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :people do |person|
     person.resources :accounts
     person.resources :contracts
+    person.show_month_year 'month/:month_number/year/:year_number', :controller => 'people', :action => "show", :method => 'get'
   end
 
-	map.resources :boxes do
-	  map.box_account 'boxes/:box_id/accounts/:id', :controller => 'boxes', :action => 'account', :method => 'get'
-  	map.edit_box_account 'boxes/:box_id/accounts/:id/edit', :controller => 'boxes', :action => 'account_edit'
+	map.resources :boxes do | box |
+    box.show_month_year 'month/:month_number/year/:year_number', :controller => 'boxes', :action => "show", :method => 'get'
+	  box.account 'accounts/:id', :controller => 'boxes', :action => 'account', :method => 'get'
+    box.edit_account 'accounts/:id/edit', :controller => 'boxes', :action => 'account_edit'
   end
 
   map.resources :people

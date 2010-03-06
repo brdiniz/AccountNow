@@ -22,6 +22,7 @@ I want feature
     And I should not see "Ex: a simple text"
     And I press "Salvar"
     Then I should see "Criação de Conta realizada com sucesso!"
+    And I go to the show of person "Anthony Vivaldi" month "1" from year "2020"
     And I should see "a receber"
     And I should see "Home"
 
@@ -29,7 +30,7 @@ I want feature
     Given I have no Person
     And I have new Person with name is "Anthony Vivaldi"
     And I have new Box with name is "Home"
-    And The Person named "Anthony Vivaldi" has an account kind "a receber" and document "doc_1" and box "Home" and MaturityDate "1/1/2020" and Price "10"
+    And The Person named "Anthony Vivaldi" has an account kind "a receber" and document "doc_1" and box "Home" and Price "10"
     And I go to the list of Person
     When I follow "Anthony Vivaldi"
     And I should see "Home"

@@ -17,7 +17,7 @@ I want feature
     Given I have no Box
     And I have new Person with name is "Anthony Vivaldi"
     And I have new Box with name is "Home"
-    And The Person named "Anthony Vivaldi" has an account kind "a receber" and document "doc_1" and box "Home" and MaturityDate "1/1/2020" and Price "10"
+    And The Person named "Anthony Vivaldi" has an account kind "a receber" and document "doc_1" and box "Home" and Price "10"
     And I go to the list of Box
     When I follow "Visualizar"
     And I should see "Caixa Home"

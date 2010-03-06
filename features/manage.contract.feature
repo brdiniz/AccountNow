@@ -26,5 +26,6 @@ Scenario: Create a new contract
   And I press "Salvar"
   Then I should see "Criação de Contrato / Financiamento realizada com sucesso!"
   And I should see "a receber"
+  And I follow "Visualizar" within "#contract_1_actions"
   And I should see "Home"
 
