@@ -17,7 +17,7 @@ class Contract < ActiveRecord::Base
   def create_accounts
     @account_quantity.to_i.times do |i|
       maturity_date = @account_date.to_date.months_since(i)
-      self.accounts << Account.create(:bank_account_id => @bank_account_id, :document => "Contrato", :kind => @account_kind, :box_id => @account_box_id, :person => self.person, :price => @account_price, :maturity_date => maturity_date)
+      self.accounts << Account.create(:bank_account_id => @bank_account_id, :document => "Contrato", :kind => @account_kind, :box_id => @account_box_id, :person => self.person, :price => @account_price, :payment_date => maturity_date, :maturity_date => maturity_date)
     end
   end
 end

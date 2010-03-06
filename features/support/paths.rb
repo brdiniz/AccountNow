@@ -17,7 +17,7 @@ module NavigationHelpers
 
     when /the show of person "(.+)" month "(.+)" from year "(.+)"/
       model = Person.find_by_name($1)
-      person_show_month_year_path(model, $2, $3)
+      person_show_date_path(model, $3, $2)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

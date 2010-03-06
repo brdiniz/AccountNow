@@ -25,12 +25,12 @@
         <% end %>
       </table>
       <div class="pagination">
-        <a rel="next" class="prev_page" href="<%= "#{person_show_month_year_path(@person, 12, @year.to_i - 1)}" %>">« 12/<%= @year.to_i - 1%></a>
+        <a rel="next" class="prev_page" href="<%= "#{person_show_date_path(@person, @year.to_i - 1, 12)}" %>">« 12/<%= @year.to_i - 1%></a>
         <% (1..12).each do |i| %>
             <%= "<span class='current'>#{i.to_s}</span>" if @month.to_i == i %>
-            <%= link_to i.to_s, person_show_month_year_path(@person, i, @year) if @month.to_i != i %>
+            <%= link_to i.to_s, person_show_date_path(@person, @year, i) if @month.to_i != i %>
         <% end %>
-        <a rel="next" class="next_page" href="#{person_show_month_year_path(@person, 12, @year.to_i + 1)}" %>01/<%= @year.to_i + 1%> »</a>
+        <a rel="next" class="next_page" href="<%= "#{person_show_date_path(@person, @year.to_i + 1, 1)}" %>" %>01/<%= @year.to_i + 1%> »</a>
       </div>
       <p />
     </div>

@@ -2,11 +2,11 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :people do |person|
     person.resources :accounts
     person.resources :contracts
-    person.show_month_year 'month/:month_number/year/:year_number', :controller => 'people', :action => "show", :method => 'get'
+    person.show_date 'date/:year_number/:month_number', :controller => 'people', :action => "show", :method => 'get'
   end
 
 	map.resources :boxes do | box |
-    box.show_month_year 'month/:month_number/year/:year_number', :controller => 'boxes', :action => "show", :method => 'get'
+    box.show_date 'date/:year_number/:month_number', :controller => 'boxes', :action => "show", :method => 'get'
 	  box.account 'accounts/:id', :controller => 'boxes', :action => 'account', :method => 'get'
     box.edit_account 'accounts/:id/edit', :controller => 'boxes', :action => 'account_edit'
   end
@@ -14,7 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :people
   map.resources :banks
   map.resources :bank_accounts do | bank_account |
-    bank_account.show_month_year 'month/:month_number/year/:year_number', :controller => 'bank_accounts', :action => "show", :method => 'get'
+    bank_account.show_date 'date/:year_number/:month_number', :controller => 'bank_accounts', :action => "show", :method => 'get'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

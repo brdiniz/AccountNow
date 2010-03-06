@@ -22,7 +22,7 @@ describe Person do
     person.should_not be_valid
     person.errors.on(:identifier).should_not be_blank
   end
-  
+
   it "should sort by name" do
     people = []
     people << Factory(:person, :name => "d")
@@ -35,6 +35,20 @@ describe Person do
     people.delete_at(0).name.should == "b"
     people.delete_at(0).name.should == "c"
     people.delete_at(0).name.should == "d"
+  end
+
+  it 'should sort by account payment date' do
+    person = Factory(:person)
+    Factory(:account, :person => person, :payment_date => "03/01/2010")
+    Factory(:account, :person => person, :payment_date => "03/02/2010")
+    Factory(:account, :person => person, :payment_date => "03/03/2010")
+    Factory(:account, :person => person, :payment_date => "03/04/2010")
+    accounts = []
+    accounts = person.find_account_month_year("03", "2010")
+    accounts[0].payment_date.to_s.should == "2010-03-01"
+    accounts[1].payment_date.to_s.should == "2010-03-02"
+    accounts[2].payment_date.to_s.should == "2010-03-03"
+    accounts[3].payment_date.to_s.should == "2010-03-04"
   end
 end
 

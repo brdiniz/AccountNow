@@ -7,7 +7,7 @@ class Account < ActiveRecord::Base
 
   KINDS = ["a pagar", "a receber"]
 
-  validates_presence_of :kind, :bank_account_id, :person_id, :document, :price, :maturity_date, :box_id
+  validates_presence_of :kind, :bank_account_id, :person_id, :document, :price, :maturity_date, :box_id, :payment_date
   validate :validate_maturity_date
 
   def <=>(other_account)
@@ -23,7 +23,6 @@ class Account < ActiveRecord::Base
   private
   def validate_update_payment
     return true unless !self.situation.nil?
-    errors.add_on_blank(:payment_date, 'é um campo obrigatório') if self.situation.id == 2
     errors.add_on_blank(:payment_price, 'é um campo obrigatório') if self.situation.id == 2
     return errors.empty?
   end

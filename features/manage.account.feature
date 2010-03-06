@@ -17,6 +17,7 @@ I want feature
     And I select "Home" from "account_box_id"
     And I select "TesteBank" from "account_bank_account_id"
     And I fill in "Data de vencimento" with "1/1/2020"
+    And I fill in "Data do pagamento" with "1/1/2020"
     And I fill in "Documento" with "doc1"
     And I fill in "Valor" with "10"
     And I should not see "Ex: a simple text"

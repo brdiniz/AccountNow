@@ -26,17 +26,18 @@ end
 Factory.define :account do |f|
   f.kind "a receber"
   f.price "10"
-  f.maturity_date "1/1/2020"
+  f.maturity_date "1/1/2000"
   f.document "doc_12"
+  f.payment_date "1/1/2000"
   f.association :bank_account, :factory => :bank_account
   f.association :box, :factory => :box
   f.association :person, :factory => :person
 end
 
 Factory.define :bank_account do |f|
-  f.name "name"
+  f.sequence(:name) { |n| "ba_#{n}" }
   f.opening_balance "10"
-  f.opening_balance_date "1/5/2011"
+  f.opening_balance_date "1/1/2000"
   f.association :bank, :factory => :bank
 end
 

@@ -8,7 +8,7 @@
           </th>
           <th class="last">&nbsp;</th>
         </tr>
-        <% @banks.each do |bank| -%>
+        <% @banks.sort.each do |bank| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td class="first">
             <%= link_to bank.code, bank_path(bank) %>

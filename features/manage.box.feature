@@ -25,7 +25,7 @@ I want feature
     Then I follow "Editar"
     And I should see "Alterar Conta"
     And I select "Realizada" from "account_situation_id"
-    And I fill in "Data do pagamento" with "1/1/1901"
+    And I fill in "Data do pagamento" with "3/30/2010"
     And I fill in "Valor do pagamento" with "100.00"
     Then I press "Salvar"
     And I should see "Alteração de Conta realizada com sucesso!"
