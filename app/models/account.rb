@@ -29,7 +29,7 @@ class Account < ActiveRecord::Base
 
   def validate_maturity_date
     return unless !self.nil? && !self.bank_account.nil?
-    errors.add(:maturity_date, "menor que saldo inicial da conta") if self.bank_account.opening_balance_date > self.maturity_date
+    errors.add(:payment_date, "menor que data inicial da conta") if self.bank_account.opening_balance_date > self.payment_date
   end
 end
 

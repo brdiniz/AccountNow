@@ -3,17 +3,17 @@
       <table class="table" id="accounts_table">
         <th class="first">ID</th>
         <th>Caixa</th>
-        <th>Tipo</th>
         <th>Data do vencimento</th>
+        <th>Data do pagamento</th>
         <th>Valor</th>
         <th>Status</th>
         <% @contract.accounts.sort.each do |account| %>
           <tr class='<%= cycle("odd", "even") %>'>
             <td><%= link_to  account.id , [@person, account] %></td>
             <td><%= account.box.name %></td>
-            <td><%= account.kind %></td>
             <td><%= account.maturity_date %></td>
-            <td><%= account.price %></td>
+            <td><%= account.payment_date %></td>
+            <td style="<%= "color: red;" if account.kind == "a pagar" %>"><%= account.price %></td>
             <td><%= account.situation.name if account.situation %></td>
           </tr>
         <% end %>

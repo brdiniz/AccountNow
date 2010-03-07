@@ -3,7 +3,7 @@ class Person < ActiveRecord::Base
   has_many :contracts, :dependent => :destroy
   has_many :bank
 
-  include AccountFind
+  include AccountsHelper
 
   TIPES = ["Física", "Juridica"]
 

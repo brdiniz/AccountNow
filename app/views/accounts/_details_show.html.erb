@@ -1,7 +1,14 @@
   <p>
     <b><%= t("activerecord.attributes.account.person_id", :default => "Person Id") %>:</b>
-      <%= @account.person.name %>
+      <%= link_to @account.person.name, @account.person %>
   </p>
+
+  <% if @account.contract %>
+    <p>
+      <b><%= t("activerecord.attributes.account.contract_id", :default => "Contract Id") %>:</b>
+        <%= link_to @account.contract.name, [@account.person, @account.contract] %>
+    </p>
+  <% end %>
 
   <p>
     <b><%= t("activerecord.attributes.account.box_id", :default => "Box Id") %>:</b>
