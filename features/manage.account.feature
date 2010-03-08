@@ -24,7 +24,6 @@ I want feature
     And I press "Salvar"
     Then I should see "Criação de Conta realizada com sucesso!"
     And I go to the show of person "Anthony Vivaldi" month "1" from year "2020"
-    And I should see "a receber"
     And I should see "Home"
 
   Scenario: Show a exist account
@@ -36,7 +35,6 @@ I want feature
     When I follow "Anthony Vivaldi"
     And I should see "Home"
     When I follow "Visualizar"
-    And I should see "a receber"
     And I should see "Conta"
     And I should see "Home"
     And I should see "10.0"

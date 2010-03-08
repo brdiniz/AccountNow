@@ -1,1 +1,1 @@
-features/manage.account.feature:6
+features/manage.account.feature:6:29 features/manage.bank.feature:6:36 features/manage.bank_account.feature:6 features/manage.box.feature:6:16 features/manage.contract.feature:6 features/manage.person.feature:20
