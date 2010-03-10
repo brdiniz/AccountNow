@@ -11,6 +11,11 @@
   <% end %>
 
   <p>
+    <b><%= t("activerecord.attributes.account.bank_account_id", :default => "Bank Account Id") %>:</b>
+      <%= link_to @account.bank_account.name, @account.bank_account %>
+  </p>
+
+  <p>
     <b><%= t("activerecord.attributes.account.box_id", :default => "Box Id") %>:</b>
       <%= @account.box.name %>
   </p>
