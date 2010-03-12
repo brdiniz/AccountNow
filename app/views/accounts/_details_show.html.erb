@@ -12,12 +12,12 @@
 
   <p>
     <b><%= t("activerecord.attributes.account.bank_account_id", :default => "Bank Account Id") %>:</b>
-      <%= link_to @account.bank_account.name, @account.bank_account %>
+      <%= link_to @account.bank_account.name, bank_account_show_date_path(@account.bank_account, @account.payment_date.year, @account.payment_date.month) %>
   </p>
 
   <p>
     <b><%= t("activerecord.attributes.account.box_id", :default => "Box Id") %>:</b>
-      <%= @account.box.name %>
+      <%= link_to @account.box.name, box_show_date_path(@account.box, @account.payment_date.year, @account.payment_date.month) %>
   </p>
 
   <p>
