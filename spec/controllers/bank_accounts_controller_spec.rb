@@ -25,5 +25,11 @@ describe BankAccountsController do
     post :account_delete, :bank_account_id => bank_account.id, :id => account.id
     response.should redirect_to(bank_account_path(bank_account))
   end
-
+  
+  it 'should redirect show account in the bank_account' do
+    account = Factory(:account)
+    post :account_edit, :bank_account_id => account.bank_account.id, :id => account.id, :account => {:situation_id => 1}
+    response.should redirect_to(bank_account_path(account.bank_account))
+  end
+  
 end
