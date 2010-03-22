@@ -2,6 +2,14 @@ class AccountItemController < InheritedResources::Base
   def account
     find_account
   end
+  
+  def account_delete
+    find_account
+    @account.delete
+    flash[:notice] = "Exclusão de Conta realizada com sucesso!"
+    redirect_to @box if @box
+    redirect_to @bank_account if @bank_account
+  end
 
   def account_edit
     find_account
@@ -32,7 +40,8 @@ class AccountItemController < InheritedResources::Base
   end
 
   def find_account
-    @box = Box.find(params[:box_id])
+    @box = Box.find(params[:box_id]) if params[:box_id]
+    @bank_account = BankAccount.find(params[:bank_account_id]) if params[:bank_account_id]
     @account = Account.find(params[:id])
   end
 end

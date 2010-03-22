@@ -9,13 +9,19 @@ ActionController::Routing::Routes.draw do |map|
     box.show_date 'date/:year_number/:month_number', :controller => 'boxes', :action => "show", :method => 'get'
 	  box.account 'accounts/:id', :controller => 'boxes', :action => 'account', :method => 'get'
     box.edit_account 'accounts/:id/edit', :controller => 'boxes', :action => 'account_edit'
+    box.delete_account 'accounts/:id/delete', :controller => 'boxes', :action => 'account_delete'
   end
 
   map.resources :people
   map.resources :banks
   map.resources :bank_accounts do | bank_account |
     bank_account.show_date 'date/:year_number/:month_number', :controller => 'bank_accounts', :action => "show", :method => 'get'
+	  bank_account.account 'accounts/:id', :controller => 'bank_accounts', :action => 'account', :method => 'get'
+    bank_account.delete_account 'accounts/:id/delete', :controller => 'bank_accounts', :action => 'account_delete'
+    bank_account.edit_account 'accounts/:id/edit', :controller => 'bank_accounts', :action => 'account_edit'
   end
+
+  map.root :boxes
 
   # The priority is based upon order of creation: first created -> highest priority.
 

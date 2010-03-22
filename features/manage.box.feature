@@ -31,4 +31,20 @@ I want feature
     And I should see "Alteração de Conta realizada com sucesso!"
     And I should see "Caixa Home"
     And I should see "Realizada"
+    
+  Scenario: Show and Delete account in the box
+    Given I have no Person
+    And I have new Person with name is "Anthony Vivaldi"
+    And I have new Box with name is "Home"
+    And The Person named "Anthony Vivaldi" has an account kind "a receber" and document "doc_1" and box "Home" and Price "10"
+    And I go to the show first account in the box "Home"
+    When I should see "Caixa Home"
+    And I should see "Voltar para o Caixa"
+    Then I follow "Remover"
+    And I should see "Exclusão de Conta realizada com sucesso!"
+    And I should see "Contas"
+    And I should see "Caixa Home"
+
+
+
 

@@ -18,6 +18,11 @@ module NavigationHelpers
     when /the show of person "(.+)" month "(.+)" from year "(.+)"/
       model = Person.find_by_name($1)
       person_show_date_path(model, $3, $2)
+      
+    when /the show first account in the (.+) "(.+)"/
+      clazz = $1.camelize.constantize.find_by_name($2)
+      a = clazz.accounts.first
+      send("#{$1}_account_path", clazz, a)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

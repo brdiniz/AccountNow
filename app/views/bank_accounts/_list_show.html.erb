@@ -25,7 +25,7 @@
           <% opening_payment = opening_payment - account.payment_price if account.kind == "a pagar" && account.payment_price %>
           <% opening_payment = opening_payment + account.payment_price if account.kind == "a receber" && account.payment_price %>
           <tr class='<%= cycle("odd", "even") %>'>
-            <td><%= link_to account.id, [account.box, account] %></td>
+            <td><%= link_to account.id, [@bank_account, account] %></td>
             <td></td>
             <td><%= account.payment_date %></td>
             <td style="<%= "color: red;" if account.kind == "a pagar" %>"><%= account.price %></td>

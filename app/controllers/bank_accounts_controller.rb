@@ -1,4 +1,4 @@
-class BankAccountsController < InheritedResources::Base
+class BankAccountsController < AccountItemController
 
   def show
     if params[:id].nil?
@@ -11,8 +11,7 @@ class BankAccountsController < InheritedResources::Base
   private
   def find_bank_account(bank_account_id, month, year)
     @bank_account = BankAccount.find(bank_account_id)
-    @month = month.to_s if month.to_i > 9
-    @month = "0"+ month.to_s if month.to_i < 10
+    @month = month.to_s
     @year = year
   end
 end
