@@ -18,6 +18,12 @@ describe BankAccountsController do
     assigns[:month].to_i.should == 10
     assigns[:year].to_i.should == 2012
   end
+  
+  it "should redirect show with deleted account" do
+    account = Factory(:account)
+    bank_account = account.bank_account
+    post :account_delete, :bank_account_id => bank_account.id, :id => account.id
+    response.should redirect_to(bank_account_path(bank_account))
+  end
 
 end
-

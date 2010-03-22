@@ -34,6 +34,13 @@ describe BoxesController do
     response.should redirect_to(box_path(account.box))
   end
 
+  it "should redirect show with deleted account" do
+    account = Factory(:account)
+    box = account.box
+    post :account_delete, :box_id => box.id, :id => account.id
+    response.should redirect_to(box_path(box))
+  end
+
   it 'should redirect show with month and year equals current date' do
     account = Factory(:account)
     get :show, :id => account.box.id

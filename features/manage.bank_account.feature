@@ -82,7 +82,8 @@ I want feature
     Then I follow "Editar"
     And I should see "Conta Bancária Citibank pessoal"
     And I should see "Alterar Conta"
-    When I follow "Cancelar"
+    When I press "Salvar"
+    And I should see "Alteração de Conta realizada com sucesso!"
     And I should see "Contas"
     And I should see "Conta Bancária Citibank pessoal"
   
