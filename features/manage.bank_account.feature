@@ -70,6 +70,21 @@ I want feature
     And I should see "Exclusão de Conta realizada com sucesso!"
     And I should see "Contas"
     And I should see "Conta Bancária Citibank pessoal"
+
+  Scenario: Show and Editing account in the bank account
+    Given I have no BankAccount
+    And I have a Bank with name "Citibank" and code "999"
+    And I have a bank account with name "Citibank pessoal" and Bank "Citibank"
+    And The BankAccount named "Citibank pessoal" has an account
+    And I go to the show first account in the bank_account "Citibank pessoal"
+    When I should see "Conta Bancária Citibank pessoal"
+    And I should see "Voltar para Conta Bancária"
+    Then I follow "Editar"
+    And I should see "Conta Bancária Citibank pessoal"
+    And I should see "Alterar Conta"
+    When I follow "Cancelar"
+    And I should see "Contas"
+    And I should see "Conta Bancária Citibank pessoal"
   
   
   
