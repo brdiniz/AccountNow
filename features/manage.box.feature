@@ -21,7 +21,6 @@ I want feature
     And I go to the list of Box
     When I follow "Visualizar"
     And I should see "Caixa Home"
-    And I should see "Status"
     Then I follow "Editar"
     And I should see "Alterar Conta"
     And I select "Realizada" from "account_situation_id"
@@ -30,7 +29,6 @@ I want feature
     Then I press "Salvar"
     And I should see "Alteração de Conta realizada com sucesso!"
     And I should see "Caixa Home"
-    And I should see "Realizada"
     
   Scenario: Show and Delete account in the box
     Given I have no Person
