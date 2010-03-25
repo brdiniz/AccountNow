@@ -9,21 +9,22 @@ module AccountsHelper
   def price_sum(month, year)
     sum = 0
     final_date = "#{month}/1/#{year}".to_date.to_s
-    self.accounts.find(:all, :conditions => ["payment_date < ?", final_date]).each do |account|
-      sum = sum - account.price if account.kind == "a pagar"
-      sum = sum + account.price if account.kind == "a receber"
-    end
+    sum = sum + Account.sum(:price, :conditions => [condition, final_date, "a receber", self.id])
+    sum = sum - Account.sum(:price, :conditions => [condition, final_date, "a pagar", self.id])
     sum
   end
 
   def payment_sum(month, year)
     sum = 0
     final_date = "#{month}/1/#{year}".to_date.to_s
-    self.accounts.find(:all, :conditions => ["payment_date < ?", final_date]).each do |account|
-      sum = sum - account.payment_price if account.kind == "a pagar" && !account.payment_price.nil?
-      sum = sum + account.payment_price if account.kind == "a receber" && !account.payment_price.nil?
-    end
+    sum = sum + Account.sum(:payment_price, :conditions => [condition, final_date, "a receber", self.id])
+    sum = sum - Account.sum(:payment_price, :conditions => [condition, final_date, "a pagar", self.id])
     sum
+  end
+  
+  private
+  def condition
+    "payment_date < ? AND kind = ? AND #{self.class.to_s.underscore}_id = ?"
   end
 end
 
