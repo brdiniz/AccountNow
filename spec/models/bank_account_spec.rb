@@ -7,7 +7,7 @@ describe BankAccount do
   end
   
   it "should sum payment account" do
-    b = Factory(:bank_account)
+    b = Factory(:bank_account, :opening_balance => "0")
     a = Factory(:account, :bank_account_id => b.id, :payment_date => "3/1/2010")
     a = Factory(:account, :bank_account_id => b.id, :payment_date => "3/1/2010")
 
