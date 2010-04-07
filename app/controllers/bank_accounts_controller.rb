@@ -11,7 +11,7 @@ class BankAccountsController < AccountItemController
   private
   def find_bank_account(bank_account_id, month, year)
     @bank_account = BankAccount.find(bank_account_id)
-    @month = month.to_s
+    @month = month
     @year = year
   end
 end

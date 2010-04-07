@@ -7,8 +7,7 @@ class AccountItemController < InheritedResources::Base
     find_account
     @account.delete
     flash[:notice] = "Exclusão de Conta realizada com sucesso!"
-    redirect_to @box if @box
-    redirect_to @bank_account if @bank_account
+    redirect_to (@box || @bank_account)
   end
 
   def account_edit
@@ -17,8 +16,7 @@ class AccountItemController < InheritedResources::Base
       @account.attributes = params[:account]
       if @account.save_payment
         flash[:notice] = "Alteração de Conta realizada com sucesso!"
-        redirect_to @box if @box
-        redirect_to @bank_account if @bank_account
+        redirect_to (@box || @bank_account)
       else
         render :action => "account_edit"
       end

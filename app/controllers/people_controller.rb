@@ -18,8 +18,7 @@ class PeopleController < InheritedResources::Base
   private
   def find_person_account(person_id, month, year)
     @person = Person.find(person_id)
-    @month = month.to_s if month.to_i > 9
-    @month = "0"+ month.to_s if month.to_i < 10
+    @month = month
     @year = year
   end
 end
