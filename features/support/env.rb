@@ -50,4 +50,27 @@ Cucumber::Rails::World.use_transactional_fixtures = true
 # http://github.com/bmabey/database_cleaner for more info.
 require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.strategy = :truncation
+Before do
+  Fixtures.reset_cache
+  fixtures_folder = File.join(RAILS_ROOT, 'spec', 'fixtures')
+  fixtures = Dir[File.join(fixtures_folder, '*.yml')].map {|f| File.basename(f, '.yml') }
+  Fixtures.create_fixtures(fixtures_folder, fixtures)
+end
 
+class ApplicationController
+  before_filter :maintain_session_and_user
+  
+  def current_session
+    Session.first.id
+  end
+  
+  def current_user
+    User.first.login
+  end
+
+  private
+  def maintain_session_and_user
+    @session = Session.first
+  end
+end

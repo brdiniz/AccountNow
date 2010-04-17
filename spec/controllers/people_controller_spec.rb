@@ -1,6 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe PeopleController do
+  it_should_behave_like "authenticated controller"
   integrate_views
 
   it 'should redirect list person when destroy person' do

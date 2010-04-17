@@ -1,4 +1,5 @@
 class PeopleController < InheritedResources::Base
+  before_filter :maintain_session_and_user
 
   def destroy
     destroy!

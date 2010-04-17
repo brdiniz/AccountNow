@@ -7,4 +7,18 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  def current_session
+    session[:id]
+  end
+  
+  def current_user
+    session[:current_user]
+  end
+  
+  private
+  def maintain_session_and_user
+    @session = Session.find_by_id(current_session)
+    redirect_to(new_session_path) unless @session
+  end
 end

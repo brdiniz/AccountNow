@@ -1,4 +1,6 @@
 class BoxesController < AccountItemController
+  before_filter :maintain_session_and_user
+  
   def destroy
     destroy!
   rescue Exception => e

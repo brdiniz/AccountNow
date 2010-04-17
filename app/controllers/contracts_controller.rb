@@ -1,4 +1,6 @@
 class ContractsController < InheritedResources::Base
+  before_filter :maintain_session_and_user
+  
   belongs_to :person
 
   def create

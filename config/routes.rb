@@ -21,6 +21,10 @@ ActionController::Routing::Routes.draw do |map|
     bank_account.edit_account 'accounts/:id/edit', :controller => 'bank_accounts', :action => 'account_edit'
   end
 
+  map.resources :sessions
+
+  map.root :controller => :sessions, :action => :new
+  map.session_logout 'session/logout', :controller => :sessions, :action => :destroy
   map.root :boxes
 
   # The priority is based upon order of creation: first created -> highest priority.
